@@ -156,9 +156,10 @@
                 }
             });
 
-            // Close menu when clicking on a link
+            // Close menu when clicking on a link (only for mobile)
             navMenu.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
+                link.addEventListener('click', (e) => {
+                    // Don't prevent default - let the link work normally
                     mobileToggle.classList.remove('active');
                     navMenu.classList.remove('active');
                     document.body.classList.remove('menu-open');
@@ -189,11 +190,42 @@
         }
     }
 
+    // Set active navigation based on current page
+    function setActiveNavigation() {
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            const linkPath = new URL(link.href).pathname;
+            
+            // Remove active class from all links
+            link.classList.remove('active');
+            
+            // Add active class to matching link
+            if (currentPath === linkPath || 
+                (currentPath.includes('/tiendas/') && linkPath.includes('/tiendas/')) ||
+                (currentPath.includes('/espacios/') && linkPath.includes('/espacios/')) ||
+                (currentPath.includes('/eventos/') && linkPath.includes('/eventos/')) ||
+                (currentPath.includes('/faq/') && linkPath.includes('/faq/'))) {
+                link.classList.add('active');
+            }
+            
+            // Special case for home page
+            if ((currentPath === '/Silao/' || currentPath === '/Silao/index.html') && 
+                (linkPath === '/Silao/' || linkPath === '/Silao/index.html')) {
+                link.classList.add('active');
+            }
+        });
+    }
+
     // Initialize components when DOM is ready
     function initComponents() {
         injectNavigation();
         injectFooter();
         initBackToTop();
+        
+        // Set active navigation after injecting
+        setTimeout(setActiveNavigation, 100);
     }
 
     // Export for use in other scripts

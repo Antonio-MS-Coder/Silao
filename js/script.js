@@ -105,9 +105,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Close mobile menu when clicking a nav link
+    // Close mobile menu when clicking a nav link (for hash links or navigation)
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
+            // Always close mobile menu when any link is clicked
             if (navMenu) navMenu.classList.remove('active');
             if (mobileMenuToggle) {
                 mobileMenuToggle.classList.remove('active');
@@ -134,21 +135,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // =====================================================
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
+            const href = this.getAttribute('href');
             
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                const headerOffset = header.offsetHeight;
-                const elementPosition = targetSection.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            // Only prevent default and do smooth scroll for hash links (same page anchors)
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
                 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+                const targetSection = document.querySelector(href);
+                
+                if (targetSection) {
+                    const headerOffset = header.offsetHeight;
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
+            // For regular links (to other pages), let them navigate normally
+            // Don't preventDefault() for these
         });
     });
 
