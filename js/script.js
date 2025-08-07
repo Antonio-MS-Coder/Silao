@@ -420,17 +420,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // =====================================================
-    // Service Worker Registration (for PWA support)
-    // =====================================================
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-            // Uncomment when service worker is implemented
-            // navigator.serviceWorker.register('/sw.js')
-            //     .then(registration => console.log('SW registered:', registration))
-            //     .catch(error => console.log('SW registration failed:', error));
-        });
-    }
+    // Service Worker registration moved to top of file to avoid duplication
 
     // =====================================================
     // Initialize on Load
