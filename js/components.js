@@ -14,7 +14,7 @@
                 <div class="nav-wrapper">
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="/" aria-label="Plaza Real Silao - Inicio">
+                        <a href="/Silao/" aria-label="Plaza Real Silao - Inicio">
                             <span class="logo-text">Plaza Real</span>
                             <span class="logo-accent">Silao</span>
                         </a>
@@ -22,12 +22,12 @@
                     
                     <!-- Desktop Navigation -->
                     <ul class="nav-menu" id="navMenu">
-                        <li><a href="/" class="nav-link" data-page="home">Inicio</a></li>
-                        <li><a href="/tiendas/" class="nav-link" data-page="tiendas">Tiendas</a></li>
-                        <li><a href="/espacios/" class="nav-link" data-page="espacios">Espacios Disponibles</a></li>
-                        <li><a href="/eventos/" class="nav-link" data-page="eventos">Eventos</a></li>
-                        <li><a href="/faq/" class="nav-link" data-page="faq">FAQ</a></li>
-                        <li><a href="/#contact" class="nav-link">Contacto</a></li>
+                        <li><a href="/Silao/" class="nav-link" data-page="home">Inicio</a></li>
+                        <li><a href="/Silao/tiendas/" class="nav-link" data-page="tiendas">Tiendas</a></li>
+                        <li><a href="/Silao/espacios/" class="nav-link" data-page="espacios">Espacios Disponibles</a></li>
+                        <li><a href="/Silao/eventos/" class="nav-link" data-page="eventos">Eventos</a></li>
+                        <li><a href="/Silao/faq/" class="nav-link" data-page="faq">FAQ</a></li>
+                        <li><a href="/Silao/#contact" class="nav-link">Contacto</a></li>
                     </ul>
                     
                     <!-- Mobile Menu Toggle -->
@@ -64,11 +64,11 @@
                 <div class="footer-section">
                     <h4>Enlaces Rápidos</h4>
                     <ul>
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="/tiendas/">Tiendas</a></li>
-                        <li><a href="/espacios/">Espacios Disponibles</a></li>
-                        <li><a href="/eventos/">Eventos</a></li>
-                        <li><a href="/faq/">Preguntas Frecuentes</a></li>
+                        <li><a href="/Silao/">Inicio</a></li>
+                        <li><a href="/Silao/tiendas/">Tiendas</a></li>
+                        <li><a href="/Silao/espacios/">Espacios Disponibles</a></li>
+                        <li><a href="/Silao/eventos/">Eventos</a></li>
+                        <li><a href="/Silao/faq/">Preguntas Frecuentes</a></li>
                     </ul>
                 </div>
                 

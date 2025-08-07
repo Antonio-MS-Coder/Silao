@@ -5,7 +5,7 @@
     // Load featured stores for preview
     async function loadStorePreview() {
         try {
-            const response = await fetch('/data/stores.json');
+            const response = await fetch('/Silao/data/stores.json');
             const data = await response.json();
             
             // Select featured stores (first 6 or specific IDs)
@@ -16,7 +16,7 @@
             
             previewGrid.innerHTML = featuredStores.map(store => `
                 <div class="preview-card">
-                    <a href="/tiendas/detalle.html?id=${store.id}" class="preview-card-link">
+                    <a href="/Silao/tiendas/detalle.html?id=${store.id}" class="preview-card-link">
                         <div class="preview-image" style="background: ${store.gradient};">
                             <span class="preview-initial">${store.name.charAt(0)}</span>
                         </div>

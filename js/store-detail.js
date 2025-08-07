@@ -14,7 +14,7 @@
     // Load store data
     async function loadStoreData() {
         try {
-            const response = await fetch('../data/stores.json');
+            const response = await fetch('/Silao/data/stores.json');
             const data = await response.json();
             allStores = data.stores;
             
@@ -147,7 +147,7 @@
         
         relatedGrid.innerHTML = relatedStores.map(store => `
             <div class="store-card">
-                <a href="/tiendas/detalle.html?id=${store.id}" class="store-card-link">
+                <a href="/Silao/tiendas/detalle.html?id=${store.id}" class="store-card-link">
                     <div class="store-image">
                         <div class="store-placeholder" style="background: ${store.gradient};">
                             <span class="store-initial">${store.name.charAt(0)}</span>
@@ -172,7 +172,7 @@
                     <i class="fas fa-exclamation-triangle"></i>
                     <h2>Error</h2>
                     <p>${message}</p>
-                    <a href="/tiendas/" class="btn btn-primary">Ver Todas las Tiendas</a>
+                    <a href="/Silao/tiendas/" class="btn btn-primary">Ver Todas las Tiendas</a>
                 </div>
             </div>
         `;
