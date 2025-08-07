@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags (Will be updated dynamically) -->
+    <title>Tienda | Plaza Real Silao</title>
+    <meta name="description" content="Información detallada de la tienda en Plaza Real Silao">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="header" id="header">
+        <nav class="navbar" role="navigation" aria-label="Navegación principal">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <!-- Logo -->
+                    <div class="logo">
+                        <a href="/" aria-label="Plaza Real Silao - Inicio">
+                            <span class="logo-text">Plaza Real</span>
+                            <span class="logo-accent">Silao</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Desktop Navigation -->
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="/" class="nav-link">Inicio</a></li>
+                        <li><a href="/tiendas/" class="nav-link active">Tiendas</a></li>
+                        <li><a href="/espacios/" class="nav-link">Espacios Disponibles</a></li>
+                        <li><a href="/eventos/" class="nav-link">Eventos</a></li>
+                        <li><a href="/#contact" class="nav-link">Contacto</a></li>
+                    </ul>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menú">
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Store Detail Hero -->
+        <section class="store-hero" id="storeHero">
+            <div class="store-hero-bg"></div>
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb breadcrumb-light">
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/tiendas/">Tiendas</a></li>
+                        <li class="active" id="breadcrumbStore">Tienda</li>
+                    </ol>
+                </nav>
+                <div class="store-hero-content">
+                    <h1 id="storeName">Cargando...</h1>
+                    <p class="store-category" id="storeCategory">...</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Store Details -->
+        <section class="store-details">
+            <div class="container">
+                <div class="store-details-grid">
+                    <!-- Store Image Gallery -->
+                    <div class="store-gallery">
+                        <div class="store-main-image" id="storeMainImage">
+                            <img src="/images/store-placeholder.jpg" alt="Store image" id="storeImage">
+                        </div>
+                        <div class="store-thumbnails" id="storeThumbnails">
+                            <!-- Will be populated if multiple images -->
+                        </div>
+                    </div>
+                    
+                    <!-- Store Information -->
+                    <div class="store-info-detail">
+                        <div class="store-description">
+                            <h2>Acerca de esta tienda</h2>
+                            <p id="storeDescription">...</p>
+                        </div>
+                        
+                        <div class="store-contact-info">
+                            <h3>Información de Contacto</h3>
+                            
+                            <div class="info-row">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Ubicación:</strong>
+                                    <span id="storeLocation">...</span>
+                                </div>
+                            </div>
+                            
+                            <div class="info-row">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Horario:</strong>
+                                    <span id="storeHours">...</span>
+                                </div>
+                            </div>
+                            
+                            <div class="info-row">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <strong>Teléfono:</strong>
+                                    <span id="storePhone">...</span>
+                                </div>
+                            </div>
+                            
+                            <div class="info-row">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email:</strong>
+                                    <span id="storeEmail">...</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="store-services">
+                            <h3>Servicios Disponibles</h3>
+                            <ul id="storeServices" class="services-list">
+                                <!-- Will be populated by JavaScript -->
+                            </ul>
+                        </div>
+                        
+                        <div class="store-actions">
+                            <a href="#" class="btn btn-primary" id="contactStore">
+                                <i class="fas fa-phone"></i> Contactar Tienda
+                            </a>
+                            <a href="/tiendas/" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Ver Todas las Tiendas
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Related Stores -->
+        <section class="related-stores">
+            <div class="container">
+                <h2 class="section-title">Otras Tiendas que te Pueden Interesar</h2>
+                <div class="related-stores-grid" id="relatedStores">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Plaza Real Silao</h3>
+                    <p>Tu centro comercial familiar en Silao de la Victoria</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="/tiendas/">Tiendas</a></li>
+                        <li><a href="/espacios/">Espacios Disponibles</a></li>
+                        <li><a href="/eventos/">Eventos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>Libramiento Nte. 3140<br>
+                    36100 Silao de la Victoria, Gto.<br>
+                    Tel: (55) 7878-9795</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Plaza Real Silao. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- JavaScript -->
+    <script src="../js/script.js"></script>
+    <script src="../js/store-detail.js"></script>
+</body>
+</html>
