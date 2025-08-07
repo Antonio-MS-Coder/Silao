@@ -133,7 +133,7 @@
       "email": "silao@financiera-acceso.com",
       "services": ["Créditos personales", "Créditos grupales", "Crédito PyME", "Seguros", "Ahorro programado"],
       "gradient": "linear-gradient(135deg, #457B9D, #1D3557)",
-      "image": "/Silao/images/stores/tiendas-del-sol.jpg"
+      "image": "/Silao/images/stores/acceso.png"
     },
     {
       "id": "dols",
