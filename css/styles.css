@@ -561,12 +561,20 @@ a:hover {
     background: white;
 }
 
+/* Stores Page Specific */
+.stores-page {
+    padding: var(--spacing-2xl) 0 var(--spacing-3xl) 0;
+    background: var(--background-alt);
+}
+
 .store-categories {
     display: flex;
     justify-content: center;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-2xl);
+    margin-top: var(--spacing-lg);
     flex-wrap: wrap;
+    padding: 0 var(--spacing-md);
 }
 
 .category-btn {
@@ -1497,6 +1505,7 @@ a:hover {
     color: white;
     padding: var(--spacing-3xl) 0 var(--spacing-2xl);
     margin-top: var(--header-height);
+    margin-bottom: 0;
 }
 
 .page-header h1 {
