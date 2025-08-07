@@ -5,7 +5,6 @@
  */
 
 const fs = require('fs').promises;
-const path = require('path');
 
 // Configuration
 const config = {

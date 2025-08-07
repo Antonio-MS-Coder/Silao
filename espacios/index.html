@@ -72,38 +72,8 @@
     <a href="#main" class="skip-link">Saltar al contenido principal</a>
     
     <!-- Navigation Header -->
-    <header class="header" id="header">
-        <nav class="navbar" role="navigation" aria-label="Navegación principal">
-            <div class="container">
-                <div class="nav-wrapper">
-                    <!-- Logo -->
-                    <div class="logo">
-                        <a href="/" aria-label="Plaza Real Silao - Inicio">
-                            <span class="logo-text">Plaza Real</span>
-                            <span class="logo-accent">Silao</span>
-                        </a>
-                    </div>
-                    
-                    <!-- Desktop Navigation -->
-                    <ul class="nav-menu" id="navMenu">
-                        <li><a href="/" class="nav-link">Inicio</a></li>
-                        <li><a href="/tiendas/" class="nav-link">Tiendas</a></li>
-                        <li><a href="/espacios/" class="nav-link active">Espacios Disponibles</a></li>
-                        <li><a href="/eventos/" class="nav-link">Eventos</a></li>
-                        <li><a href="#contact" class="nav-link">Contacto</a></li>
-                    </ul>
-                    
-                    <!-- Mobile Menu Toggle -->
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menú">
-                        <span class="hamburger"></span>
-                        <span class="hamburger"></span>
-                        <span class="hamburger"></span>
-                    </button>
-                </div>
-            </div>
-        </nav>
-    </header>
-    
+    <!-- Navigation Header (Injected by components.js) -->
+    <header class="header" id="header"></header>    
     <!-- Main Content -->
     <main id="main">
         <!-- Hero Section -->
@@ -532,65 +502,16 @@
     </main>
     
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Plaza Real Silao</h3>
-                    <p>Tu centro comercial familiar en Silao de la Victoria</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul>
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="/tiendas/">Tiendas</a></li>
-                        <li><a href="/espacios/">Espacios Disponibles</a></li>
-                        <li><a href="/eventos/">Eventos</a></li>
-                        <li><a href="/faq/">Preguntas Frecuentes</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Información de Contacto</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> Libramiento Nte. 3140, Silao</p>
-                    <p><i class="fas fa-phone"></i> (55) 7878-9795</p>
-                    <p><i class="fas fa-envelope"></i> contacto@plazarealsilao.com</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Newsletter</h4>
-                    <p>Recibe noticias y promociones exclusivas</p>
-                    <form class="newsletter-form" id="newsletterForm">
-                        <input type="email" placeholder="Tu correo electrónico" required>
-                        <button type="submit" class="btn btn-primary">Suscribir</button>
-                    </form>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Plaza Real Silao. Todos los derechos reservados.</p>
-                <div class="footer-links">
-                    <a href="/privacidad/">Política de Privacidad</a>
-                    <a href="/terminos/">Términos y Condiciones</a>
-                    <a href="/sitemap.xml">Mapa del Sitio</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-    
+    <!-- Footer (Injected by components.js) -->
+    <footer class="footer"></footer>    
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top" aria-label="Volver arriba">
         <i class="fas fa-chevron-up"></i>
     </button>
     
     <!-- JavaScript -->
-    <script src="../js/script.js"></script>
-    <script src="../js/espacios.js"></script>
+    <script src="/js/components.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/espacios.js"></script>
 </body>
 </html>
