@@ -1,9 +1,27 @@
 /**
  * Plaza Real Silao - JavaScript Functionality
- * Version: 1.0
+ * Version: 1.1
  * Description: Production-ready JavaScript for smooth scrolling,
- * interactive features, and enhanced user experience
+ * interactive features, PWA support, and enhanced user experience
  */
+
+// Register Service Worker for PWA support
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+                console.log('ServiceWorker registered:', registration.scope);
+                
+                // Check for updates periodically
+                setInterval(() => {
+                    registration.update();
+                }, 60000); // Check every minute
+            })
+            .catch(err => {
+                console.log('ServiceWorker registration failed:', err);
+            });
+    });
+}
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -21,6 +39,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const storeCards = document.querySelectorAll('.store-card');
     const contactForm = document.getElementById('contactForm');
     const newsletterForm = document.getElementById('newsletterForm');
+    
+    // Performance metrics
+    const perfData = {
+        start: performance.now(),
+        loadTime: 0
+    };
     
     // Throttle function for performance optimization
     function throttle(func, limit) {

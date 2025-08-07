@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Página No Encontrada - Error 404 | Plaza Real Silao</title>
+    <meta name="description" content="La página que buscas no existe. Regresa al inicio de Plaza Real Silao o explora nuestras tiendas y eventos.">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #10b981;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --background: #ffffff;
+            --background-alt: #f9fafb;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Animated background elements */
+        .bg-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+        
+        .shape {
+            position: absolute;
+            opacity: 0.1;
+        }
+        
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: white;
+            border-radius: 50%;
+            top: -150px;
+            left: -150px;
+            animation: float 20s infinite ease-in-out;
+        }
+        
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: white;
+            border-radius: 50%;
+            bottom: -100px;
+            right: -100px;
+            animation: float 15s infinite ease-in-out reverse;
+        }
+        
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            background: white;
+            transform: rotate(45deg);
+            top: 50%;
+            right: 10%;
+            animation: rotate 25s infinite linear;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-50px) scale(1.1);
+            }
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .error-container {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 1;
+            animation: slideUp 0.6s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 20px;
+            font-family: 'Poppins', sans-serif;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .error-title {
+            font-size: 28px;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .error-message {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        
+        .error-illustration {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+        
+        .shopping-bag {
+            font-size: 100px;
+            color: #e5e7eb;
+            animation: swing 2s infinite ease-in-out;
+        }
+        
+        @keyframes swing {
+            0%, 100% {
+                transform: rotate(-5deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+        
+        .question-mark {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            font-size: 40px;
+            color: var(--primary-color);
+            animation: bounce 1s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .error-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 15px;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-secondary {
+            background: var(--background-alt);
+            color: var(--text-primary);
+            border: 2px solid var(--background-alt);
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .suggestions {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .suggestions h3 {
+            font-size: 18px;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+        
+        .quick-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .quick-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s ease;
+        }
+        
+        .quick-link:hover {
+            color: var(--primary-dark);
+            transform: translateX(3px);
+        }
+        
+        .quick-link i {
+            font-size: 12px;
+        }
+        
+        @media (max-width: 640px) {
+            .error-container {
+                padding: 40px 20px;
+            }
+            
+            .error-code {
+                font-size: 80px;
+            }
+            
+            .error-title {
+                font-size: 24px;
+            }
+            
+            .error-actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background shapes -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    
+    <!-- Error content -->
+    <div class="error-container">
+        <div class="error-illustration">
+            <div class="shopping-bag">
+                <i class="fas fa-shopping-bag"></i>
+            </div>
+            <div class="question-mark">
+                <i class="fas fa-question"></i>
+            </div>
+        </div>
+        
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">¡Ups! Página no encontrada</h2>
+        <p class="error-message">
+            Parece que la página que buscas se fue de compras y no ha regresado. 
+            No te preocupes, tenemos muchas otras opciones para ti en Plaza Real Silao.
+        </p>
+        
+        <div class="error-actions">
+            <a href="/" class="btn btn-primary">
+                <i class="fas fa-home"></i>
+                Volver al Inicio
+            </a>
+            <a href="/tiendas/" class="btn btn-secondary">
+                <i class="fas fa-store"></i>
+                Ver Tiendas
+            </a>
+        </div>
+        
+        <div class="suggestions">
+            <h3>Enlaces útiles</h3>
+            <div class="quick-links">
+                <a href="/eventos/" class="quick-link">
+                    <i class="fas fa-calendar"></i>
+                    Eventos
+                </a>
+                <a href="/espacios/" class="quick-link">
+                    <i class="fas fa-building"></i>
+                    Espacios Disponibles
+                </a>
+                <a href="/#contact" class="quick-link">
+                    <i class="fas fa-phone"></i>
+                    Contacto
+                </a>
+                <a href="/faq/" class="quick-link">
+                    <i class="fas fa-question-circle"></i>
+                    Preguntas Frecuentes
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Redirect to home after 10 seconds
+        setTimeout(() => {
+            const countdown = document.createElement('p');
+            countdown.style.position = 'fixed';
+            countdown.style.bottom = '20px';
+            countdown.style.left = '50%';
+            countdown.style.transform = 'translateX(-50%)';
+            countdown.style.background = 'white';
+            countdown.style.padding = '10px 20px';
+            countdown.style.borderRadius = '20px';
+            countdown.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+            countdown.style.fontSize = '14px';
+            countdown.style.color = '#6b7280';
+            
+            let seconds = 10;
+            countdown.textContent = `Redirigiendo al inicio en ${seconds} segundos...`;
+            document.body.appendChild(countdown);
+            
+            const interval = setInterval(() => {
+                seconds--;
+                countdown.textContent = `Redirigiendo al inicio en ${seconds} segundos...`;
+                
+                if (seconds <= 0) {
+                    clearInterval(interval);
+                    window.location.href = '/';
+                }
+            }, 1000);
+        }, 5000);
+    </script>
+</body>
+</html>

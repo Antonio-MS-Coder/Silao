@@ -22,16 +22,88 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://antonio-ms-coder.github.io/Silao/">
     
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Theme Color for mobile browsers -->
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Plaza Real">
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileImage" content="/images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#2563eb">
+    
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
+    <!-- Preload critical assets -->
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="js/script.js" as="script">
+    
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ShoppingCenter",
+        "name": "Plaza Real Silao",
+        "description": "Centro comercial familiar en Silao de la Victoria, Guanajuato. Tiendas, restaurantes y eventos para toda la familia.",
+        "url": "https://antonio-ms-coder.github.io/Silao/",
+        "telephone": "+52-55-7878-9795",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Libramiento Nte. 3140",
+            "addressLocality": "Silao de la Victoria",
+            "addressRegion": "Guanajuato",
+            "postalCode": "36100",
+            "addressCountry": "MX"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 20.9436,
+            "longitude": -101.4269
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "22:00"
+            }
+        ],
+        "image": "https://antonio-ms-coder.github.io/Silao/images/plaza-real-silao.jpg",
+        "priceRange": "$$",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "1250"
+        },
+        "hasMap": "https://goo.gl/maps/example",
+        "sameAs": [
+            "https://www.facebook.com/plazarealsilao",
+            "https://www.instagram.com/plazarealsilao"
+        ]
+    }
+    </script>
 </head>
 <body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main" class="skip-link">Saltar al contenido principal</a>
     <!-- Navigation Header -->
     <header class="header" id="header">
         <nav class="navbar" role="navigation" aria-label="Navegación principal">
