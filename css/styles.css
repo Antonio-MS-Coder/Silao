@@ -465,6 +465,11 @@ a:hover {
     transition: all var(--transition-base);
     position: relative;
     overflow: hidden;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .feature-card::before {
@@ -504,11 +509,19 @@ a:hover {
 .feature-card h3 {
     margin-bottom: var(--spacing-sm);
     color: var(--text-primary);
+    font-size: 1.2rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+    max-width: 100%;
 }
 
 .feature-card p {
     color: var(--text-secondary);
     margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    word-wrap: break-word;
+    max-width: 100%;
 }
 
 /* Section Headers */
@@ -565,17 +578,59 @@ a:hover {
     font-weight: 500;
     cursor: pointer;
     transition: all var(--transition-base);
+    white-space: nowrap;
+    font-size: 0.95rem;
 }
 
 .category-btn:hover {
     border-color: var(--primary-color);
     color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .category-btn.active {
     background: var(--primary-color);
     border-color: var(--primary-color);
     color: white;
+    box-shadow: 0 4px 12px rgba(56, 152, 236, 0.3);
+}
+
+/* Store Search Styles */
+.store-search {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto var(--spacing-xl) auto;
+}
+
+.store-search input {
+    width: 100%;
+    padding: 0.75rem 3rem 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-full);
+    font-size: 1rem;
+    transition: all var(--transition-base);
+    background: white;
+    color: var(--text-primary);
+}
+
+.store-search input::placeholder {
+    color: var(--text-secondary);
+}
+
+.store-search input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(56, 152, 236, 0.1);
+}
+
+.store-search i {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    pointer-events: none;
 }
 
 .stores-grid {
@@ -1346,6 +1401,38 @@ a:hover {
     .category-btn {
         flex: 1;
         min-width: 100px;
+        font-size: 0.85rem;
+        padding: 0.4rem 1rem;
+    }
+    
+    /* Feature cards mobile */
+    .feature-card {
+        min-height: 180px;
+        padding: var(--spacing-lg);
+    }
+    
+    .feature-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    /* Store search mobile */
+    .store-search {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .store-search input {
+        font-size: 0.95rem;
+        padding: 0.65rem 2.5rem 0.65rem 1rem;
     }
 }
 

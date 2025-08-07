@@ -91,6 +91,11 @@
     function initializeSearch() {
         const searchInput = document.getElementById('storeSearch');
         
+        if (!searchInput) {
+            console.error('Search input not found');
+            return;
+        }
+        
         searchInput.addEventListener('input', function() {
             const searchTerm = this.value.toLowerCase().trim();
             

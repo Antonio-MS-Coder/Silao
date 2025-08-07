@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // =====================================================
     // Mobile Menu Toggle
     // =====================================================
-    if (mobileMenuToggle) {
+    if (mobileMenuToggle && navMenu) {
         mobileMenuToggle.addEventListener('click', function() {
             const isActive = navMenu.classList.contains('active');
             
@@ -108,20 +108,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close mobile menu when clicking a nav link
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            if (navMenu) navMenu.classList.remove('active');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            }
             document.body.style.overflow = '';
         });
     });
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
-        if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
-            navMenu.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
-            document.body.style.overflow = '';
+        if (navMenu && mobileMenuToggle) {
+            if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            }
         }
     });
 
@@ -183,9 +187,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // =====================================================
-    // Store Category Filter
+    // Store Category Filter (Legacy - handled by stores.js on stores page)
     // =====================================================
-    if (categoryBtns.length > 0) {
+    // This functionality is now handled by stores.js for the stores page
+    // Keeping basic filter functionality for other pages if needed
+    if (categoryBtns.length > 0 && !document.querySelector('.stores-page')) {
         categoryBtns.forEach(btn => {
             btn.addEventListener('click', function() {
                 const category = this.getAttribute('data-category');
@@ -447,10 +453,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // =====================================================
     document.addEventListener('keydown', function(e) {
         // Escape key closes mobile menu
-        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        if (e.key === 'Escape' && navMenu && navMenu.classList.contains('active')) {
             navMenu.classList.remove('active');
-            mobileMenuToggle.classList.remove('active');
-            mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            if (mobileMenuToggle) {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+            }
             document.body.style.overflow = '';
         }
     });
@@ -471,6 +479,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }, false);
     
     function handleSwipe() {
+        if (!navMenu || !mobileMenuToggle) return;
+        
         const swipeThreshold = 100;
         const diff = touchStartX - touchEndX;
         
