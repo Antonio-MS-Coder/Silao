@@ -13,7 +13,7 @@
       "email": "contacto@elzorro.com.mx",
       "services": ["Venta al mayoreo", "Precios especiales para negocios", "Entrega a domicilio", "Amplio surtido"],
       "gradient": "linear-gradient(135deg, #FF6B6B, #FF8E8E)",
-      "image": "/images/stores/el-zorro.jpg"
+      "image": "/Silao/images/stores/zorro.png"
     },
     {
       "id": "fix-truper",
@@ -28,7 +28,7 @@
       "email": "fixtruper.silao@truper.com",
       "services": ["Herramientas profesionales", "Material de construcción", "Asesoría técnica", "Garantía Truper"],
       "gradient": "linear-gradient(135deg, #4ECDC4, #44A2A0)",
-      "image": "/images/stores/fix-truper.jpg"
+      "image": "/Silao/images/stores/fix.png"
     },
     {
       "id": "elektra",
@@ -43,7 +43,7 @@
       "email": "elektra.silao@elektra.com.mx",
       "services": ["Crédito Elektra", "Banco Azteca", "Envíos de dinero", "Recargas telefónicas", "Apartado fácil"],
       "gradient": "linear-gradient(135deg, #FFB703, #FB8500)",
-      "image": "/images/stores/elektra.jpg"
+      "image": "/Silao/images/stores/elektra.png"
     },
     {
       "id": "zonatura",
@@ -58,7 +58,7 @@
       "email": "zonatura.silao@gmail.com",
       "services": ["Consulta nutricional", "Productos orgánicos", "Suplementos deportivos", "Medicina alternativa"],
       "gradient": "linear-gradient(135deg, #95E1D3, #3FC1C9)",
-      "image": "/images/stores/zonatura.jpg"
+      "image": "/Silao/images/stores/natura.png"
     },
     {
       "id": "telcel",
@@ -73,7 +73,7 @@
       "email": "cac.silao@telcel.com",
       "services": ["Planes de renta", "Equipos nuevos", "Renovación de plan", "Servicio técnico", "Accesorios originales"],
       "gradient": "linear-gradient(135deg, #219EBC, #023047)",
-      "image": "/images/stores/telcel.jpg"
+      "image": "/Silao/images/stores/telcel.png"
     },
     {
       "id": "att",
@@ -88,7 +88,7 @@
       "email": "tienda.silao@att.com.mx",
       "services": ["Planes 5G", "Internet en casa", "DirecTV", "Portabilidad gratis", "Seguro para equipos"],
       "gradient": "linear-gradient(135deg, #00A8E8, #003459)",
-      "image": "/images/stores/att.jpg"
+      "image": "/Silao/images/stores/att.png"
     },
     {
       "id": "bufete-juridico",
@@ -103,7 +103,7 @@
       "email": "contacto@bufetelegal-silao.com",
       "services": ["Divorcios", "Contratos", "Juicios laborales", "Testamentos", "Asesoría empresarial"],
       "gradient": "linear-gradient(135deg, #8B7355, #5D4E37)",
-      "image": "/images/stores/bufete.jpg"
+      "image": "/Silao/images/stores/abogados.png"
     },
     {
       "id": "infonavit",
@@ -118,7 +118,7 @@
       "email": "cesi.silao@infonavit.org.mx",
       "services": ["Consulta de crédito", "Estado de cuenta", "Aclaraciones", "Precalificación", "Citas en línea"],
       "gradient": "linear-gradient(135deg, #C73E1D, #8B2A0D)",
-      "image": "/images/stores/infonavit.jpg"
+      "image": "/Silao/images/stores/infonavit.png"
     },
     {
       "id": "financiera-acceso",
@@ -133,7 +133,7 @@
       "email": "silao@financiera-acceso.com",
       "services": ["Créditos personales", "Créditos grupales", "Crédito PyME", "Seguros", "Ahorro programado"],
       "gradient": "linear-gradient(135deg, #457B9D, #1D3557)",
-      "image": "/images/stores/financiera.jpg"
+      "image": "/Silao/images/stores/tiendas-del-sol.jpg"
     },
     {
       "id": "dols",
@@ -148,7 +148,7 @@
       "email": "dolsbeauty.silao@gmail.com",
       "services": ["Corte y peinado", "Colorimetría", "Tratamientos capilares", "Uñas acrílicas", "Maquillaje social"],
       "gradient": "linear-gradient(135deg, #F72585, #B5179E)",
-      "image": "/images/stores/dols.jpg"
+      "image": "/Silao/images/stores/doll.png"
     }
   ]
 }

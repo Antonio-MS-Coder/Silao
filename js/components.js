@@ -15,8 +15,11 @@
                     <!-- Logo -->
                     <div class="logo">
                         <a href="/Silao/" aria-label="Plaza Real Silao - Inicio">
-                            <span class="logo-text">Plaza Real</span>
-                            <span class="logo-accent">Silao</span>
+                            <img src="/Silao/images/logo-silao.webp" alt="Plaza Real Silao" class="logo-img">
+                            <div class="logo-text-wrapper">
+                                <span class="logo-text">Plaza Real</span>
+                                <span class="logo-accent">Silao</span>
+                            </div>
                         </a>
                     </div>
                     

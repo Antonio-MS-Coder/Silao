@@ -18,10 +18,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/images/espacios-hero.jpg');
+    background-image: url('/Silao/images/plaza/acceso.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.3;
+    opacity: 0.4;
 }
 
 .espacios-hero .hero-overlay {
