@@ -2,6 +2,18 @@
    Espacios Disponibles - Custom Styles
    ===================================================== */
 
+/* Custom button styles for call button */
+.espacios-hero .btn-secondary {
+    background: white;
+    color: var(--primary-color);
+    border: 2px solid white;
+}
+
+.espacios-hero .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.9);
+}
+
 /* Hero Section Enhancements */
 .espacios-hero {
     position: relative;
