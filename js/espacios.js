@@ -85,10 +85,8 @@ function initContactForm() {
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
             submitBtn.disabled = true;
             
-            // Store form data for thank you page
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-            sessionStorage.setItem('inquiryData', JSON.stringify(data));
+            // Allow form to submit normally to FormSubmit
+            // FormSubmit will handle the actual submission
         }
     });
 }
