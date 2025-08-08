@@ -115,6 +115,19 @@
         }
     }
 
+    // Helper function to get category icon
+    function getCategoryIcon(category) {
+        const icons = {
+            'retail': 'fa-shopping-bag',
+            'services': 'fa-concierge-bell',
+            'food': 'fa-utensils',
+            'health': 'fa-heartbeat',
+            'education': 'fa-graduation-cap',
+            'finance': 'fa-landmark'
+        };
+        return icons[category] || 'fa-store';
+    }
+
     // Load related stores
     function loadRelatedStores() {
         // Get stores from the same category, excluding current store
@@ -146,17 +159,26 @@
         }
         
         relatedGrid.innerHTML = relatedStores.map(store => `
-            <div class="store-card">
+            <div class="store-card" data-category="${store.category}">
                 <a href="/Silao/tiendas/detalle.html?id=${store.id}" class="store-card-link">
+                    <div class="store-category-badge ${store.category}">
+                        <i class="fas ${getCategoryIcon(store.category)}"></i>
+                        <span>${store.categoryName}</span>
+                    </div>
                     <div class="store-image">
-                        <div class="store-placeholder" style="background: ${store.gradient};">
-                            <span class="store-initial">${store.name.charAt(0)}</span>
-                        </div>
+                        ${store.image ? 
+                            `<img src="${store.image}" alt="${store.name}" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'store-placeholder\\' style=\\'background: ${store.gradient};\\'><span class=\\'store-initial\\'>${store.name.charAt(0)}</span></div>'">` :
+                            `<div class="store-placeholder" style="background: ${store.gradient};">
+                                <span class="store-initial">${store.name.charAt(0)}</span>
+                            </div>`
+                        }
                     </div>
                     <div class="store-info">
                         <h3>${store.name}</h3>
                         <p>${store.shortDescription}</p>
-                        <span class="store-location">${store.location}</span>
+                    </div>
+                    <div class="store-card-footer">
+                        <span class="view-details">Ver Detalles <i class="fas fa-arrow-right"></i></span>
                     </div>
                 </a>
             </div>

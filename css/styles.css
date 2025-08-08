@@ -2079,3 +2079,55 @@ img.loaded {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
+/* Related Stores Section - Store Detail Page */
+.related-stores {
+    padding: 60px 0;
+    background: #f8f9fa;
+    margin-top: 80px;
+}
+
+.related-stores .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.related-stores-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Fix store cards in related section */
+.related-stores .store-card {
+    height: 100%;
+    margin: 0;
+}
+
+.related-stores .store-image {
+    height: 180px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .related-stores {
+        padding: 40px 0;
+        margin-top: 50px;
+    }
+    
+    .related-stores .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+    
+    .related-stores-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+    }
+}
