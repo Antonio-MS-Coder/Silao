@@ -357,13 +357,17 @@
                         </div>
                     </div>
                     
-                    <form class="contact-form" id="rentalInquiryForm" action="https://formsubmit.co/carlosantonio.murrieta@gmail.com" method="POST">
+                    <form class="contact-form" id="rentalInquiryForm" action="https://formsubmit.co/carlosantonio.murrieta@gmail.com" method="POST" accept-charset="UTF-8">
                         <!-- FormSubmit Configuration -->
                         <input type="hidden" name="_subject" value="Nueva solicitud de información - Espacios Plaza Real Silao">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
                         <input type="hidden" name="_next" value="https://antonio-ms-coder.github.io/Silao/espacios/gracias.html">
                         <input type="hidden" name="_cc" value="contacto@plazarealsilao.com">
+                        <input type="hidden" name="_autoresponse" value="Gracias por tu interés en Plaza Real Silao. Hemos recibido tu solicitud de información sobre nuestros espacios comerciales. Un ejecutivo se pondrá en contacto contigo en las próximas 24 horas. Para cualquier consulta inmediata, puedes llamarnos al (55) 7878-9795.">
+                        <input type="hidden" name="_blacklist" value="spam, casino, viagra, cryptocurrency, forex">
+                        <!-- Honeypot field for spam protection -->
+                        <input type="text" name="_honey" style="display:none">
                         
                         <div class="form-row">
                             <div class="form-group">
@@ -381,6 +385,7 @@
                             <div class="form-group">
                                 <label for="email">Correo electrónico *</label>
                                 <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required aria-required="true">
+                                <input type="hidden" name="_replyto" value="">
                                 <span class="error-message" role="alert"></span>
                             </div>
                             <div class="form-group">

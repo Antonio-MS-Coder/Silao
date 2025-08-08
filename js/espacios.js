@@ -49,6 +49,15 @@ function initContactForm() {
     const form = document.getElementById('rentalInquiryForm');
     if (!form) return;
     
+    // Set up email reply-to synchronization
+    const emailInput = form.querySelector('#email');
+    const replyToInput = form.querySelector('input[name="_replyto"]');
+    if (emailInput && replyToInput) {
+        emailInput.addEventListener('input', function() {
+            replyToInput.value = this.value;
+        });
+    }
+    
     // Real-time validation
     const inputs = form.querySelectorAll('input[required], select[required]');
     inputs.forEach(input => {
@@ -78,16 +87,17 @@ function initContactForm() {
                 firstError.focus();
                 firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
-        } else {
-            // Show loading state
-            const submitBtn = form.querySelector('.btn-submit');
-            const originalContent = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
-            submitBtn.disabled = true;
-            
-            // Allow form to submit normally to FormSubmit
-            // FormSubmit will handle the actual submission
+            return;
         }
+        
+        // Show loading state
+        const submitBtn = form.querySelector('.btn-submit');
+        const originalContent = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        submitBtn.disabled = true;
+        
+        // Allow form to submit normally to FormSubmit
+        // FormSubmit will handle the actual submission and redirect
     });
 }
 

@@ -37,7 +37,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const backToTopBtn = document.getElementById('backToTop');
     const categoryBtns = document.querySelectorAll('.category-btn');
     const storeCards = document.querySelectorAll('.store-card');
-    const contactForm = document.getElementById('contactForm');
+    // Try to find actual form element, not section
+    let contactForm = document.getElementById('contactForm');
+    // If contactForm is a section, look for form inside it
+    if (contactForm && contactForm.tagName !== 'FORM') {
+        contactForm = contactForm.querySelector('form');
+    }
     const newsletterForm = document.getElementById('newsletterForm');
     
     // Performance metrics
@@ -234,24 +239,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Form Handling
     // =====================================================
     
-    // Contact Form
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            
-            // Here you would normally send the data to a server
-            console.log('Contact form submitted:', data);
-            
-            // Show success message (for demo purposes)
-            showFormMessage(contactForm, 'success', 'Mensaje enviado exitosamente. Te contactaremos pronto.');
-            
-            // Reset form
-            contactForm.reset();
-        });
+    // Contact Form - only handle if it's actually a form element
+    if (contactForm && contactForm.tagName === 'FORM') {
+        // Skip handling here - the form should submit normally to FormSubmit
+        // The espacios.js file handles the rental inquiry form
+        console.log('Contact form found but handled by page-specific script');
     }
     
     // Newsletter Form
