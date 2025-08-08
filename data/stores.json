@@ -61,19 +61,19 @@
       "image": "/Silao/images/stores/zorro.png"
     },
     {
-      "id": "comex",
-      "name": "Comex",
-      "category": "retail",
-      "categoryName": "Comercio",
-      "description": "Todo en pinturas y recubrimientos. Amplia gama de colores y productos para embellecer y proteger tu hogar o negocio. Asesoría personalizada para tu proyecto.",
-      "shortDescription": "Pinturas y recubrimientos",
-      "location": "Local E",
-      "hours": "Lunes a Viernes: 8:00 - 18:00, Sábado: 8:00 - 14:00",
+      "id": "telcel",
+      "name": "Telcel",
+      "category": "telecom",
+      "categoryName": "Telecomunicaciones",
+      "description": "La red con mayor cobertura. Planes de telefonía móvil, equipos de última generación, recargas y servicios adicionales. Todo lo que necesitas en comunicación móvil.",
+      "shortDescription": "Telefonía móvil y servicios",
+      "location": "Local G",
+      "hours": "Lunes a Domingo: 10:00 - 20:00",
       "phone": "Próximamente",
       "email": "Próximamente",
-      "services": ["Igualación de colores", "Asesoría en proyectos", "Productos premium", "Herramientas de pintura"],
-      "gradient": "linear-gradient(135deg, #E91E63, #F06292)",
-      "image": "/Silao/images/stores/placeholder.png"
+      "services": ["Planes de telefonía", "Venta de equipos", "Recargas", "Internet móvil", "Paquetes y promociones"],
+      "gradient": "linear-gradient(135deg, #2196F3, #1976D2)",
+      "image": "/Silao/images/stores/telcel.png"
     },
     {
       "id": "abogados",
@@ -91,19 +91,19 @@
       "image": "/Silao/images/stores/abogados.png"
     },
     {
-      "id": "telcel",
-      "name": "Telcel",
-      "category": "telecom",
-      "categoryName": "Telecomunicaciones",
-      "description": "La red con mayor cobertura. Planes de telefonía móvil, equipos de última generación, recargas y servicios adicionales. Todo lo que necesitas en comunicación móvil.",
-      "shortDescription": "Telefonía móvil y servicios",
-      "location": "Local G",
-      "hours": "Lunes a Domingo: 10:00 - 20:00",
+      "id": "comex",
+      "name": "Comex",
+      "category": "retail",
+      "categoryName": "Comercio",
+      "description": "Todo en pinturas y recubrimientos. Amplia gama de colores y productos para embellecer y proteger tu hogar o negocio. Asesoría personalizada para tu proyecto.",
+      "shortDescription": "Pinturas y recubrimientos",
+      "location": "Local E",
+      "hours": "Lunes a Viernes: 8:00 - 18:00, Sábado: 8:00 - 14:00",
       "phone": "Próximamente",
       "email": "Próximamente",
-      "services": ["Planes de telefonía", "Venta de equipos", "Recargas", "Internet móvil", "Paquetes y promociones"],
-      "gradient": "linear-gradient(135deg, #2196F3, #1976D2)",
-      "image": "/Silao/images/stores/telcel.png"
+      "services": ["Igualación de colores", "Asesoría en proyectos", "Productos premium", "Herramientas de pintura"],
+      "gradient": "linear-gradient(135deg, #E91E63, #F06292)",
+      "image": "/Silao/images/stores/placeholder.png"
     },
     {
       "id": "infonavit",
