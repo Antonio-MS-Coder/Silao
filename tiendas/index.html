@@ -49,7 +49,49 @@
         <!-- Stores Section -->
         <section class="stores-page">
             <div class="container">
+                <!-- Interactive Map Section (Moved to top) -->
+                <div class="map-section" style="margin-bottom: 50px;">
+                    <h2 class="map-title" style="text-align: center; font-size: 2rem; margin-bottom: 30px; color: var(--primary-color);">Mapa de Locales</h2>
+                    <div class="map-container" id="interactiveMap" style="background: white; padding: 20px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 12px;">
+                            <img 
+                                src="/Silao/images/mapa-tiendas-silao.webp" 
+                                alt="Mapa de Plaza Real Silao - Distribución de tiendas y locales" 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #f9fafb;"
+                                loading="eager">
+                        </div>
+                        <div style="margin-top: 25px; padding: 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px;">
+                            <h3 style="color: white; margin-bottom: 20px; font-size: 1.3rem; text-align: center;">Directorio de Tiendas</h3>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; color: white; font-size: 0.95rem;">
+                                <div><strong>A.</strong> Tiendas del Sol</div>
+                                <div><strong>B.</strong> Elektra</div>
+                                <div><strong>C.</strong> Fix Ferreterías</div>
+                                <div><strong>D.</strong> Zorro Abarrotero</div>
+                                <div><strong>E.</strong> Comex</div>
+                                <div><strong>F.</strong> Abogados</div>
+                                <div><strong>G.</strong> Telcel</div>
+                                <div><strong>H.</strong> Infonavit</div>
+                                <div><strong>I.</strong> Zonatura</div>
+                                <div><strong>J.</strong> Acceso</div>
+                                <div><strong>K.</strong> Escuela de Peluquería</div>
+                                <div><strong>L.</strong> Comida China</div>
+                                <div><strong>M.</strong> Home Moda</div>
+                                <div><strong>N.</strong> Chevrolet</div>
+                                <div><strong>O.</strong> Dols (Beauty & Nails)</div>
+                                <div><strong>P.</strong> Zapatería</div>
+                                <div><strong>Q-R.</strong> Restaurantes</div>
+                                <div><strong>S.</strong> Óptica Jireh</div>
+                                <div><strong>T.</strong> Gobierno</div>
+                                <div><strong>U.</strong> AT&T</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr style="margin: 40px 0; border: none; border-top: 1px solid #e5e7eb;">
+
                 <!-- Store Categories Filter -->
+                <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 30px; color: var(--text-primary);">Explora Nuestras Tiendas</h2>
                 <div class="store-categories">
                     <button class="category-btn active" data-category="all">Todas</button>
                     <button class="category-btn" data-category="retail">Comercio</button>
@@ -68,43 +110,6 @@
                 <!-- Stores Grid -->
                 <div class="stores-grid" id="storesGrid">
                     <!-- Will be populated by JavaScript -->
-                </div>
-                
-                <!-- Interactive Map Section -->
-                <div class="map-section">
-                    <h2 class="map-title">Mapa de Locales</h2>
-                    <div class="map-container" id="interactiveMap">
-                        <img 
-                            src="/Silao/images/mapa-tiendas-silao.webp" 
-                            alt="Mapa de Plaza Real Silao - Distribución de tiendas y locales" 
-                            style="width: 100%; height: auto; max-width: 1200px; margin: 0 auto; display: block; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);"
-                            loading="lazy">
-                        <div style="margin-top: 20px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px;">
-                            <h3 style="color: white; margin-bottom: 15px; font-size: 1.2rem;">Directorio de Tiendas</h3>
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; color: white; font-size: 0.9rem;">
-                                <div><strong>A.</strong> Tiendas del Sol</div>
-                                <div><strong>B.</strong> Elektra</div>
-                                <div><strong>C.</strong> Fix Ferreterías</div>
-                                <div><strong>D.</strong> Zorro Abarrotero</div>
-                                <div><strong>E.</strong> Comex</div>
-                                <div><strong>F.</strong> Abogados</div>
-                                <div><strong>G.</strong> Telcel</div>
-                                <div><strong>H.</strong> Infonavit</div>
-                                <div><strong>I.</strong> Zonatura</div>
-                                <div><strong>J.</strong> Acceso</div>
-                                <div><strong>K.</strong> Escuela de Peluquería</div>
-                                <div><strong>L.</strong> Money China</div>
-                                <div><strong>M.</strong> Home Moda</div>
-                                <div><strong>N.</strong> Chevrolet</div>
-                                <div><strong>O.</strong> Dols (Beauty and nails shop)</div>
-                                <div><strong>P.</strong> Zapatería</div>
-                                <div><strong>Q-R.</strong> Restaurantes</div>
-                                <div><strong>S.</strong> Óptica Jireh</div>
-                                <div><strong>T.</strong> Gobierno</div>
-                                <div><strong>U.</strong> AT&T</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
