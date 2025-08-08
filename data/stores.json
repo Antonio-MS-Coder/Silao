@@ -271,8 +271,8 @@
       "image": "/Silao/images/stores/placeholder.png"
     },
     {
-      "id": "optica-flora-fatima",
-      "name": "Óptica Flora Fátima",
+      "id": "optica-jireh",
+      "name": "Óptica Jireh",
       "category": "services",
       "categoryName": "Servicios",
       "description": "Cuidamos tu salud visual con los mejores especialistas. Examen de la vista, lentes graduados, lentes de contacto y armazones de las mejores marcas. Tecnología de punta para el diagnóstico visual.",
@@ -313,6 +313,66 @@
       "email": "zapatosvaleria@gmail.com",
       "services": ["Calzado para dama", "Calzado para caballero", "Calzado infantil", "Accesorios", "Reparación de calzado"],
       "gradient": "linear-gradient(135deg, #795548, #8D6E63)",
+      "image": "/Silao/images/stores/placeholder.png"
+    },
+    {
+      "id": "tiendas-del-sol",
+      "name": "Tiendas del Sol",
+      "category": "retail",
+      "categoryName": "Comercio",
+      "description": "Tu tienda de conveniencia favorita. Encuentra todo lo que necesitas para el día a día: abarrotes, bebidas, snacks, artículos de primera necesidad y mucho más. Atención rápida y amable.",
+      "shortDescription": "Tienda de conveniencia y abarrotes",
+      "location": "Local A",
+      "hours": "Lunes a Domingo: 7:00 - 22:00",
+      "phone": "Próximamente",
+      "email": "contacto@tiendasdelsol.com",
+      "services": ["Abarrotes", "Bebidas", "Snacks", "Artículos de limpieza", "Productos básicos"],
+      "gradient": "linear-gradient(135deg, #FFC107, #FFB300)",
+      "image": "/Silao/images/stores/placeholder.png"
+    },
+    {
+      "id": "home-moda",
+      "name": "Home Moda",
+      "category": "retail",
+      "categoryName": "Comercio",
+      "description": "Moda y estilo para tu hogar. Encuentra decoración, textiles, muebles y accesorios para hacer de tu casa un espacio único. Las últimas tendencias en decoración de interiores a precios accesibles.",
+      "shortDescription": "Decoración y muebles para el hogar",
+      "location": "Local M",
+      "hours": "Lunes a Sábado: 10:00 - 20:00, Domingo: 11:00 - 19:00",
+      "phone": "Próximamente",
+      "email": "info@homemoda.mx",
+      "services": ["Decoración", "Muebles", "Textiles", "Iluminación", "Accesorios para el hogar"],
+      "gradient": "linear-gradient(135deg, #4CAF50, #45A049)",
+      "image": "/Silao/images/stores/placeholder.png"
+    },
+    {
+      "id": "restaurante-comida-corrida-q",
+      "name": "Restaurante Comida Corrida",
+      "category": "food",
+      "categoryName": "Alimentos",
+      "description": "Deliciosa comida casera todos los días. Menú del día con sopa, guisado, arroz, frijoles y agua fresca. Sabor casero, porciones generosas y precios accesibles. El lugar perfecto para tu comida diaria.",
+      "shortDescription": "Comida corrida y menú del día",
+      "location": "Local Q",
+      "hours": "Lunes a Sábado: 12:00 - 17:00",
+      "phone": "Próximamente",
+      "email": "Próximamente",
+      "services": ["Menú del día", "Comida para llevar", "Servicio a domicilio", "Comida casera", "Precios económicos"],
+      "gradient": "linear-gradient(135deg, #FF5722, #FF6E40)",
+      "image": "/Silao/images/stores/placeholder.png"
+    },
+    {
+      "id": "restaurante-comida-corrida-r",
+      "name": "Restaurante Familiar",
+      "category": "food",
+      "categoryName": "Alimentos",
+      "description": "Comida tradicional mexicana en un ambiente familiar. Disfruta de nuestros guisados del día, antojitos mexicanos y especialidades de la casa. Servicio cálido y precios justos para toda la familia.",
+      "shortDescription": "Comida tradicional mexicana",
+      "location": "Local R",
+      "hours": "Lunes a Domingo: 12:00 - 18:00",
+      "phone": "Próximamente",
+      "email": "Próximamente",
+      "services": ["Comida tradicional", "Menú infantil", "Desayunos", "Comida corrida", "Eventos familiares"],
+      "gradient": "linear-gradient(135deg, #E91E63, #EC407A)",
       "image": "/Silao/images/stores/placeholder.png"
     }
   ]
