@@ -22,6 +22,8 @@
     align-items: center;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     overflow: hidden;
+    padding-top: calc(var(--header-height) + 3rem);
+    margin-top: 0;
 }
 
 .espacios-hero .hero-background {
@@ -50,7 +52,8 @@
     z-index: 2;
     text-align: center;
     color: white;
-    padding: var(--spacing-3xl) var(--spacing-lg);
+    padding: var(--spacing-3xl) var(--spacing-lg) var(--spacing-3xl);
+    margin-top: var(--spacing-2xl);
 }
 
 .espacios-hero .hero-title-main {
