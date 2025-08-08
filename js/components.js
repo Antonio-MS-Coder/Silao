@@ -6,6 +6,10 @@
 
 (function() {
     'use strict';
+    
+    // Detect if running on GitHub Pages or locally
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    const basePath = isGitHubPages ? '/Silao' : '';
 
     // Shared Navigation HTML
     const navigationHTML = `
@@ -14,8 +18,8 @@
                 <div class="nav-wrapper">
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="/Silao/" aria-label="Plaza Real Silao - Inicio">
-                            <img src="/Silao/images/logo-silao.webp" alt="Plaza Real Silao" class="logo-img">
+                        <a href="${basePath}/" aria-label="Plaza Real Silao - Inicio">
+                            <img src="${basePath}/images/logo-silao.webp" alt="Plaza Real Silao" class="logo-img">
                             <div class="logo-text-wrapper">
                                 <span class="logo-text">Plaza Real</span>
                                 <span class="logo-accent">Silao</span>
@@ -25,12 +29,12 @@
                     
                     <!-- Desktop Navigation -->
                     <ul class="nav-menu" id="navMenu">
-                        <li><a href="/Silao/" class="nav-link" data-page="home">Inicio</a></li>
-                        <li><a href="/Silao/tiendas/" class="nav-link" data-page="tiendas">Tiendas</a></li>
-                        <li><a href="/Silao/espacios/" class="nav-link" data-page="espacios">Espacios Disponibles</a></li>
-                        <!-- <li><a href="/Silao/eventos/" class="nav-link" data-page="eventos">Eventos</a></li> -->
-                        <li><a href="/Silao/faq/" class="nav-link" data-page="faq">FAQ</a></li>
-                        <li><a href="/Silao/#contact" class="nav-link">Visítanos</a></li>
+                        <li><a href="${basePath}/" class="nav-link" data-page="home">Inicio</a></li>
+                        <li><a href="${basePath}/tiendas/" class="nav-link" data-page="tiendas">Tiendas</a></li>
+                        <li><a href="${basePath}/espacios/" class="nav-link" data-page="espacios">Espacios Disponibles</a></li>
+                        <!-- <li><a href="${basePath}/eventos/" class="nav-link" data-page="eventos">Eventos</a></li> -->
+                        <li><a href="${basePath}/faq/" class="nav-link" data-page="faq">FAQ</a></li>
+                        <li><a href="${basePath}/#contact" class="nav-link">Visítanos</a></li>
                     </ul>
                     
                     <!-- Mobile Menu Toggle -->
@@ -47,7 +51,7 @@
         <div class="mobile-sidebar" id="mobileSidebar">
             <div class="mobile-sidebar-header">
                 <div class="mobile-sidebar-logo">
-                    <img src="/Silao/images/logo-silao.webp" alt="Plaza Real Silao">
+                    <img src="${basePath}/images/logo-silao.webp" alt="Plaza Real Silao">
                     <span>Plaza Real Silao</span>
                 </div>
                 <button class="mobile-sidebar-close" id="mobileSidebarClose" aria-label="Cerrar menú">
@@ -55,23 +59,23 @@
                 </button>
             </div>
             <nav class="mobile-sidebar-nav">
-                <a href="/Silao/" class="mobile-nav-link">
+                <a href="${basePath}/" class="mobile-nav-link">
                     <i class="fas fa-home"></i>
                     <span>Inicio</span>
                 </a>
-                <a href="/Silao/tiendas/" class="mobile-nav-link">
+                <a href="${basePath}/tiendas/" class="mobile-nav-link">
                     <i class="fas fa-store"></i>
                     <span>Tiendas</span>
                 </a>
-                <a href="/Silao/espacios/" class="mobile-nav-link">
+                <a href="${basePath}/espacios/" class="mobile-nav-link">
                     <i class="fas fa-building"></i>
                     <span>Espacios Disponibles</span>
                 </a>
-                <a href="/Silao/faq/" class="mobile-nav-link">
+                <a href="${basePath}/faq/" class="mobile-nav-link">
                     <i class="fas fa-question-circle"></i>
                     <span>Preguntas Frecuentes</span>
                 </a>
-                <a href="/Silao/#contact" class="mobile-nav-link">
+                <a href="${basePath}/#contact" class="mobile-nav-link">
                     <i class="fas fa-map-marker-alt"></i>
                     <span>Visítanos</span>
                 </a>
@@ -128,11 +132,11 @@
                 <div class="footer-section">
                     <h4>Enlaces Rápidos</h4>
                     <ul>
-                        <li><a href="/Silao/">Inicio</a></li>
-                        <li><a href="/Silao/tiendas/">Tiendas</a></li>
-                        <li><a href="/Silao/espacios/">Espacios Disponibles</a></li>
-                        <li><a href="/Silao/eventos/">Eventos</a></li>
-                        <li><a href="/Silao/faq/">Preguntas Frecuentes</a></li>
+                        <li><a href="${basePath}/">Inicio</a></li>
+                        <li><a href="${basePath}/tiendas/">Tiendas</a></li>
+                        <li><a href="${basePath}/espacios/">Espacios Disponibles</a></li>
+                        <li><a href="${basePath}/eventos/">Eventos</a></li>
+                        <li><a href="${basePath}/faq/">Preguntas Frecuentes</a></li>
                     </ul>
                 </div>
                 
@@ -254,28 +258,8 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && mobileSidebar.classList.contains('active')) {
                 closeMobileSidebar();
-            
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', function(e) {
-                if (!e.target.closest('.nav-wrapper')) {
-                    mobileToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                }
-            });
-
-            // Close menu when clicking on a link (only for mobile)
-            navMenu.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    // Don't prevent default - let the link work normally
-                    mobileToggle.classList.remove('active');
-                    navMenu.classList.remove('active');
-                    document.body.classList.remove('menu-open');
-                });
-            });
-        }
+            }
+        });
     }
 
     // Back to Top Button functionality
