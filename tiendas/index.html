@@ -5,18 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <!-- SEO Meta Tags -->
-    <title>Tiendas | Plaza Real Silao - Centro Comercial</title>
-    <meta name="description" content="Explora las tiendas de Plaza Real Silao. Elektra, Telcel, AT&T, Fix Truper y más. El mejor centro comercial en Silao de la Victoria.">
-    <meta name="keywords" content="tiendas silao, elektra silao, telcel silao, fix truper, centro comercial">
+    <!-- SEO Meta Tags Enhanced -->
+    <title>Directorio de Tiendas | Plaza Real Silao - Centro Comercial en Silao, Guanajuato</title>
+    <meta name="description" content="Descubre más de 20 tiendas en Plaza Real Silao: Elektra, Telcel, AT&T, Fix Ferreterías, restaurantes y servicios. Mapa interactivo y directorio completo del mejor centro comercial en Silao de la Victoria, Guanajuato.">
+    <meta name="keywords" content="tiendas silao, directorio plaza real silao, elektra silao, telcel silao, at&t silao, fix ferreterías, centro comercial silao, locales comerciales silao, shopping silao guanajuato">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Plaza Real Silao">
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="Tiendas - Plaza Real Silao">
-    <meta property="og:description" content="Descubre todas las tiendas disponibles en Plaza Real Silao">
+    <!-- Open Graph Enhanced -->
+    <meta property="og:title" content="Directorio de Tiendas - Plaza Real Silao | Centro Comercial">
+    <meta property="og:description" content="Explora más de 20 tiendas y servicios en Plaza Real Silao. Encuentra electrónica, telefonía, restaurantes, servicios gubernamentales y más en el corazón de Silao.">
     <meta property="og:url" content="https://antonio-ms-coder.github.io/Silao/tiendas/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://antonio-ms-coder.github.io/Silao/images/mapa-tiendas-silao.webp">
+    <meta property="og:locale" content="es_MX">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Directorio de Tiendas - Plaza Real Silao">
+    <meta name="twitter:description" content="Descubre todas las tiendas y servicios disponibles en Plaza Real Silao">
+    <meta name="twitter:image" content="https://antonio-ms-coder.github.io/Silao/images/mapa-tiendas-silao.webp">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://antonio-ms-coder.github.io/Silao/tiendas/">
+    
+    <!-- Structured Data - LocalBusiness Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ShoppingCenter",
+        "name": "Plaza Real Silao",
+        "description": "Centro comercial con más de 20 tiendas y servicios en Silao de la Victoria",
+        "url": "https://antonio-ms-coder.github.io/Silao/tiendas/",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Carretera Silao - Guanajuato km 5.5",
+            "addressLocality": "Silao de la Victoria",
+            "addressRegion": "Guanajuato",
+            "postalCode": "36100",
+            "addressCountry": "MX"
+        },
+        "openingHours": "Mo-Su 09:00-21:00",
+        "telephone": "+52-472-123-4567"
+    }
+    </script>
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
@@ -26,6 +63,290 @@
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="/Silao/css/styles.css">
+    
+    <!-- Page Specific Styles for Enhanced UX -->
+    <style>
+        /* Critical CSS for Above-the-fold Content */
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 0 40px;
+            margin-bottom: 0;
+        }
+        
+        /* Optimized Map Section */
+        .stores-page {
+            padding-top: 0;
+            background: linear-gradient(to bottom, #ffffff 0%, #f9fafb 100%);
+        }
+        
+        .map-section {
+            margin-top: 0;
+            padding: 40px 0;
+            background: white;
+            position: relative;
+        }
+        
+        .map-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        
+        .map-title {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+        
+        .map-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .map-container {
+            background: white;
+            padding: 0;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+            overflow: hidden;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+        
+        .map-image-wrapper {
+            position: relative;
+            width: 100%;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            max-height: 600px;
+            overflow: hidden;
+        }
+        
+        .map-image-wrapper img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 600px;
+            object-fit: contain;
+            display: block;
+        }
+        
+        /* Enhanced Directory Legend */
+        .directory-legend {
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .directory-legend::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            transform: translate(50px, -50px);
+        }
+        
+        .directory-legend h3 {
+            color: white;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .directory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .directory-item {
+            color: white;
+            font-size: 0.95rem;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .directory-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .directory-item strong {
+            color: #ffd700;
+            font-weight: 600;
+            min-width: 20px;
+        }
+        
+        /* Section Divider Enhancement */
+        .section-divider {
+            margin: 60px auto;
+            width: 100%;
+            max-width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+            position: relative;
+        }
+        
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: #667eea;
+            border-radius: 50%;
+        }
+        
+        /* Enhanced Filter Section */
+        .filter-section {
+            padding: 40px 0 20px;
+            background: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .filter-title {
+            text-align: center;
+            font-size: 1.9rem;
+            margin-bottom: 30px;
+            color: #1f2937;
+            font-weight: 600;
+        }
+        
+        .store-categories {
+            margin-bottom: 25px;
+            padding: 0 10px;
+        }
+        
+        /* Improved Store Cards */
+        .stores-grid {
+            animation: fadeInUp 0.6s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile Responsive Enhancements */
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 40px 0 30px;
+            }
+            
+            .map-section {
+                padding: 30px 0;
+            }
+            
+            .map-title {
+                font-size: 1.8rem;
+            }
+            
+            .map-image-wrapper {
+                min-height: 300px;
+                max-height: 400px;
+            }
+            
+            .map-image-wrapper img {
+                max-height: 400px;
+            }
+            
+            .directory-legend {
+                padding: 20px;
+            }
+            
+            .directory-legend h3 {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+            
+            .directory-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .directory-item {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+            
+            .section-divider {
+                margin: 40px auto;
+            }
+            
+            .filter-title {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .map-title {
+                font-size: 1.5rem;
+            }
+            
+            .directory-item {
+                font-size: 0.85rem;
+                padding: 8px;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            .map-section {
+                page-break-inside: avoid;
+            }
+            
+            .directory-legend {
+                background: none;
+                color: black;
+                border: 1px solid #ddd;
+            }
+            
+            .directory-item {
+                color: black;
+                background: white;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Header (Injected by components.js) -->
@@ -33,85 +354,179 @@
     
     <!-- Main Content -->
     <main id="main">
-        <!-- Page Header -->
-        <section class="page-header">
+        <!-- Page Header with Schema Markup -->
+        <section class="page-header" itemscope itemtype="https://schema.org/BreadcrumbList">
             <div class="container">
-                <h1>Nuestras Tiendas</h1>
+                <h1>Directorio de Tiendas y Servicios</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li><a href="/Silao/">Inicio</a></li>
-                        <li class="active">Tiendas</li>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a itemprop="item" href="/Silao/">
+                                <span itemprop="name">Inicio</span>
+                            </a>
+                            <meta itemprop="position" content="1">
+                        </li>
+                        <li class="active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name">Tiendas</span>
+                            <meta itemprop="position" content="2">
+                        </li>
                     </ol>
                 </nav>
             </div>
         </section>
         
-        <!-- Stores Section -->
+        <!-- Stores Section with Improved Structure -->
         <section class="stores-page">
-            <div class="container">
-                <!-- Interactive Map Section (Moved to top) -->
-                <div class="map-section" style="margin-bottom: 50px;">
-                    <h2 class="map-title" style="text-align: center; font-size: 2rem; margin-bottom: 30px; color: var(--primary-color);">Mapa de Locales</h2>
-                    <div class="map-container" id="interactiveMap" style="background: white; padding: 20px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-                        <div style="position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; border-radius: 12px;">
+            <!-- Interactive Map Section -->
+            <article class="map-section" aria-label="Mapa interactivo del centro comercial">
+                <div class="map-wrapper">
+                    <h2 class="map-title">Mapa Interactivo de Locales</h2>
+                    <div class="map-container" id="interactiveMap">
+                        <div class="map-image-wrapper">
                             <img 
                                 src="/Silao/images/mapa-tiendas-silao.webp" 
-                                alt="Mapa de Plaza Real Silao - Distribución de tiendas y locales" 
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; background: #f9fafb;"
-                                loading="eager">
+                                alt="Mapa detallado de Plaza Real Silao mostrando la distribución de todas las tiendas y locales comerciales" 
+                                loading="eager"
+                                width="1200"
+                                height="800">
                         </div>
-                        <div style="margin-top: 25px; padding: 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px;">
-                            <h3 style="color: white; margin-bottom: 20px; font-size: 1.3rem; text-align: center;">Directorio de Tiendas</h3>
-                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; color: white; font-size: 0.95rem;">
-                                <div><strong>A.</strong> Tiendas del Sol</div>
-                                <div><strong>B.</strong> Elektra</div>
-                                <div><strong>C.</strong> Fix Ferreterías</div>
-                                <div><strong>D.</strong> Zorro Abarrotero</div>
-                                <div><strong>E.</strong> Comex</div>
-                                <div><strong>F.</strong> Abogados</div>
-                                <div><strong>G.</strong> Telcel</div>
-                                <div><strong>H.</strong> Infonavit</div>
-                                <div><strong>I.</strong> Zonatura</div>
-                                <div><strong>J.</strong> Acceso</div>
-                                <div><strong>K.</strong> Escuela de Peluquería</div>
-                                <div><strong>L.</strong> Comida China</div>
-                                <div><strong>M.</strong> Home Moda</div>
-                                <div><strong>N.</strong> Chevrolet</div>
-                                <div><strong>O.</strong> Dols (Beauty & Nails)</div>
-                                <div><strong>P.</strong> Zapatería</div>
-                                <div><strong>Q-R.</strong> Restaurantes</div>
-                                <div><strong>S.</strong> Óptica Jireh</div>
-                                <div><strong>T.</strong> Gobierno</div>
-                                <div><strong>U.</strong> AT&T</div>
+                        <div class="directory-legend">
+                            <h3>Directorio de Locales</h3>
+                            <div class="directory-grid">
+                                <div class="directory-item">
+                                    <strong>A.</strong>
+                                    <span>Tiendas del Sol</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>B.</strong>
+                                    <span>Elektra</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>C.</strong>
+                                    <span>Fix Ferreterías</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>D.</strong>
+                                    <span>Zorro Abarrotero</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>E.</strong>
+                                    <span>Comex</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>F.</strong>
+                                    <span>Abogados</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>G.</strong>
+                                    <span>Telcel</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>H.</strong>
+                                    <span>Infonavit</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>I.</strong>
+                                    <span>Zonatura</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>J.</strong>
+                                    <span>Acceso</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>K.</strong>
+                                    <span>Escuela de Peluquería</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>L.</strong>
+                                    <span>Comida China</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>M.</strong>
+                                    <span>Home Moda</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>N.</strong>
+                                    <span>Chevrolet</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>O.</strong>
+                                    <span>Dols Beauty & Nails</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>P.</strong>
+                                    <span>Zapatería</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>Q-R.</strong>
+                                    <span>Restaurantes</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>S.</strong>
+                                    <span>Óptica Jireh</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>T.</strong>
+                                    <span>Gobierno</span>
+                                </div>
+                                <div class="directory-item">
+                                    <strong>U.</strong>
+                                    <span>AT&T</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </article>
 
-                <hr style="margin: 40px 0; border: none; border-top: 1px solid #e5e7eb;">
+            <!-- Section Divider -->
+            <div class="section-divider" aria-hidden="true"></div>
 
-                <!-- Store Categories Filter -->
-                <h2 style="text-align: center; font-size: 1.8rem; margin-bottom: 30px; color: var(--text-primary);">Explora Nuestras Tiendas</h2>
-                <div class="store-categories">
-                    <button class="category-btn active" data-category="all">Todas</button>
-                    <button class="category-btn" data-category="retail">Comercio</button>
-                    <button class="category-btn" data-category="services">Servicios</button>
-                    <button class="category-btn" data-category="telecom">Telecomunicaciones</button>
-                    <button class="category-btn" data-category="beauty">Belleza</button>
-                    <button class="category-btn" data-category="government">Gobierno</button>
+            <!-- Filter Section -->
+            <section class="filter-section">
+                <div class="container">
+                    <h2 class="filter-title">Explora Nuestras Tiendas</h2>
+                    
+                    <!-- Store Categories Filter -->
+                    <div class="store-categories" role="tablist" aria-label="Filtrar tiendas por categoría">
+                        <button class="category-btn active" data-category="all" role="tab" aria-selected="true" aria-controls="storesGrid">
+                            Todas
+                        </button>
+                        <button class="category-btn" data-category="retail" role="tab" aria-selected="false" aria-controls="storesGrid">
+                            Comercio
+                        </button>
+                        <button class="category-btn" data-category="services" role="tab" aria-selected="false" aria-controls="storesGrid">
+                            Servicios
+                        </button>
+                        <button class="category-btn" data-category="telecom" role="tab" aria-selected="false" aria-controls="storesGrid">
+                            Telecomunicaciones
+                        </button>
+                        <button class="category-btn" data-category="beauty" role="tab" aria-selected="false" aria-controls="storesGrid">
+                            Belleza
+                        </button>
+                        <button class="category-btn" data-category="government" role="tab" aria-selected="false" aria-controls="storesGrid">
+                            Gobierno
+                        </button>
+                    </div>
+                    
+                    <!-- Search Bar with ARIA Labels -->
+                    <div class="store-search" role="search">
+                        <input 
+                            type="text" 
+                            id="storeSearch" 
+                            placeholder="Buscar tienda por nombre..." 
+                            aria-label="Buscar tienda"
+                            aria-describedby="search-hint">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        <span id="search-hint" class="sr-only">Escribe el nombre de la tienda que buscas</span>
+                    </div>
+                    
+                    <!-- Stores Grid -->
+                    <div class="stores-grid" id="storesGrid" role="tabpanel" aria-label="Lista de tiendas">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
                 </div>
-                
-                <!-- Search Bar -->
-                <div class="store-search">
-                    <input type="text" id="storeSearch" placeholder="Buscar tienda..." aria-label="Buscar tienda">
-                    <i class="fas fa-search"></i>
-                </div>
-                
-                <!-- Stores Grid -->
-                <div class="stores-grid" id="storesGrid">
-                    <!-- Will be populated by JavaScript -->
-                </div>
-            </div>
+            </section>
         </section>
     </main>
     
@@ -127,5 +542,46 @@
     <script src="/Silao/js/components.js"></script>
     <script src="/Silao/js/script.js"></script>
     <script src="/Silao/js/stores.js"></script>
+    
+    <!-- Additional CSS for Accessibility -->
+    <style>
+        /* Screen Reader Only Text */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Focus improvements for keyboard navigation */
+        .category-btn:focus-visible,
+        .store-search input:focus-visible {
+            outline: 3px solid #667eea;
+            outline-offset: 2px;
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Prefers reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
 </body>
 </html>
