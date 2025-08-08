@@ -720,6 +720,7 @@ a:hover {
 }
 
 .store-card {
+    position: relative;
     background: white;
     border-radius: var(--radius-lg);
     overflow: hidden;
@@ -750,7 +751,6 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 3px solid transparent;
     transition: all var(--transition-base);
 }
 
@@ -759,18 +759,14 @@ a:hover {
 }
 
 .store-image img {
-    width: auto;
-    height: auto;
-    max-width: 85%;
-    max-height: 85%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform var(--transition-base);
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .store-card:hover .store-image img {
-    transform: scale(1.08);
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    transform: scale(1.05);
 }
 
 .store-placeholder {
@@ -2031,4 +2027,55 @@ img.loaded {
     color: var(--text-primary);
     margin: var(--spacing-2xl) 0;
     font-style: italic;
+}
+
+/* Category Badge Styles for Store Cards */
+.store-category-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.store-category-badge i {
+    font-size: 0.875rem;
+}
+
+/* Category-specific colors */
+.store-category-badge.retail {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.95), rgba(255, 142, 142, 0.95));
+    color: white;
+}
+
+.store-category-badge.services {
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.95), rgba(68, 162, 160, 0.95));
+    color: white;
+}
+
+.store-category-badge.food {
+    background: linear-gradient(135deg, rgba(255, 183, 3, 0.95), rgba(251, 133, 0, 0.95));
+    color: white;
+}
+
+.store-category-badge.health {
+    background: linear-gradient(135deg, rgba(162, 155, 254, 0.95), rgba(135, 128, 251, 0.95));
+    color: white;
+}
+
+.store-card:hover .store-category-badge {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
