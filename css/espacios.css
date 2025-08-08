@@ -445,13 +445,21 @@
     position: relative;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: var(--spacing-sm);
-    color: var(--text-primary);
+.contact-form-section .form-group label,
+.form-wrapper .form-group label {
+    display: block !important;
+    position: static !important;
+    margin-bottom: 0.75rem;
+    color: #1f2937;
     font-weight: 700;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     letter-spacing: -0.3px;
+    opacity: 1 !important;
+    visibility: visible !important;
+    top: auto !important;
+    left: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
 }
 
 .form-group input,
