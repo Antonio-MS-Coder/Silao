@@ -2,6 +2,19 @@
 (function() {
     'use strict';
 
+    // Helper function to get category icon
+    function getCategoryIcon(category) {
+        const icons = {
+            'retail': 'fa-shopping-bag',
+            'services': 'fa-concierge-bell',
+            'food': 'fa-utensils',
+            'health': 'fa-heartbeat',
+            'education': 'fa-graduation-cap',
+            'finance': 'fa-landmark'
+        };
+        return icons[category] || 'fa-store';
+    }
+
     // Load featured stores for preview
     async function loadStorePreview() {
         try {
@@ -17,8 +30,15 @@
             previewGrid.innerHTML = featuredStores.map(store => `
                 <div class="preview-card">
                     <a href="/Silao/tiendas/detalle.html?id=${store.id}" class="preview-card-link">
-                        <div class="preview-image" style="background: ${store.gradient};">
-                            <span class="preview-initial">${store.name.charAt(0)}</span>
+                        <div class="store-category-badge ${store.category}">
+                            <i class="fas ${getCategoryIcon(store.category)}"></i>
+                            <span>${store.categoryName}</span>
+                        </div>
+                        <div class="preview-image">
+                            ${store.image ? 
+                                `<img src="${store.image}" alt="${store.name}" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<span class=\\'preview-initial\\'>${store.name.charAt(0)}</span>'">` :
+                                `<span class="preview-initial">${store.name.charAt(0)}</span>`
+                            }
                         </div>
                         <div class="preview-info">
                             <h3>${store.name}</h3>
