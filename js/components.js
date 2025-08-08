@@ -42,6 +42,67 @@
                 </div>
             </div>
         </nav>
+        
+        <!-- Mobile Sidebar -->
+        <div class="mobile-sidebar" id="mobileSidebar">
+            <div class="mobile-sidebar-header">
+                <div class="mobile-sidebar-logo">
+                    <img src="/Silao/images/logo-silao.webp" alt="Plaza Real Silao">
+                    <span>Plaza Real Silao</span>
+                </div>
+                <button class="mobile-sidebar-close" id="mobileSidebarClose" aria-label="Cerrar menú">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-sidebar-nav">
+                <a href="/Silao/" class="mobile-nav-link">
+                    <i class="fas fa-home"></i>
+                    <span>Inicio</span>
+                </a>
+                <a href="/Silao/tiendas/" class="mobile-nav-link">
+                    <i class="fas fa-store"></i>
+                    <span>Tiendas</span>
+                </a>
+                <a href="/Silao/espacios/" class="mobile-nav-link">
+                    <i class="fas fa-building"></i>
+                    <span>Espacios Disponibles</span>
+                </a>
+                <a href="/Silao/faq/" class="mobile-nav-link">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Preguntas Frecuentes</span>
+                </a>
+                <a href="/Silao/#contact" class="mobile-nav-link">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Visítanos</span>
+                </a>
+            </nav>
+            <div class="mobile-sidebar-footer">
+                <div class="mobile-contact-info">
+                    <a href="tel:+5578789795" class="mobile-contact-link">
+                        <i class="fas fa-phone"></i>
+                        <span>(55) 7878-9795</span>
+                    </a>
+                    <a href="mailto:contacto@plazarealsilao.com" class="mobile-contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>Contacto</span>
+                    </a>
+                </div>
+                <div class="mobile-social-links">
+                    <a href="https://facebook.com/plazarealsilao" target="_blank" rel="noopener">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://instagram.com/plazarealsilao" target="_blank" rel="noopener">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/5578789795" target="_blank" rel="noopener">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Sidebar Overlay -->
+        <div class="mobile-sidebar-overlay" id="mobileSidebarOverlay"></div>
     `;
 
     // Shared Footer HTML
@@ -141,13 +202,59 @@
     // Initialize mobile menu functionality
     function initMobileMenu() {
         const mobileToggle = document.getElementById('mobileMenuToggle');
-        const navMenu = document.getElementById('navMenu');
+        const mobileSidebar = document.getElementById('mobileSidebar');
+        const mobileSidebarClose = document.getElementById('mobileSidebarClose');
+        const mobileSidebarOverlay = document.getElementById('mobileSidebarOverlay');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
         
-        if (mobileToggle && navMenu) {
+        if (mobileToggle && mobileSidebar) {
+            // Open sidebar
             mobileToggle.addEventListener('click', function() {
-                this.classList.toggle('active');
-                navMenu.classList.toggle('active');
-                document.body.classList.toggle('menu-open');
+                openMobileSidebar();
+            });
+            
+            // Close sidebar with close button
+            if (mobileSidebarClose) {
+                mobileSidebarClose.addEventListener('click', function() {
+                    closeMobileSidebar();
+                });
+            }
+            
+            // Close sidebar with overlay click
+            if (mobileSidebarOverlay) {
+                mobileSidebarOverlay.addEventListener('click', function() {
+                    closeMobileSidebar();
+                });
+            }
+            
+            // Close sidebar when clicking a nav link
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    closeMobileSidebar();
+                });
+            });
+        }
+        
+        // Helper functions
+        function openMobileSidebar() {
+            mobileSidebar.classList.add('active');
+            mobileSidebarOverlay.classList.add('active');
+            document.body.classList.add('menu-open');
+            mobileToggle.classList.add('active');
+        }
+        
+        function closeMobileSidebar() {
+            mobileSidebar.classList.remove('active');
+            mobileSidebarOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            mobileToggle.classList.remove('active');
+        }
+        
+        // Close sidebar on ESC key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileSidebar.classList.contains('active')) {
+                closeMobileSidebar();
+            
             });
 
             // Close menu when clicking outside
