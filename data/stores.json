@@ -13,7 +13,7 @@
       "email": "contacto@tiendasdelsol.com",
       "services": ["Abarrotes", "Bebidas", "Snacks", "Artículos de limpieza", "Productos básicos"],
       "gradient": "linear-gradient(135deg, #FFC107, #FFB300)",
-      "image": "/Silao/images/stores/placeholder.png"
+      "image": "/Silao/images/stores/tiendas-del-sol.jpg"
     },
     {
       "id": "elektra",
@@ -88,7 +88,7 @@
       "email": "contacto@abogados.mx",
       "services": ["Derecho civil", "Derecho mercantil", "Derecho laboral", "Asesoría legal", "Contratos"],
       "gradient": "linear-gradient(135deg, #5C6BC0, #3F51B5)",
-      "image": "/Silao/images/stores/placeholder.png"
+      "image": "/Silao/images/stores/abogados.png"
     },
     {
       "id": "telcel",
@@ -103,7 +103,7 @@
       "email": "telcel.silao@telcel.com",
       "services": ["Planes de telefonía", "Venta de equipos", "Recargas", "Internet móvil", "Paquetes y promociones"],
       "gradient": "linear-gradient(135deg, #2196F3, #1976D2)",
-      "image": "/Silao/images/stores/placeholder.png"
+      "image": "/Silao/images/stores/telcel.png"
     },
     {
       "id": "infonavit",
@@ -118,7 +118,7 @@
       "email": "atencion@infonavit.org.mx",
       "services": ["Consulta de crédito", "Precalificación", "Estado de cuenta", "Asesoría personalizada", "Trámites diversos"],
       "gradient": "linear-gradient(135deg, #43A047, #388E3C)",
-      "image": "/Silao/images/stores/placeholder.png"
+      "image": "/Silao/images/stores/infonavit.png"
     },
     {
       "id": "zonatura",
@@ -133,7 +133,7 @@
       "email": "info@zonatura.mx",
       "services": ["Consultoría", "Asesoría especializada", "Gestión de proyectos", "Servicios profesionales"],
       "gradient": "linear-gradient(135deg, #9C27B0, #7B1FA2)",
-      "image": "/Silao/images/stores/placeholder.png"
+      "image": "/Silao/images/stores/natura.png"
     },
     {
       "id": "acceso",
@@ -148,7 +148,7 @@
       "email": "silao@acceso.com.mx",
       "services": ["Préstamos personales", "Créditos grupales", "Asesoría financiera", "Pagos de servicios", "Seguros"],
       "gradient": "linear-gradient(135deg, #FF9800, #F57C00)",
-      "image": "/Silao/images/stores/placeholder.png"
+      "image": "/Silao/images/stores/acceso.png"
     },
     {
       "id": "escuela-peluqueria",
@@ -223,7 +223,7 @@
       "email": "dols.silao@gmail.com",
       "services": ["Manicure y pedicure", "Uñas acrílicas", "Gelish", "Diseños personalizados", "Tratamientos de belleza"],
       "gradient": "linear-gradient(135deg, #EC407A, #E91E63)",
-      "image": "/Silao/images/stores/placeholder.png"
+      "image": "/Silao/images/stores/doll.png"
     },
     {
       "id": "zapateria",
@@ -313,7 +313,7 @@
       "email": "att.silao@att.com.mx",
       "services": ["Planes móviles", "Internet residencial", "Equipos y accesorios", "Soluciones empresariales", "Soporte técnico"],
       "gradient": "linear-gradient(135deg, #00BCD4, #0097A7)",
-      "image": "/Silao/images/stores/placeholder.png"
+      "image": "/Silao/images/stores/att.png"
     }
   ]
 }
