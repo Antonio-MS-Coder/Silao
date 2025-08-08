@@ -20,7 +20,7 @@
     min-height: 60vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--hero-gradient-solid);
     overflow: hidden;
     padding-top: calc(var(--header-height) + 3rem);
     margin-top: 0;
@@ -44,7 +44,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+    background: var(--hero-gradient);
 }
 
 .espacios-hero .hero-content {

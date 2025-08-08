@@ -7,13 +7,17 @@
 
 /* CSS Variables for theming and consistency */
 :root {
-    /* Color Palette */
-    --primary-color: #2563eb;
-    --primary-dark: #1e40af;
-    --primary-light: #60a5fa;
-    --secondary-color: #10b981;
-    --secondary-dark: #059669;
+    /* Color Palette - Purple/Violet Theme */
+    --primary-color: #667eea;
+    --primary-dark: #5a67d8;
+    --primary-light: #7c8ef8;
+    --secondary-color: #764ba2;
+    --secondary-dark: #663c8c;
     --accent-color: #f59e0b;
+    
+    /* Hero Gradients */
+    --hero-gradient: linear-gradient(135deg, rgba(102, 126, 234, 0.92) 0%, rgba(118, 75, 162, 0.92) 100%);
+    --hero-gradient-solid: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     --text-primary: #1f2937;
     --text-secondary: #6b7280;
     --text-light: #9ca3af;
@@ -369,7 +373,7 @@ a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.92) 0%, rgba(79, 70, 229, 0.92) 100%);
+    background: var(--hero-gradient);
     z-index: -2;
 }
 
@@ -530,7 +534,7 @@ a:hover {
     width: 70px;
     height: 70px;
     margin: 0 auto var(--spacing-lg);
-    background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+    background: var(--hero-gradient-solid);
     border-radius: var(--radius-full);
     display: flex;
     align-items: center;
@@ -778,7 +782,7 @@ a:hover {
 .store-placeholder {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+    background: var(--hero-gradient-solid);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1662,7 +1666,7 @@ a:hover {
 
 /* Page Header */
 .page-header {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background: var(--hero-gradient-solid);
     color: white;
     padding: var(--spacing-3xl) 0 var(--spacing-2xl);
     margin-top: var(--header-height);
