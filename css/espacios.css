@@ -449,7 +449,9 @@
     display: block;
     margin-bottom: var(--spacing-sm);
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: -0.3px;
 }
 
 .form-group input,
