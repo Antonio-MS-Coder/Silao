@@ -2070,43 +2070,43 @@ img.loaded {
     position: static;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 14px;
+    gap: 4px;
+    padding: 4px 10px;
     background: var(--hero-gradient-solid);
     backdrop-filter: blur(10px);
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
     color: white;
-    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 2px 6px rgba(102, 126, 234, 0.2);
     transition: all 0.3s ease;
-    margin: var(--spacing-lg) 0 var(--spacing-md) 0;
+    margin: var(--spacing-md) 0 var(--spacing-sm) 0;
 }
 
 .store-category-badge i {
-    font-size: 0.875rem;
+    font-size: 0.65rem;
 }
 
-/* Category-specific colors - Purple theme variations */
+/* Category-specific colors - Subtle purple theme */
 .store-category-badge.retail {
-    background: linear-gradient(135deg, #667eea, #5a67d8);
+    background: rgba(102, 126, 234, 0.85);
     color: white;
 }
 
 .store-category-badge.services {
-    background: linear-gradient(135deg, #764ba2, #663c8c);
+    background: rgba(118, 75, 162, 0.85);
     color: white;
 }
 
 .store-category-badge.food {
-    background: linear-gradient(135deg, #8b7eea, #7c6dd8);
+    background: rgba(139, 126, 234, 0.85);
     color: white;
 }
 
 .store-category-badge.health {
-    background: linear-gradient(135deg, #9f8fc4, #8b7ab3);
+    background: rgba(159, 143, 196, 0.85);
     color: white;
 }
 
