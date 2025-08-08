@@ -2067,10 +2067,7 @@ img.loaded {
 
 /* Category Badge Styles for Store Cards */
 .store-category-badge {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    z-index: 10;
+    position: static;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -2085,6 +2082,7 @@ img.loaded {
     color: white;
     box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
     transition: all 0.3s ease;
+    margin: var(--spacing-lg) 0 var(--spacing-md) 0;
 }
 
 .store-category-badge i {
