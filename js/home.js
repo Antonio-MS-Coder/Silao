@@ -1,7 +1,145 @@
-// Home Page JavaScript
+// Home Page JavaScript - Enhanced with Hero Interactions
 (function() {
     'use strict';
 
+    // Hero Slider Functionality
+    let currentSlide = 1;
+    let slideInterval;
+    
+    function initHeroSlider() {
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.hero-nav-dots .dot');
+        
+        if (slides.length === 0) return;
+        
+        // Auto-slide function
+        function nextSlide() {
+            slides[currentSlide - 1].classList.remove('active');
+            dots[currentSlide - 1].classList.remove('active');
+            
+            currentSlide = currentSlide % slides.length + 1;
+            
+            slides[currentSlide - 1].classList.add('active');
+            dots[currentSlide - 1].classList.add('active');
+        }
+        
+        // Start auto-sliding
+        slideInterval = setInterval(nextSlide, 5000);
+        
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                
+                slides[currentSlide - 1].classList.remove('active');
+                dots[currentSlide - 1].classList.remove('active');
+                
+                currentSlide = index + 1;
+                
+                slides[currentSlide - 1].classList.add('active');
+                dots[currentSlide - 1].classList.add('active');
+                
+                // Restart auto-sliding
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+        });
+    }
+    
+    // Animated Counter for Stats
+    function animateCounters() {
+        const counters = document.querySelectorAll('.stat-number');
+        
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000; // 2 seconds
+                    const start = 0;
+                    const increment = target / (duration / 16); // 60fps
+                    
+                    let current = start;
+                    
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current).toLocaleString();
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target.toLocaleString();
+                            // Add a "+" for certain stats
+                            if (target === 1000) {
+                                counter.textContent = target.toLocaleString() + '+';
+                            }
+                        }
+                    };
+                    
+                    updateCounter();
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, observerOptions);
+        
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+    }
+    
+    // Parallax Effect for Hero Background
+    function initParallax() {
+        const heroBackground = document.querySelector('.hero-media-slider');
+        if (!heroBackground) return;
+        
+        let ticking = false;
+        
+        function updateParallax() {
+            const scrolled = window.pageYOffset;
+            const speed = 0.5;
+            
+            heroBackground.style.transform = `translateY(${scrolled * speed}px)`;
+            ticking = false;
+        }
+        
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', requestTick);
+    }
+    
+    // Enhanced Smooth Scroll for Hero CTA
+    function initSmoothScroll() {
+        const smoothLinks = document.querySelectorAll('a[href^="#"]');
+        
+        smoothLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                e.preventDefault();
+                const target = document.querySelector(href);
+                
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+    
     // Helper function to get category icon
     function getCategoryIcon(category) {
         const icons = {
@@ -61,41 +199,40 @@
         }
     }
 
-    // Smooth scroll for contact link
-    function initializeSmoothScroll() {
-        const contactLink = document.querySelector('a[href="#contact"]');
-        if (contactLink) {
-            contactLink.addEventListener('click', function(e) {
-                e.preventDefault();
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                    contactSection.scrollIntoView({ 
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        }
-    }
-
-    // Initialize hero animations
-    function initializeHeroAnimations() {
+    // Initialize all hero features
+    function initializeHero() {
+        initHeroSlider();
+        animateCounters();
+        initParallax();
+        initSmoothScroll();
+        
+        // Add entrance animations
         const heroContent = document.querySelector('.hero-content');
         if (heroContent) {
             heroContent.classList.add('animate-in');
         }
+        
+        // Preload hero images for better performance
+        const heroImages = [
+            '/Silao/images/hero/shopping-experience.jpg',
+            '/Silao/images/hero/family-shopping.jpg',
+            '/Silao/images/hero/modern-mall.jpg'
+        ];
+        
+        heroImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
     }
 
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function() {
+            initializeHero();
             loadStorePreview();
-            initializeSmoothScroll();
-            initializeHeroAnimations();
         });
     } else {
+        initializeHero();
         loadStorePreview();
-        initializeSmoothScroll();
-        initializeHeroAnimations();
     }
 })();
