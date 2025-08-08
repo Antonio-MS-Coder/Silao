@@ -59,7 +59,7 @@ function initContactForm() {
     }
     
     // Real-time validation
-    const inputs = form.querySelectorAll('input[required], select[required]');
+    const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
     inputs.forEach(input => {
         input.addEventListener('blur', () => validateField(input));
         input.addEventListener('input', () => {
@@ -137,6 +137,16 @@ function validateField(field) {
             message = 'El nombre debe tener al menos 3 caracteres';
             isValid = false;
         }
+    } else if (field.id === 'squareMeters' && field.value) {
+        // Square meters validation
+        const value = parseInt(field.value);
+        if (value < 10) {
+            message = 'El espacio mínimo es de 10 m²';
+            isValid = false;
+        } else if (value > 5000) {
+            message = 'Por favor ingresa un valor menor a 5000 m²';
+            isValid = false;
+        }
     }
     
     // Show error if validation failed
@@ -155,42 +165,15 @@ function validateField(field) {
  * Space selection handling
  */
 function initSpaceSelection() {
-    const spaceButtons = document.querySelectorAll('.space-btn');
-    const spaceSelect = document.getElementById('space');
+    // Since we removed the spaces section, we only need to handle the custom space button if it exists
     const customSpaceBtn = document.getElementById('customSpaceBtn');
     
-    spaceButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const spaceName = this.getAttribute('data-space');
-            
-            // Scroll to form
-            const formSection = document.getElementById('contactForm');
-            formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            
-            // Pre-select the space in the form
-            if (spaceSelect) {
-                spaceSelect.value = spaceName;
-                // Add highlight effect
-                spaceSelect.style.backgroundColor = '#f0f9ff';
-                setTimeout(() => {
-                    spaceSelect.style.backgroundColor = '';
-                }, 2000);
-            }
-        });
-    });
-    
-    // Custom space button
+    // Custom space button - if it still exists somewhere
     if (customSpaceBtn) {
         customSpaceBtn.addEventListener('click', function() {
             const formSection = document.getElementById('contactForm');
-            formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            
-            if (spaceSelect) {
-                spaceSelect.value = 'Personalizado';
-                spaceSelect.style.backgroundColor = '#f0f9ff';
-                setTimeout(() => {
-                    spaceSelect.style.backgroundColor = '';
-                }, 2000);
+            if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     }
