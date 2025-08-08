@@ -3,460 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- SEO Meta Tags -->
-    <title>Eventos Centro Comercial Silao | Plaza Real - Actividades y Entretenimiento</title>
-    <meta name="description" content="Descubre los eventos, actividades culturales y promociones en Plaza Real Silao. Conciertos, festivales, actividades familiares y más en el centro comercial de Silao de la Victoria.">
-    <meta name="keywords" content="eventos centro comercial silao, actividades plaza real silao, eventos silao, entretenimiento silao, eventos familiares silao, promociones centro comercial">
-    <meta name="author" content="Plaza Real Silao">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Eventos y Actividades | Plaza Real Silao">
-    <meta property="og:description" content="No te pierdas los mejores eventos y actividades en Plaza Real Silao. Entretenimiento para toda la familia.">
-    <meta property="og:image" content="https://antonio-ms-coder.github.io/Silao/images/eventos-og.jpg">
-    <meta property="og:url" content="https://antonio-ms-coder.github.io/Silao/eventos/">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Eventos - Plaza Real Silao">
-    <meta name="twitter:description" content="Eventos, actividades y entretenimiento para toda la familia en Plaza Real Silao">
-    <meta name="twitter:image" content="https://antonio-ms-coder.github.io/Silao/images/eventos-og.jpg">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://antonio-ms-coder.github.io/Silao/eventos/">
-    
-    <!-- Structured Data for Events -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "EventSeries",
-        "name": "Eventos Plaza Real Silao",
-        "description": "Serie de eventos culturales y de entretenimiento en Plaza Real Silao",
-        "location": {
-            "@type": "Place",
-            "name": "Plaza Real Silao",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Libramiento Nte. 3140",
-                "addressLocality": "Silao de la Victoria",
-                "addressRegion": "Guanajuato",
-                "postalCode": "36100",
-                "addressCountry": "MX"
-            }
-        },
-        "organizer": {
-            "@type": "Organization",
-            "name": "Plaza Real Silao",
-            "url": "https://antonio-ms-coder.github.io/Silao/"
+    <title>Próximamente - Plaza Real Silao</title>
+    <meta name="robots" content="noindex, nofollow">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            color: white;
+            text-align: center;
         }
-    }
-    </script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="/Silao/css/styles.css">
-    <link rel="stylesheet" href="/Silao/css/eventos.css">
+        .container {
+            padding: 2rem;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        a:hover {
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
-    <!-- Skip Link for Accessibility -->
-    <a href="#main" class="skip-link">Saltar al contenido principal</a>
-    
-    <!-- Navigation Header -->
-    <!-- Navigation Header (Injected by components.js) -->
-    <header class="header" id="header"></header>    
-    <!-- Main Content -->
-    <main id="main">
-        <!-- Hero Section -->
-        <section class="eventos-hero">
-            <div class="hero-background">
-                <div class="hero-particles"></div>
-                <div class="hero-overlay"></div>
-            </div>
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title animate-fade-in">
-                        <span class="hero-title-main">Eventos y Actividades</span>
-                        <span class="hero-subtitle">Diversión y entretenimiento para toda la familia</span>
-                    </h1>
-                    <p class="hero-description animate-slide-up">
-                        Descubre nuestra agenda de eventos culturales, promociones especiales y actividades 
-                        que hacen de Plaza Real Silao el lugar perfecto para compartir momentos inolvidables.
-                    </p>
-                    <div class="hero-cta animate-fade-in-delay">
-                        <a href="#upcoming-events" class="btn btn-primary">Ver Próximos Eventos</a>
-                        <a href="#calendar" class="btn btn-secondary">Calendario Completo</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Event Categories -->
-        <section class="event-categories">
-            <div class="container">
-                <h2 class="section-title">Categorías de Eventos</h2>
-                <div class="categories-grid">
-                    <button class="category-card active" data-category="all">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Todos</span>
-                    </button>
-                    <button class="category-card" data-category="cultural">
-                        <i class="fas fa-theater-masks"></i>
-                        <span>Cultural</span>
-                    </button>
-                    <button class="category-card" data-category="promocional">
-                        <i class="fas fa-percentage"></i>
-                        <span>Promocional</span>
-                    </button>
-                    <button class="category-card" data-category="familiar">
-                        <i class="fas fa-users"></i>
-                        <span>Familiar</span>
-                    </button>
-                    <button class="category-card" data-category="temporada">
-                        <i class="fas fa-gift"></i>
-                        <span>Temporada</span>
-                    </button>
-                    <button class="category-card" data-category="deportivo">
-                        <i class="fas fa-running"></i>
-                        <span>Deportivo</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Upcoming Events -->
-        <section class="upcoming-events" id="upcoming-events">
-            <div class="container">
-                <h2 class="section-title">Próximos Eventos</h2>
-                <div class="events-grid" id="eventsGrid">
-                    <!-- Event 1 -->
-                    <article class="event-card featured animate-on-scroll" data-category="familiar">
-                        <div class="event-badge">Destacado</div>
-                        <div class="event-image">
-                            <img src="/images/events/festival-verano.jpg" alt="Festival de Verano" loading="lazy">
-                            <div class="event-date">
-                                <span class="date-day">15</span>
-                                <span class="date-month">AGO</span>
-                            </div>
-                        </div>
-                        <div class="event-content">
-                            <span class="event-category">Evento Familiar</span>
-                            <h3>Festival de Verano 2024</h3>
-                            <div class="event-meta">
-                                <span><i class="far fa-clock"></i> 16:00 - 22:00</span>
-                                <span><i class="far fa-map-marker-alt"></i> Plaza Central</span>
-                            </div>
-                            <p>Celebra el verano con música en vivo, juegos mecánicos, food trucks y actividades para toda la familia. ¡No te pierdas la presentación de artistas locales!</p>
-                            <div class="event-tags">
-                                <span class="tag">Entrada Libre</span>
-                                <span class="tag">Para toda la familia</span>
-                                <span class="tag">Música en vivo</span>
-                            </div>
-                            <button class="btn btn-primary event-btn" data-event="festival-verano">
-                                Más Información
-                            </button>
-                        </div>
-                    </article>
-                    
-                    <!-- Event 2 -->
-                    <article class="event-card animate-on-scroll" data-category="promocional">
-                        <div class="event-image">
-                            <img src="/images/events/venta-nocturna.jpg" alt="Venta Nocturna" loading="lazy">
-                            <div class="event-date">
-                                <span class="date-day">20</span>
-                                <span class="date-month">AGO</span>
-                            </div>
-                        </div>
-                        <div class="event-content">
-                            <span class="event-category">Promoción Especial</span>
-                            <h3>Venta Nocturna</h3>
-                            <div class="event-meta">
-                                <span><i class="far fa-clock"></i> 18:00 - 23:00</span>
-                                <span><i class="far fa-map-marker-alt"></i> Todas las tiendas</span>
-                            </div>
-                            <p>Descuentos de hasta 50% en tiendas participantes. Aprovecha ofertas exclusivas y promociones especiales solo por esta noche.</p>
-                            <div class="event-tags">
-                                <span class="tag">Hasta 50% OFF</span>
-                                <span class="tag">Tiendas participantes</span>
-                            </div>
-                            <button class="btn btn-primary event-btn" data-event="venta-nocturna">
-                                Ver Detalles
-                            </button>
-                        </div>
-                    </article>
-                    
-                    <!-- Event 3 -->
-                    <article class="event-card animate-on-scroll" data-category="cultural">
-                        <div class="event-image">
-                            <img src="/images/events/expo-artesanias.jpg" alt="Expo Artesanías" loading="lazy">
-                            <div class="event-date">
-                                <span class="date-day">25</span>
-                                <span class="date-month">AGO</span>
-                            </div>
-                        </div>
-                        <div class="event-content">
-                            <span class="event-category">Evento Cultural</span>
-                            <h3>Expo Artesanías Guanajuato</h3>
-                            <div class="event-meta">
-                                <span><i class="far fa-clock"></i> 10:00 - 20:00</span>
-                                <span><i class="far fa-calendar"></i> 25-27 Agosto</span>
-                            </div>
-                            <p>Exposición y venta de artesanías tradicionales de Guanajuato. Conoce el trabajo de artesanos locales y llévate piezas únicas.</p>
-                            <div class="event-tags">
-                                <span class="tag">3 días</span>
-                                <span class="tag">Artesanos locales</span>
-                            </div>
-                            <button class="btn btn-primary event-btn" data-event="expo-artesanias">
-                                Más Información
-                            </button>
-                        </div>
-                    </article>
-                    
-                    <!-- Event 4 -->
-                    <article class="event-card animate-on-scroll" data-category="deportivo">
-                        <div class="event-image">
-                            <img src="/images/events/carrera-5k.jpg" alt="Carrera 5K" loading="lazy">
-                            <div class="event-date">
-                                <span class="date-day">01</span>
-                                <span class="date-month">SEP</span>
-                            </div>
-                        </div>
-                        <div class="event-content">
-                            <span class="event-category">Evento Deportivo</span>
-                            <h3>Carrera 5K Plaza Real</h3>
-                            <div class="event-meta">
-                                <span><i class="far fa-clock"></i> 07:00</span>
-                                <span><i class="far fa-map-marker-alt"></i> Salida: Plaza Real</span>
-                            </div>
-                            <p>Participa en nuestra carrera anual de 5K. Inscripciones abiertas, incluye kit de corredor y medalla de participación.</p>
-                            <div class="event-tags">
-                                <span class="tag">Inscripción $150</span>
-                                <span class="tag">Todas las edades</span>
-                            </div>
-                            <button class="btn btn-primary event-btn" data-event="carrera-5k">
-                                Inscribirse
-                            </button>
-                        </div>
-                    </article>
-                    
-                    <!-- Event 5 -->
-                    <article class="event-card animate-on-scroll" data-category="familiar">
-                        <div class="event-image">
-                            <img src="/images/events/cine-aire-libre.jpg" alt="Cine al Aire Libre" loading="lazy">
-                            <div class="event-date">
-                                <span class="date-day">07</span>
-                                <span class="date-month">SEP</span>
-                            </div>
-                        </div>
-                        <div class="event-content">
-                            <span class="event-category">Evento Familiar</span>
-                            <h3>Cine al Aire Libre</h3>
-                            <div class="event-meta">
-                                <span><i class="far fa-clock"></i> 19:30</span>
-                                <span><i class="far fa-map-marker-alt"></i> Estacionamiento Norte</span>
-                            </div>
-                            <p>Disfruta de películas familiares bajo las estrellas. Trae tu manta y palomitas. Este mes: "Coco" de Disney Pixar.</p>
-                            <div class="event-tags">
-                                <span class="tag">Entrada Libre</span>
-                                <span class="tag">Apto para niños</span>
-                            </div>
-                            <button class="btn btn-primary event-btn" data-event="cine-aire-libre">
-                                Más Información
-                            </button>
-                        </div>
-                    </article>
-                    
-                    <!-- Event 6 -->
-                    <article class="event-card animate-on-scroll" data-category="temporada">
-                        <div class="event-image">
-                            <img src="/images/events/fiestas-patrias.jpg" alt="Fiestas Patrias" loading="lazy">
-                            <div class="event-date">
-                                <span class="date-day">15</span>
-                                <span class="date-month">SEP</span>
-                            </div>
-                        </div>
-                        <div class="event-content">
-                            <span class="event-category">Evento de Temporada</span>
-                            <h3>Celebración Fiestas Patrias</h3>
-                            <div class="event-meta">
-                                <span><i class="far fa-clock"></i> 18:00 - 23:00</span>
-                                <span><i class="far fa-calendar"></i> 15-16 Septiembre</span>
-                            </div>
-                            <p>Vive el Grito de Independencia con mariachi, antojitos mexicanos, juegos tradicionales y fuegos artificiales.</p>
-                            <div class="event-tags">
-                                <span class="tag">2 días de fiesta</span>
-                                <span class="tag">Fuegos artificiales</span>
-                            </div>
-                            <button class="btn btn-primary event-btn" data-event="fiestas-patrias">
-                                Ver Programa
-                            </button>
-                        </div>
-                    </article>
-                </div>
-                
-                <div class="load-more-container">
-                    <button class="btn btn-secondary" id="loadMoreEvents">
-                        Cargar Más Eventos
-                    </button>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Calendar View -->
-        <section class="calendar-section" id="calendar">
-            <div class="container">
-                <h2 class="section-title">Calendario de Eventos</h2>
-                <div class="calendar-wrapper">
-                    <div class="calendar-header">
-                        <button class="calendar-nav" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
-                        <h3 id="currentMonth">Agosto 2024</h3>
-                        <button class="calendar-nav" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
-                    </div>
-                    <div class="calendar-grid" id="calendarGrid">
-                        <!-- Calendar will be generated by JavaScript -->
-                    </div>
-                    <div class="calendar-legend">
-                        <div class="legend-item">
-                            <span class="legend-dot cultural"></span>
-                            <span>Cultural</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-dot promocional"></span>
-                            <span>Promocional</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-dot familiar"></span>
-                            <span>Familiar</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-dot temporada"></span>
-                            <span>Temporada</span>
-                        </div>
-                        <div class="legend-item">
-                            <span class="legend-dot deportivo"></span>
-                            <span>Deportivo</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Past Events Gallery -->
-        <section class="past-events">
-            <div class="container">
-                <h2 class="section-title">Eventos Pasados</h2>
-                <p class="section-subtitle">Revive los mejores momentos en Plaza Real Silao</p>
-                
-                <div class="gallery-grid">
-                    <div class="gallery-item animate-on-scroll">
-                        <img src="/images/events/past/navidad-2023.jpg" alt="Navidad 2023" loading="lazy">
-                        <div class="gallery-overlay">
-                            <h4>Navidad Mágica 2023</h4>
-                            <p>Diciembre 2023</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item animate-on-scroll">
-                        <img src="/images/events/past/dia-madres.jpg" alt="Día de las Madres" loading="lazy">
-                        <div class="gallery-overlay">
-                            <h4>Festival Día de las Madres</h4>
-                            <p>Mayo 2024</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item animate-on-scroll">
-                        <img src="/images/events/past/halloween.jpg" alt="Halloween" loading="lazy">
-                        <div class="gallery-overlay">
-                            <h4>Halloween Terror Night</h4>
-                            <p>Octubre 2023</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item animate-on-scroll">
-                        <img src="/images/events/past/dia-nino.jpg" alt="Día del Niño" loading="lazy">
-                        <div class="gallery-overlay">
-                            <h4>Súper Día del Niño</h4>
-                            <p>Abril 2024</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item animate-on-scroll">
-                        <img src="/images/events/past/aniversario.jpg" alt="Aniversario Plaza" loading="lazy">
-                        <div class="gallery-overlay">
-                            <h4>5° Aniversario Plaza Real</h4>
-                            <p>Marzo 2024</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item animate-on-scroll">
-                        <img src="/images/events/past/buen-fin.jpg" alt="Buen Fin" loading="lazy">
-                        <div class="gallery-overlay">
-                            <h4>Buen Fin 2023</h4>
-                            <p>Noviembre 2023</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Event Subscription -->
-        <section class="event-subscription">
-            <div class="container">
-                <div class="subscription-card">
-                    <div class="subscription-content">
-                        <h2>No te pierdas ningún evento</h2>
-                        <p>Suscríbete a nuestro boletín y recibe información sobre próximos eventos, promociones exclusivas y novedades de Plaza Real Silao</p>
-                        <form class="subscription-form" id="eventSubscriptionForm">
-                            <div class="form-row">
-                                <input type="email" placeholder="Tu correo electrónico" required>
-                                <select name="preferences">
-                                    <option value="all">Todos los eventos</option>
-                                    <option value="cultural">Eventos culturales</option>
-                                    <option value="promocional">Promociones</option>
-                                    <option value="familiar">Eventos familiares</option>
-                                </select>
-                                <button type="submit" class="btn btn-primary">
-                                    <span>Suscribirse</span>
-                                    <i class="fas fa-bell"></i>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="subscription-image">
-                        <img src="/images/newsletter-events.svg" alt="Suscripción a eventos">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <!-- Event Modal -->
-    <div class="event-modal" id="eventModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="modal-body" id="modalBody">
-                <!-- Dynamic content will be inserted here -->
-            </div>
-        </div>
+    <div class="container">
+        <h1>🎉 Próximamente</h1>
+        <p>Estamos preparando eventos increíbles para ti.<br>Vuelve pronto para conocer las novedades.</p>
+        <a href="/Silao/">Volver al inicio</a>
     </div>
-    
-    <!-- Footer -->
-    <!-- Footer (Injected by components.js) -->
-    <footer class="footer"></footer>    
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top" aria-label="Volver arriba">
-        <i class="fas fa-chevron-up"></i>
-    </button>
-    
-    <!-- JavaScript -->
-    <script src="/Silao/js/components.js"></script>
-    <script src="/Silao/js/script.js"></script>
-    <script src="/Silao/js/eventos.js"></script>
 </body>
 </html>
