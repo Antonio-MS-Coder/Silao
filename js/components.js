@@ -30,7 +30,7 @@
                         <li><a href="/Silao/espacios/" class="nav-link" data-page="espacios">Espacios Disponibles</a></li>
                         <li><a href="/Silao/eventos/" class="nav-link" data-page="eventos">Eventos</a></li>
                         <li><a href="/Silao/faq/" class="nav-link" data-page="faq">FAQ</a></li>
-                        <li><a href="/Silao/#contact" class="nav-link">Contacto</a></li>
+                        <li><a href="/Silao/#contact" class="nav-link">Visítanos</a></li>
                     </ul>
                     
                     <!-- Mobile Menu Toggle -->
