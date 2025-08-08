@@ -1731,7 +1731,7 @@ a:hover {
 .store-category-tag {
     display: inline-block;
     padding: var(--spacing-xs) var(--spacing-sm);
-    background: var(--primary-light);
+    background: var(--hero-gradient-solid);
     color: white;
     border-radius: var(--radius-sm);
     font-size: 0.75rem;
@@ -2074,15 +2074,16 @@ img.loaded {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    padding: 6px 12px;
-    background: rgba(255, 255, 255, 0.95);
+    padding: 8px 14px;
+    background: var(--hero-gradient-solid);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
     transition: all 0.3s ease;
 }
 
@@ -2090,24 +2091,24 @@ img.loaded {
     font-size: 0.875rem;
 }
 
-/* Category-specific colors */
+/* Category-specific colors - Purple theme variations */
 .store-category-badge.retail {
-    background: linear-gradient(135deg, rgba(255, 107, 107, 0.95), rgba(255, 142, 142, 0.95));
+    background: linear-gradient(135deg, #667eea, #5a67d8);
     color: white;
 }
 
 .store-category-badge.services {
-    background: linear-gradient(135deg, rgba(78, 205, 196, 0.95), rgba(68, 162, 160, 0.95));
+    background: linear-gradient(135deg, #764ba2, #663c8c);
     color: white;
 }
 
 .store-category-badge.food {
-    background: linear-gradient(135deg, rgba(255, 183, 3, 0.95), rgba(251, 133, 0, 0.95));
+    background: linear-gradient(135deg, #8b7eea, #7c6dd8);
     color: white;
 }
 
 .store-category-badge.health {
-    background: linear-gradient(135deg, rgba(162, 155, 254, 0.95), rgba(135, 128, 251, 0.95));
+    background: linear-gradient(135deg, #9f8fc4, #8b7ab3);
     color: white;
 }
 
