@@ -97,13 +97,13 @@
       "categoryName": "Comercio",
       "description": "Todo en pinturas y recubrimientos. Amplia gama de colores y productos para embellecer y proteger tu hogar o negocio. Asesoría personalizada para tu proyecto.",
       "shortDescription": "Pinturas y recubrimientos",
-      "location": "Local E",
+      "location": "Local L",
       "hours": "Lunes a Viernes: 8:00 - 18:00, Sábado: 8:00 - 14:00",
       "phone": "Próximamente",
       "email": "Próximamente",
       "services": ["Igualación de colores", "Asesoría en proyectos", "Productos premium", "Herramientas de pintura"],
       "gradient": "linear-gradient(135deg, #E91E63, #F06292)",
-      "image": "/images/stores/placeholder.png"
+      "image": "/images/stores/Comex.png"
     },
     {
       "id": "infonavit",
@@ -163,7 +163,7 @@
       "email": "Próximamente",
       "services": ["Cursos de estilismo", "Diplomados en colorimetría", "Maquillaje profesional", "Certificaciones", "Prácticas profesionales"],
       "gradient": "linear-gradient(135deg, #7B1FA2, #8E24AA)",
-      "image": "/images/stores/placeholder.png"
+      "image": "/images/stores/Escuela_Peluqueria.png"
     },
     {
       "id": "comida-china",
@@ -172,13 +172,13 @@
       "categoryName": "Alimentos",
       "description": "Auténtica comida china con el mejor sabor oriental. Platillos tradicionales preparados con ingredientes frescos. Servicio para comer aquí o para llevar.",
       "shortDescription": "Restaurante de comida china",
-      "location": "Local L",
+      "location": "Local M",
       "hours": "Lunes a Domingo: 12:00 - 21:00",
       "phone": "Próximamente",
       "email": "Próximamente",
       "services": ["Comida para llevar", "Servicio a domicilio", "Buffet", "Platillos vegetarianos", "Combos familiares"],
       "gradient": "linear-gradient(135deg, #D32F2F, #C62828)",
-      "image": "/images/stores/placeholder.png"
+      "image": "/images/stores/Comida_China.png"
     },
     {
       "id": "home-moda",
@@ -187,13 +187,13 @@
       "categoryName": "Comercio",
       "description": "Moda y estilo para tu hogar. Encuentra decoración, textiles, muebles y accesorios para hacer de tu casa un espacio único. Las últimas tendencias en decoración de interiores a precios accesibles.",
       "shortDescription": "Decoración y muebles para el hogar",
-      "location": "Local M",
+      "location": "Local N",
       "hours": "Lunes a Sábado: 10:00 - 20:00, Domingo: 11:00 - 19:00",
       "phone": "Próximamente",
       "email": "Próximamente",
       "services": ["Decoración", "Muebles", "Textiles", "Iluminación", "Accesorios para el hogar"],
       "gradient": "linear-gradient(135deg, #4CAF50, #45A049)",
-      "image": "/images/stores/placeholder.png"
+      "image": "/images/stores/Homemoda.png"
     },
     {
       "id": "chevrolet",
@@ -202,13 +202,13 @@
       "categoryName": "Servicios",
       "description": "Agencia y servicio Chevrolet. Venta de vehículos nuevos y seminuevos, servicio de mantenimiento, refacciones originales y planes de financiamiento.",
       "shortDescription": "Agencia automotriz y servicio",
-      "location": "Local N",
+      "location": "Local E",
       "hours": "Lunes a Viernes: 9:00 - 19:00, Sábado: 9:00 - 14:00",
       "phone": "Próximamente",
       "email": "Próximamente",
       "services": ["Venta de autos nuevos", "Seminuevos certificados", "Servicio y mantenimiento", "Refacciones originales", "Planes de financiamiento"],
       "gradient": "linear-gradient(135deg, #FFC107, #FFA000)",
-      "image": "/images/stores/placeholder.png"
+      "image": "/images/stores/Chevrolet.png"
     },
     {
       "id": "dols-beauty-nails",
@@ -238,7 +238,7 @@
       "email": "Próximamente",
       "services": ["Calzado para dama", "Calzado para caballero", "Calzado infantil", "Accesorios", "Reparación de calzado"],
       "gradient": "linear-gradient(135deg, #795548, #8D6E63)",
-      "image": "/images/stores/placeholder.png"
+      "image": "/images/stores/Zapateria.png"
     },
     {
       "id": "restaurante-1",
@@ -253,7 +253,7 @@
       "email": "Próximamente",
       "services": ["Menú del día", "Comida para llevar", "Servicio a domicilio", "Comida casera", "Precios económicos"],
       "gradient": "linear-gradient(135deg, #FF5722, #FF6E40)",
-      "image": "/images/stores/placeholder.png"
+      "image": "/images/stores/Restaurante.png"
     },
     {
       "id": "restaurante-2",
@@ -268,7 +268,7 @@
       "email": "Próximamente",
       "services": ["Comida tradicional", "Menú infantil", "Desayunos", "Comida corrida", "Eventos familiares"],
       "gradient": "linear-gradient(135deg, #E91E63, #EC407A)",
-      "image": "/images/stores/placeholder.png"
+      "image": "/images/stores/Restaurante.png"
     },
     {
       "id": "optica-jireh",
@@ -283,7 +283,7 @@
       "email": "Próximamente",
       "services": ["Examen de la vista", "Lentes graduados", "Lentes de contacto", "Armazones de marca", "Lentes de sol"],
       "gradient": "linear-gradient(135deg, #00796B, #00897B)",
-      "image": "/images/stores/placeholder.png"
+      "image": "/images/stores/Optica.png"
     },
     {
       "id": "gobierno",
@@ -298,7 +298,7 @@
       "email": "Próximamente",
       "services": ["Trámites estatales", "Servicios municipales", "Atención ciudadana", "Información gubernamental", "Programas sociales"],
       "gradient": "linear-gradient(135deg, #1565C0, #0D47A1)",
-      "image": "/images/stores/placeholder.png"
+      "image": "/images/stores/Gobierno.png"
     },
     {
       "id": "att",
