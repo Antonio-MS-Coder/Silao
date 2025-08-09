@@ -305,8 +305,8 @@
             }
             
             // Special case for home page
-            if ((currentPath === '/Silao/' || currentPath === '/Silao/index.html') && 
-                (linkPath === '/Silao/' || linkPath === '/Silao/index.html')) {
+            if ((currentPath === '/' || currentPath === '/index.html') && 
+                (linkPath === '/' || linkPath === '/index.html')) {
                 link.classList.add('active');
             }
         });
