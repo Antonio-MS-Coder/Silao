@@ -44,12 +44,12 @@
             return;
         }
 
-        grid.innerHTML = filteredStores.map(store => `
+        grid.innerHTML = filteredStores.map((store, index) => `
             <div class="store-card" data-category="${store.category}">
                 <a href="/tiendas/detalle.html?id=${store.id}" class="store-card-link">
                     <div class="store-image">
                         ${store.image ? 
-                            `<img src="${store.image}" alt="${store.name}" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'store-placeholder\\' style=\\'background: ${store.gradient};\\'><span class=\\'store-initial\\'>${store.name.charAt(0)}</span></div>'">` :
+                            `<img ${index < 6 ? 'src' : 'data-src'}="${store.image}" alt="${store.name}" loading="${index < 6 ? 'eager' : 'lazy'}" decoding="async" fetchpriority="${index < 3 ? 'high' : 'auto'}">` :
                             `<div class="store-placeholder" style="background: ${store.gradient};">
                                 <span class="store-initial">${store.name.charAt(0)}</span>
                             </div>`

@@ -28,7 +28,7 @@
       "email": "Próximamente",
       "services": ["Crédito Elektra", "Banco Azteca", "Envíos de dinero", "Recargas telefónicas", "Apartado fácil"],
       "gradient": "linear-gradient(135deg, #FFB703, #FB8500)",
-      "image": "/images/stores/elektra.png"
+      "image": "/images/stores/elektra.webp"
     },
     {
       "id": "fix-ferreterias",
@@ -43,7 +43,7 @@
       "email": "Próximamente",
       "services": ["Herramientas profesionales", "Material de construcción", "Asesoría técnica", "Garantía en productos"],
       "gradient": "linear-gradient(135deg, #4ECDC4, #44A2A0)",
-      "image": "/images/stores/fix.png"
+      "image": "/images/stores/fix.webp"
     },
     {
       "id": "zorro-abarrotero",
@@ -58,7 +58,7 @@
       "email": "Próximamente",
       "services": ["Venta al mayoreo", "Precios especiales para negocios", "Entrega a domicilio", "Amplio surtido"],
       "gradient": "linear-gradient(135deg, #FF6B6B, #FF8E8E)",
-      "image": "/images/stores/zorro.png"
+      "image": "/images/stores/zorro.webp"
     },
     {
       "id": "telcel",
@@ -73,7 +73,7 @@
       "email": "Próximamente",
       "services": ["Planes de telefonía", "Venta de equipos", "Recargas", "Internet móvil", "Paquetes y promociones"],
       "gradient": "linear-gradient(135deg, #2196F3, #1976D2)",
-      "image": "/images/stores/telcel.png"
+      "image": "/images/stores/telcel.webp"
     },
     {
       "id": "abogados",
@@ -88,7 +88,7 @@
       "email": "Próximamente",
       "services": ["Derecho civil", "Derecho mercantil", "Derecho laboral", "Asesoría legal", "Contratos"],
       "gradient": "linear-gradient(135deg, #5C6BC0, #3F51B5)",
-      "image": "/images/stores/abogados.png"
+      "image": "/images/stores/abogados.webp"
     },
     {
       "id": "comex",
@@ -103,7 +103,7 @@
       "email": "Próximamente",
       "services": ["Igualación de colores", "Asesoría en proyectos", "Productos premium", "Herramientas de pintura"],
       "gradient": "linear-gradient(135deg, #E91E63, #F06292)",
-      "image": "/images/stores/Comex.png"
+      "image": "/images/stores/Comex.webp"
     },
     {
       "id": "infonavit",
@@ -118,7 +118,7 @@
       "email": "Próximamente",
       "services": ["Consulta de crédito", "Precalificación", "Estado de cuenta", "Asesoría personalizada", "Trámites diversos"],
       "gradient": "linear-gradient(135deg, #43A047, #388E3C)",
-      "image": "/images/stores/infonavit.png"
+      "image": "/images/stores/infonavit.webp"
     },
     {
       "id": "zonatura",
@@ -133,7 +133,7 @@
       "email": "Próximamente",
       "services": ["Suplementos naturales", "Vitaminas y minerales", "Productos orgánicos", "Medicina alternativa", "Asesoría nutricional"],
       "gradient": "linear-gradient(135deg, #9C27B0, #7B1FA2)",
-      "image": "/images/stores/natura.png"
+      "image": "/images/stores/natura.webp"
     },
     {
       "id": "acceso",
@@ -148,7 +148,7 @@
       "email": "Próximamente",
       "services": ["Préstamos personales", "Créditos grupales", "Asesoría financiera", "Pagos de servicios", "Seguros"],
       "gradient": "linear-gradient(135deg, #FF9800, #F57C00)",
-      "image": "/images/stores/acceso.png"
+      "image": "/images/stores/acceso.webp"
     },
     {
       "id": "escuela-peluqueria",
@@ -163,7 +163,7 @@
       "email": "Próximamente",
       "services": ["Cursos de estilismo", "Diplomados en colorimetría", "Maquillaje profesional", "Certificaciones", "Prácticas profesionales"],
       "gradient": "linear-gradient(135deg, #7B1FA2, #8E24AA)",
-      "image": "/images/stores/Escuela_Peluqueria.png"
+      "image": "/images/stores/Escuela_Peluqueria.webp"
     },
     {
       "id": "comida-china",
@@ -178,7 +178,7 @@
       "email": "Próximamente",
       "services": ["Comida para llevar", "Servicio a domicilio", "Buffet", "Platillos vegetarianos", "Combos familiares"],
       "gradient": "linear-gradient(135deg, #D32F2F, #C62828)",
-      "image": "/images/stores/Comida_China.png"
+      "image": "/images/stores/Comida_China.webp"
     },
     {
       "id": "home-moda",
@@ -193,7 +193,7 @@
       "email": "Próximamente",
       "services": ["Artículos del hogar", "Electrónicos", "Juguetes", "Decoración", "Papelería y novedades"],
       "gradient": "linear-gradient(135deg, #4CAF50, #45A049)",
-      "image": "/images/stores/Homemoda.png"
+      "image": "/images/stores/Homemoda.webp"
     },
     {
       "id": "chevrolet",
@@ -208,7 +208,7 @@
       "email": "Próximamente",
       "services": ["Venta de autos nuevos", "Seminuevos certificados", "Servicio y mantenimiento", "Refacciones originales", "Planes de financiamiento"],
       "gradient": "linear-gradient(135deg, #FFC107, #FFA000)",
-      "image": "/images/stores/Chevrolet.png"
+      "image": "/images/stores/Chevrolet.webp"
     },
     {
       "id": "dols-beauty-nails",
@@ -223,7 +223,7 @@
       "email": "Próximamente",
       "services": ["Manicure y pedicure", "Uñas acrílicas", "Gelish", "Diseños personalizados", "Tratamientos de belleza"],
       "gradient": "linear-gradient(135deg, #EC407A, #E91E63)",
-      "image": "/images/stores/doll.png"
+      "image": "/images/stores/doll.webp"
     },
     {
       "id": "zapateria",
@@ -238,7 +238,7 @@
       "email": "Próximamente",
       "services": ["Calzado para dama", "Calzado para caballero", "Calzado infantil", "Accesorios", "Reparación de calzado"],
       "gradient": "linear-gradient(135deg, #795548, #8D6E63)",
-      "image": "/images/stores/Zapateria.png"
+      "image": "/images/stores/Zapateria.webp"
     },
     {
       "id": "restaurante-1",
@@ -253,7 +253,7 @@
       "email": "Próximamente",
       "services": ["Menú del día", "Comida para llevar", "Servicio a domicilio", "Comida casera", "Precios económicos"],
       "gradient": "linear-gradient(135deg, #FF5722, #FF6E40)",
-      "image": "/images/stores/Restaurante.png"
+      "image": "/images/stores/Restaurante.webp"
     },
     {
       "id": "restaurante-2",
@@ -268,7 +268,7 @@
       "email": "Próximamente",
       "services": ["Comida tradicional", "Menú infantil", "Desayunos", "Comida corrida", "Eventos familiares"],
       "gradient": "linear-gradient(135deg, #E91E63, #EC407A)",
-      "image": "/images/stores/Restaurante.png"
+      "image": "/images/stores/Restaurante.webp"
     },
     {
       "id": "optica-jireh",
@@ -283,7 +283,7 @@
       "email": "Próximamente",
       "services": ["Examen de la vista", "Lentes graduados", "Lentes de contacto", "Armazones de marca", "Lentes de sol"],
       "gradient": "linear-gradient(135deg, #00796B, #00897B)",
-      "image": "/images/stores/Optica.png"
+      "image": "/images/stores/Optica.webp"
     },
     {
       "id": "gobierno",
@@ -298,7 +298,7 @@
       "email": "Próximamente",
       "services": ["Trámites estatales", "Servicios municipales", "Atención ciudadana", "Información gubernamental", "Programas sociales"],
       "gradient": "linear-gradient(135deg, #1565C0, #0D47A1)",
-      "image": "/images/stores/Gobierno.png"
+      "image": "/images/stores/Gobierno.webp"
     },
     {
       "id": "att",
@@ -313,7 +313,7 @@
       "email": "Próximamente",
       "services": ["Planes móviles", "Internet residencial", "Equipos y accesorios", "Soluciones empresariales", "Soporte técnico"],
       "gradient": "linear-gradient(135deg, #00BCD4, #0097A7)",
-      "image": "/images/stores/att.png"
+      "image": "/images/stores/att.webp"
     }
   ]
 }

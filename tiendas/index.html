@@ -22,6 +22,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="/css/styles.css">
     
+    <!-- Preload critical images -->
+    <link rel="preload" href="/images/mapa-tiendas-silao.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="/images/stores/elektra.webp" as="image">
+    <link rel="preload" href="/images/stores/tiendas-del-sol.jpg" as="image">
+    
     <style>
         /* Title banner styles */
         .page-title-banner {
@@ -122,7 +127,10 @@
             <img 
                 src="/images/mapa-tiendas-silao.webp" 
                 alt="Mapa de Plaza Real Silao" 
-                class="map-image">
+                class="map-image"
+                fetchpriority="high"
+                decoding="async"
+                loading="eager">
             
             <div class="directory-box">
                 <h3>Directorio de Locales</h3>
@@ -189,7 +197,7 @@
     </button>
     
     <script src="/js/components.js"></script>
-    <script src="/js/stores-data.js"></script>
+    <script src="/js/image-optimizer.js"></script>
     <script src="/js/stores.js"></script>
 </body>
 </html>
