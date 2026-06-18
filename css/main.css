@@ -1,0 +1,160 @@
+/* =====================================================
+   Plaza Real Silao — Design System (warm / editorial)
+   Built from the logo palette: terracotta · amber · cocoa · cream
+   One tokenized stylesheet for the whole site.
+   ===================================================== */
+
+/* ---------- Self-hosted fonts (added in Task 2) ---------- */
+/* @font-face declarations are injected at the top of this file by Task 2. */
+
+/* ---------- Tokens ---------- */
+:root {
+  /* Brand (sampled from logo) */
+  --cream: #F7F2E7;
+  --sand: #EFE7D6;
+  --terracotta: #DD6B4A;
+  --terracotta-dark: #C2563A;
+  --amber: #E89A2D;
+  --amber-soft: #F2C078;
+  --espresso: #33200F;
+  --cocoa: #5A4632;
+  --ink: #2A1B0E;
+
+  /* Semantic */
+  --bg: var(--cream);
+  --bg-alt: #FFFDF8;
+  --surface: #FFFFFF;
+  --text: var(--espresso);
+  --text-muted: #6B5743;
+  --line: rgba(51, 32, 15, 0.12);
+  --line-strong: rgba(51, 32, 15, 0.24);
+  --accent: var(--terracotta);
+  --accent-2: var(--amber);
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Layout / shape */
+  --container: 1180px;
+  --header-h: 72px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(51,32,15,.06), 0 1px 3px rgba(51,32,15,.08);
+  --shadow-md: 0 6px 18px rgba(51,32,15,.10);
+  --shadow-lg: 0 20px 45px rgba(51,32,15,.14);
+  --ease: cubic-bezier(.2,.7,.2,1);
+
+  /* Spacing scale */
+  --s1:.25rem; --s2:.5rem; --s3:.75rem; --s4:1rem; --s5:1.5rem;
+  --s6:2rem; --s7:3rem; --s8:4rem; --s9:6rem;
+}
+
+/* ---------- Reset / base ---------- */
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { font-size:16px; scroll-behavior:smooth; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+body {
+  font-family:var(--font-body);
+  line-height:1.6;
+  color:var(--text);
+  background:var(--bg);
+  overflow-x:hidden;
+}
+img,svg { display:block; max-width:100%; }
+img { height:auto; }
+ul { list-style:none; }
+button { font-family:inherit; }
+
+/* ---------- Typography ---------- */
+h1,h2,h3,h4 {
+  font-family:var(--font-display);
+  font-weight:600;
+  line-height:1.08;
+  letter-spacing:-.012em;
+  color:var(--ink);
+}
+h1 { font-size:clamp(2.4rem, 6vw, 4rem); }
+h2 { font-size:clamp(1.9rem, 4vw, 2.8rem); }
+h3 { font-size:clamp(1.2rem, 2.5vw, 1.6rem); }
+h4 { font-size:1.15rem; }
+p { color:var(--text-muted); }
+a { color:var(--terracotta-dark); text-decoration:none; transition:color .2s var(--ease); }
+a:hover { color:var(--terracotta); }
+strong { color:var(--text); }
+
+/* ---------- Layout helpers ---------- */
+.container { width:100%; max-width:var(--container); margin:0 auto; padding:0 var(--s5); }
+.section { padding:var(--s9) 0; }
+.section--alt { background:var(--bg-alt); }
+.section--dark { background:var(--espresso); color:var(--cream); }
+.section--dark h1,.section--dark h2,.section--dark h3 { color:var(--cream); }
+.section--dark p { color:rgba(247,242,231,.78); }
+.section-head { max-width:640px; margin:0 auto var(--s7); text-align:center; }
+.section-head.left { margin-left:0; text-align:left; }
+
+.eyebrow {
+  font-family:var(--font-body);
+  font-weight:600; letter-spacing:.14em; text-transform:uppercase;
+  font-size:.78rem; color:var(--terracotta);
+  display:inline-block; margin-bottom:var(--s3);
+}
+.lead { font-size:1.125rem; color:var(--text-muted); }
+
+/* ---------- Icons ---------- */
+.ico { width:1.25em; height:1.25em; display:inline-block; vertical-align:-.15em; stroke-width:2; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  padding:.85rem 1.6rem; border-radius:var(--radius-pill);
+  font-weight:600; font-size:1rem; line-height:1; cursor:pointer;
+  border:1.5px solid transparent; transition:all .2s var(--ease); white-space:nowrap;
+}
+.btn-primary { background:var(--terracotta); color:#fff; }
+.btn-primary:hover { background:var(--terracotta-dark); color:#fff; transform:translateY(-1px); box-shadow:var(--shadow-md); }
+.btn-secondary { background:transparent; color:var(--espresso); border-color:var(--line-strong); }
+.btn-secondary:hover { border-color:var(--espresso); color:var(--espresso); }
+.btn-ghost { background:rgba(255,255,255,.14); color:#fff; border-color:rgba(255,255,255,.4); }
+.btn-ghost:hover { background:rgba(255,255,255,.24); color:#fff; }
+.btn-lg { padding:1rem 2rem; font-size:1.05rem; }
+
+/* ---------- Cards / badges ---------- */
+.card {
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-sm); overflow:hidden;
+  transition:transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+.card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
+.badge {
+  display:inline-flex; align-items:center; gap:.4rem; padding:.34rem .72rem;
+  border-radius:var(--radius-pill); font-size:.78rem; font-weight:600;
+  background:var(--sand); color:var(--cocoa);
+}
+.badge--accent { background:var(--terracotta); color:#fff; }
+.badge--amber { background:var(--amber); color:var(--espresso); }
+
+/* ---------- Arch motif (echoes plaza architecture) ---------- */
+.arch-top { border-top-left-radius:50% 64px; border-top-right-radius:50% 64px; }
+
+/* ---------- Accessibility ---------- */
+.skip-link {
+  position:absolute; top:-48px; left:var(--s4); z-index:200;
+  background:var(--terracotta); color:#fff; padding:.6rem 1rem; border-radius:var(--radius);
+  transition:top .2s var(--ease);
+}
+.skip-link:focus { top:var(--s4); color:#fff; }
+:focus-visible { outline:3px solid var(--amber); outline-offset:2px; border-radius:4px; }
+
+/* ---------- Motion preference ---------- */
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation-duration:.001ms !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+}
+
+/* =====================================================
+   Component layers below are appended per task:
+   Task 5  → nav + footer
+   Task 6  → hero + próximamente
+   Task 7  → stats, value props, featured, location, teaser, contact
+   Task 8+ → tiendas, detail, espacios, faq, inversionistas, data room
+   ===================================================== */
