@@ -4,8 +4,12 @@
    One tokenized stylesheet for the whole site.
    ===================================================== */
 
-/* ---------- Self-hosted fonts (added in Task 2) ---------- */
-/* @font-face declarations are injected at the top of this file by Task 2. */
+/* ---------- Self-hosted fonts (latin subset, woff2) ---------- */
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/inter-400.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:swap;src:url("/fonts/inter-500.woff2") format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/inter-600.woff2") format("woff2")}
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:500;font-display:swap;src:url("/fonts/fraunces-500.woff2") format("woff2")}
+@font-face{font-family:"Fraunces";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/fraunces-600.woff2") format("woff2")}
 
 /* ---------- Tokens ---------- */
 :root {
