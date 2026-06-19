@@ -434,6 +434,46 @@ body.menu-open { overflow:hidden; }
 .no-results { grid-column:1/-1; text-align:center; color:var(--text-muted); padding:var(--s7) 0; }
 
 /* =====================================================
+   STORE DETAIL
+   ===================================================== */
+.store-hero { position:relative; padding:calc(var(--header-h) + var(--s6)) 0 var(--s7); background:var(--cocoa); isolation:isolate; }
+.store-hero::before { content:""; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg, rgba(42,27,14,.7), rgba(42,27,14,.4)); }
+.store-hero .breadcrumb { display:flex; flex-wrap:wrap; gap:.5rem; list-style:none; margin-bottom:var(--s4); font-size:.9rem; }
+.store-hero .breadcrumb li { color:rgba(247,242,231,.7); }
+.store-hero .breadcrumb li::after { content:"/"; margin-left:.5rem; color:rgba(247,242,231,.4); }
+.store-hero .breadcrumb li:last-child::after { content:""; }
+.store-hero .breadcrumb a { color:rgba(247,242,231,.9); }
+.store-hero .breadcrumb a:hover { color:#fff; }
+.store-hero .breadcrumb .active { color:var(--amber); }
+.store-hero .badge { margin-bottom:var(--s3); }
+.store-hero h1 { color:var(--cream); }
+
+.store-detail-grid { display:grid; grid-template-columns:1fr 1.1fr; gap:var(--s7); align-items:start; }
+.store-detail-media { border-radius:var(--radius-lg); overflow:hidden; background:var(--sand); border:1px solid var(--line); box-shadow:var(--shadow-md); aspect-ratio:4/3; position:relative; }
+.store-detail-media img { width:100%; height:100%; object-fit:cover; }
+.store-detail-media.logo img { object-fit:contain; padding:2rem; }
+.store-detail-media .media-initial { position:absolute; inset:0; display:grid; place-items:center; font-family:var(--font-display); font-size:5rem; color:var(--terracotta); }
+.store-detail-info h2 { margin-bottom:var(--s3); }
+.store-detail-info h3 { margin:var(--s6) 0 var(--s4); }
+.store-detail-info .badge--amber { margin-bottom:var(--s4); }
+.info-rows { display:grid; grid-template-columns:1fr 1fr; gap:var(--s4); margin-top:var(--s5); }
+.info-row { display:flex; gap:.75rem; align-items:flex-start; }
+.info-row .ico { color:var(--terracotta); width:1.35rem; height:1.35rem; flex-shrink:0; margin-top:.15rem; }
+.info-row strong { display:block; font-size:.85rem; color:var(--text); }
+.info-row span { color:var(--text-muted); font-size:.95rem; }
+.services-list { display:grid; grid-template-columns:1fr 1fr; gap:.5rem .9rem; }
+.services-list li { display:flex; align-items:center; gap:.5rem; color:var(--text-muted); }
+.services-list .ico { color:var(--terracotta); width:1.1rem; height:1.1rem; flex-shrink:0; }
+.store-actions { display:flex; flex-wrap:wrap; gap:.75rem; margin-top:var(--s6); }
+.error-container { text-align:center; padding:var(--s9) 0; }
+.error-container .ico { width:3rem; height:3rem; color:var(--terracotta); margin:0 auto var(--s4); }
+
+@media (max-width:840px) {
+  .store-detail-grid { grid-template-columns:1fr; }
+  .info-rows, .services-list { grid-template-columns:1fr; }
+}
+
+/* =====================================================
    Component layers appended per task:
-   Task 9+ → detail, espacios, faq, inversionistas, data room
+   Task 10+ → espacios, faq, inversionistas, data room
    ===================================================== */

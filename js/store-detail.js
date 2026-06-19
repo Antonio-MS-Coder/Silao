@@ -1,209 +1,131 @@
-// Store Detail Page JavaScript
-(function() {
+// Plaza Real Silao — Store detail
+(function () {
     'use strict';
 
     let currentStore = null;
     let allStores = [];
 
-    // Get store ID from URL
+    const CATEGORY_ICON = {
+        retail: 'bag', services: 'bell', food: 'utensils', health: 'heart',
+        education: 'cap', finance: 'landmark', telecom: 'signal',
+        government: 'landmark', beauty: 'sparkles'
+    };
+    const icon = c => CATEGORY_ICON[c] || 'store';
+    const useIco = id => `<svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#${id}"></use></svg>`;
+
     function getStoreId() {
-        const params = new URLSearchParams(window.location.search);
-        return params.get('id');
+        return new URLSearchParams(window.location.search).get('id');
     }
 
-    // Load store data
     async function loadStoreData() {
         try {
-            const response = await fetch('/data/stores.json');
-            const data = await response.json();
-            allStores = data.stores;
-            
-            const storeId = getStoreId();
-            
-            if (!storeId) {
-                showError('No se especificó ninguna tienda');
-                return;
-            }
-            
-            currentStore = allStores.find(store => store.id === storeId);
-            
-            if (!currentStore) {
-                showError('Tienda no encontrada');
-                return;
-            }
-            
+            const res = await fetch('/data/stores.json');
+            const data = await res.json();
+            allStores = data.stores || [];
+            const id = getStoreId();
+            if (!id) return showError('No se especificó ninguna tienda');
+            currentStore = allStores.find(s => s.id === id);
+            if (!currentStore) return showError('Tienda no encontrada');
             displayStoreDetails();
             loadRelatedStores();
-        } catch (error) {
-            console.error('Error loading store data:', error);
+        } catch (err) {
+            console.error('Error loading store data:', err);
             showError('Error al cargar la información de la tienda');
         }
     }
 
-    // Display store details
     function displayStoreDetails() {
-        // Update page title and meta
-        document.title = `${currentStore.name} | Plaza Real Silao`;
-        const metaDescription = document.querySelector('meta[name="description"]');
-        if (metaDescription) {
-            metaDescription.content = currentStore.description;
+        const s = currentStore;
+        const coming = s.status === 'coming-soon';
+
+        document.title = `${s.name} | Plaza Real Silao`;
+        const meta = document.querySelector('meta[name="description"]');
+        if (meta) meta.content = s.shortDescription || s.description;
+
+        const hero = document.getElementById('storeHero');
+        if (s.gradient) hero.style.background = s.gradient;
+
+        document.getElementById('breadcrumbStore').textContent = s.name;
+        document.getElementById('storeName').textContent = s.name;
+        document.getElementById('storeCategoryBadge').innerHTML = `${useIco(icon(s.category))}${s.categoryName}`;
+
+        // Image
+        const media = document.getElementById('storeMainImage');
+        const img = document.getElementById('storeImage');
+        if (s.image) {
+            img.src = s.image; img.alt = s.name;
+            if (coming || /\.svg$/.test(s.image)) media.classList.add('logo');
+            img.onerror = () => { media.innerHTML = `<span class="media-initial">${s.name.charAt(0)}</span>`; };
+        } else {
+            media.innerHTML = `<span class="media-initial">${s.name.charAt(0)}</span>`;
         }
 
-        // Update hero section
-        const heroSection = document.getElementById('storeHero');
-        const heroBg = heroSection.querySelector('.store-hero-bg');
-        heroBg.style.background = currentStore.gradient;
-        
-        // Update breadcrumb
-        document.getElementById('breadcrumbStore').textContent = currentStore.name;
-        
-        // Update store name and category
-        document.getElementById('storeName').textContent = currentStore.name;
-        document.getElementById('storeCategory').textContent = currentStore.categoryName;
-        
-        // Update store image
-        const storeImage = document.getElementById('storeImage');
-        if (currentStore.image && currentStore.image !== '/images/stores/placeholder.jpg') {
-            storeImage.src = currentStore.image;
-            storeImage.alt = currentStore.name;
+        // Coming-soon banner
+        const status = document.getElementById('storeStatus');
+        status.innerHTML = coming
+            ? `<span class="badge badge--amber">Próximamente · Apertura 2026</span>`
+            : '';
+
+        document.getElementById('storeDescription').textContent = s.description;
+        document.getElementById('storeLocation').textContent = s.location;
+        document.getElementById('storeHours').textContent = s.hours;
+
+        const phoneEl = document.getElementById('storePhone');
+        const emailEl = document.getElementById('storeEmail');
+        if (s.phone && s.phone !== 'Próximamente') {
+            phoneEl.innerHTML = `<a href="tel:${s.phone.replace(/\s/g, '')}">${s.phone}</a>`;
+        } else { phoneEl.textContent = 'Próximamente'; }
+        if (s.email && s.email !== 'Próximamente') {
+            emailEl.innerHTML = `<a href="mailto:${s.email}">${s.email}</a>`;
+        } else { emailEl.textContent = 'Próximamente'; }
+
+        document.getElementById('servicesTitle').textContent = coming ? 'Lo que encontrarás' : 'Servicios disponibles';
+        document.getElementById('storeServices').innerHTML = (s.services || [])
+            .map(svc => `<li>${useIco('check')}${svc}</li>`).join('');
+
+        // Primary action
+        const btn = document.getElementById('contactStore');
+        if (coming) {
+            btn.href = '/#proximamente'; btn.innerHTML = `${useIco('bell')} Avísame de la apertura`;
+        } else if (s.phone && s.phone !== 'Próximamente') {
+            btn.href = `tel:${s.phone.replace(/\s/g, '')}`; btn.innerHTML = `${useIco('phone')} Llamar`;
+        } else if (s.email && s.email !== 'Próximamente') {
+            btn.href = `mailto:${s.email}`; btn.innerHTML = `${useIco('mail')} Enviar email`;
         } else {
-            // Create a placeholder with gradient
-            const imageContainer = document.getElementById('storeMainImage');
-            imageContainer.innerHTML = `
-                <div class="store-image-placeholder" style="background: ${currentStore.gradient};">
-                    <span class="store-initial-large">${currentStore.name.charAt(0)}</span>
-                </div>
-            `;
-        }
-        
-        // Update store information
-        document.getElementById('storeDescription').textContent = currentStore.description;
-        document.getElementById('storeLocation').textContent = currentStore.location;
-        document.getElementById('storeHours').textContent = currentStore.hours;
-        
-        // Update contact info
-        const phoneElement = document.getElementById('storePhone');
-        const emailElement = document.getElementById('storeEmail');
-        
-        if (currentStore.phone && currentStore.phone !== 'Próximamente') {
-            phoneElement.innerHTML = `<a href="tel:${currentStore.phone.replace(/\s/g, '')}">${currentStore.phone}</a>`;
-        } else {
-            phoneElement.textContent = 'Próximamente';
-        }
-        
-        if (currentStore.email && currentStore.email !== 'Próximamente') {
-            emailElement.innerHTML = `<a href="mailto:${currentStore.email}">${currentStore.email}</a>`;
-        } else {
-            emailElement.textContent = 'Próximamente';
-        }
-        
-        // Update services
-        const servicesList = document.getElementById('storeServices');
-        servicesList.innerHTML = currentStore.services.map(service => 
-            `<li><i class="fas fa-check"></i> ${service}</li>`
-        ).join('');
-        
-        // Update contact button
-        const contactBtn = document.getElementById('contactStore');
-        if (currentStore.phone && currentStore.phone !== 'Próximamente') {
-            contactBtn.href = `tel:${currentStore.phone.replace(/\s/g, '')}`;
-        } else if (currentStore.email && currentStore.email !== 'Próximamente') {
-            contactBtn.href = `mailto:${currentStore.email}`;
-            contactBtn.innerHTML = '<i class="fas fa-envelope"></i> Enviar Email';
-        } else {
-            contactBtn.style.display = 'none';
+            btn.style.display = 'none';
         }
     }
 
-    // Helper function to get category icon
-    function getCategoryIcon(category) {
-        const icons = {
-            'retail': 'fa-shopping-bag',
-            'services': 'fa-concierge-bell',
-            'food': 'fa-utensils',
-            'health': 'fa-heartbeat',
-            'education': 'fa-graduation-cap',
-            'finance': 'fa-landmark'
-        };
-        return icons[category] || 'fa-store';
-    }
-
-    // Load related stores
     function loadRelatedStores() {
-        // Get stores from the same category, excluding current store
-        const relatedStores = allStores
-            .filter(store => 
-                store.category === currentStore.category && 
-                store.id !== currentStore.id
-            )
-            .slice(0, 3); // Show max 3 related stores
-        
-        // If not enough related stores, add random ones
-        if (relatedStores.length < 3) {
-            const otherStores = allStores
-                .filter(store => 
-                    store.id !== currentStore.id &&
-                    !relatedStores.includes(store)
-                )
-                .sort(() => Math.random() - 0.5)
-                .slice(0, 3 - relatedStores.length);
-            
-            relatedStores.push(...otherStores);
+        const pool = allStores.filter(s => s.id !== currentStore.id && s.status !== 'coming-soon');
+        let related = pool.filter(s => s.category === currentStore.category).slice(0, 3);
+        if (related.length < 3) {
+            related = related.concat(pool.filter(s => !related.includes(s)).slice(0, 3 - related.length));
         }
-        
-        const relatedGrid = document.getElementById('relatedStores');
-        
-        if (relatedStores.length === 0) {
-            relatedGrid.parentElement.style.display = 'none';
-            return;
-        }
-        
-        relatedGrid.innerHTML = relatedStores.map(store => `
-            <div class="store-card" data-category="${store.category}">
-                <a href="/tiendas/detalle.html?id=${store.id}" class="store-card-link">
-                    <div class="store-category-badge ${store.category}">
-                        <i class="fas ${getCategoryIcon(store.category)}"></i>
-                        <span>${store.categoryName}</span>
-                    </div>
-                    <div class="store-image">
-                        ${store.image ? 
-                            `<img src="${store.image}" alt="${store.name}" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'store-placeholder\\' style=\\'background: ${store.gradient};\\'><span class=\\'store-initial\\'>${store.name.charAt(0)}</span></div>'">` :
-                            `<div class="store-placeholder" style="background: ${store.gradient};">
-                                <span class="store-initial">${store.name.charAt(0)}</span>
-                            </div>`
-                        }
-                    </div>
-                    <div class="store-info">
-                        <h3>${store.name}</h3>
-                        <p>${store.shortDescription}</p>
-                    </div>
-                    <div class="store-card-footer">
-                        <span class="view-details">Ver Detalles <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-            </div>
-        `).join('');
-    }
-
-    // Show error message
-    function showError(message) {
-        const mainContent = document.querySelector('.store-details');
-        mainContent.innerHTML = `
-            <div class="container">
-                <div class="error-container">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <h2>Error</h2>
-                    <p>${message}</p>
-                    <a href="/tiendas/" class="btn btn-primary">Ver Todas las Tiendas</a>
+        const grid = document.getElementById('relatedStores');
+        if (!related.length) { grid.closest('section').style.display = 'none'; return; }
+        grid.innerHTML = related.map(s => `
+            <a class="store-card card" href="/tiendas/detalle.html?id=${s.id}">
+                <div class="store-card-media">
+                    <img src="${s.image}" alt="${s.name}" width="400" height="300" loading="lazy"
+                         onerror="this.style.display='none';this.parentElement.classList.add('no-img');this.parentElement.dataset.initial='${s.name.charAt(0)}'">
                 </div>
-            </div>
-        `;
+                <div class="store-card-body">
+                    <span class="badge">${useIco(icon(s.category))}${s.categoryName}</span>
+                    <h3>${s.name}</h3>
+                    <p>${s.shortDescription || ''}</p>
+                </div>
+            </a>`).join('');
     }
 
-    // Initialize when DOM is ready
+    function showError(message) {
+        const main = document.querySelector('.store-detail .container') || document.getElementById('main');
+        main.innerHTML = `<div class="error-container">
+            ${useIco('help')}<h2>Ups…</h2><p>${message}</p>
+            <a href="/tiendas/" class="btn btn-primary">Ver todas las tiendas</a></div>`;
+    }
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', loadStoreData);
-    } else {
-        loadStoreData();
-    }
+    } else { loadStoreData(); }
 })();
