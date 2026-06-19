@@ -54,7 +54,7 @@
         const img = document.getElementById('storeImage');
         if (s.image) {
             img.src = s.image; img.alt = s.name;
-            if (coming || /\.svg$/.test(s.image)) media.classList.add('logo');
+            if (/\.svg$/.test(s.image)) media.classList.add('logo');
             img.onerror = () => { media.innerHTML = `<span class="media-initial">${s.name.charAt(0)}</span>`; };
         } else {
             media.innerHTML = `<span class="media-initial">${s.name.charAt(0)}</span>`;

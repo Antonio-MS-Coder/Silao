@@ -430,7 +430,7 @@ body.menu-open { overflow:hidden; }
 .store-card .store-flag { position:absolute; top:var(--s4); left:var(--s4); z-index:1; }
 .store-card.coming { cursor:default; }
 .store-card.coming .store-card-media { background:var(--sand); }
-.store-card.coming .store-card-media img { object-fit:contain; padding:1.5rem; }
+.store-card.coming .store-card-media img { object-fit:cover; }
 .no-results { grid-column:1/-1; text-align:center; color:var(--text-muted); padding:var(--s7) 0; }
 
 /* =====================================================
