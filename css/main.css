@@ -532,6 +532,20 @@ body.menu-open { overflow:hidden; }
 }
 
 /* =====================================================
+   INVERSIONISTAS
+   ===================================================== */
+.dataroom-cta { max-width:760px; margin:0 auto; text-align:center; padding:clamp(var(--s6), 5vw, var(--s8)); }
+.dataroom-icon { width:64px; height:64px; border-radius:50%; background:var(--sand); display:grid; place-items:center; margin:0 auto var(--s4); }
+.dataroom-icon .ico { width:1.8rem; height:1.8rem; color:var(--terracotta); }
+.dataroom-cta h2 { margin-bottom:var(--s3); }
+.dataroom-cta .lead { max-width:56ch; margin:0 auto; }
+.dataroom-note { font-size:.85rem; color:var(--text-muted); margin-top:var(--s4); }
+
+/* =====================================================
+   DATA ROOM (gated viewer) — Task 12
+   ===================================================== */
+
+/* =====================================================
    Component layers appended per task:
-   Task 11+ → inversionistas, data room
+   Task 12 → data room viewer
    ===================================================== */
