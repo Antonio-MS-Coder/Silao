@@ -259,8 +259,135 @@ body.menu-open { overflow:hidden; }
 }
 
 /* =====================================================
+   REVEAL ON SCROLL (JS-gated so content is visible without JS)
+   ===================================================== */
+.js .reveal { opacity:0; transform:translateY(18px); transition:opacity .6s var(--ease), transform .6s var(--ease); }
+.reveal.in { opacity:1; transform:none; }
+
+/* =====================================================
+   HERO
+   ===================================================== */
+.hero { position:relative; min-height:clamp(560px, 86vh, 820px); display:flex; align-items:center; isolation:isolate; }
+.hero-media { position:absolute; inset:0; z-index:-2; }
+.hero-media img { width:100%; height:100%; object-fit:cover; }
+.hero::after {
+  content:""; position:absolute; inset:0; z-index:-1;
+  background:
+    linear-gradient(90deg, rgba(42,27,14,.82) 0%, rgba(42,27,14,.55) 45%, rgba(42,27,14,.18) 100%),
+    linear-gradient(0deg, rgba(42,27,14,.55), rgba(42,27,14,0) 40%);
+}
+.hero-inner { max-width:760px; padding:var(--s8) 0; }
+.hero-badge {
+  display:inline-flex; align-items:center; gap:.5rem; margin-bottom:var(--s5);
+  background:rgba(232,154,45,.95); color:var(--espresso); font-weight:600; font-size:.9rem;
+  padding:.5rem 1rem; border-radius:var(--radius-pill); box-shadow:var(--shadow-md);
+}
+.hero-badge .ico { width:1.1rem; height:1.1rem; }
+.hero-badge:hover { background:var(--amber); color:var(--espresso); transform:translateY(-1px); }
+.hero h1 { color:var(--cream); margin-bottom:var(--s4); text-wrap:balance; }
+.hero-sub { color:rgba(247,242,231,.92); font-size:clamp(1.05rem,2vw,1.3rem); max-width:60ch; margin-bottom:var(--s6); }
+.hero-cta { display:flex; flex-wrap:wrap; gap:var(--s3); }
+
+/* =====================================================
+   PRÓXIMAMENTE (new anchor brands)
+   ===================================================== */
+.proximamente { background:linear-gradient(180deg, var(--bg) 0%, var(--sand) 100%); }
+.prox-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:var(--s6); margin-top:var(--s7); }
+.prox-card { padding:var(--s7); display:flex; flex-direction:column; align-items:flex-start; gap:var(--s3); position:relative; }
+.prox-card .badge--amber { position:absolute; top:var(--s5); right:var(--s5); }
+.prox-logo {
+  width:100%; height:140px; border-radius:var(--radius); background:var(--sand);
+  display:grid; place-items:center; overflow:hidden; margin-bottom:var(--s3);
+}
+.prox-logo img { max-height:96px; width:auto; object-fit:contain; }
+.prox-card h3 { margin:0; }
+.prox-card .prox-desc { margin:0; }
+.avisame-form { display:flex; gap:.5rem; width:100%; margin-top:auto; padding-top:var(--s4); }
+.avisame-form input { flex:1; min-width:0; padding:.75rem 1rem; border:1.5px solid var(--line-strong); border-radius:var(--radius-pill); font:inherit; background:var(--surface); color:var(--text); }
+.avisame-form input:focus { outline:none; border-color:var(--terracotta); }
+.avisame-form .btn { white-space:nowrap; }
+.avisame-done { display:flex; align-items:center; gap:.5rem; color:var(--terracotta-dark); font-weight:600; margin-top:auto; padding-top:var(--s4); }
+.avisame-done .ico { color:var(--terracotta); }
+
+@media (max-width:760px) {
+  .prox-grid { grid-template-columns:1fr; }
+  .avisame-form { flex-direction:column; }
+  .avisame-form .btn { width:100%; }
+}
+
+/* =====================================================
+   STATS BAND (Plaza en números)
+   ===================================================== */
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s6); text-align:center; }
+.stat { display:flex; flex-direction:column; gap:.3rem; }
+.stat-num { font-family:var(--font-display); font-weight:600; font-size:clamp(2.2rem,4vw,3.2rem); color:var(--amber); line-height:1; }
+.stat-label { color:rgba(247,242,231,.82); font-size:.95rem; }
+
+/* =====================================================
+   FEATURE CARDS (Por qué)
+   ===================================================== */
+.features-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:var(--s5); }
+.feature-card { padding:var(--s6); }
+.feature-icon { width:56px; height:56px; border-radius:16px; background:var(--sand); display:grid; place-items:center; color:var(--terracotta); margin-bottom:var(--s4); }
+.feature-icon .ico { width:1.6rem; height:1.6rem; }
+.feature-card h3 { margin-bottom:.4rem; }
+.feature-card p { margin:0; }
+
+/* =====================================================
+   STORE CARDS (featured + directory)
+   ===================================================== */
+.featured-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--s5); }
+.store-card { display:flex; flex-direction:column; color:inherit; }
+.store-card-media { aspect-ratio:4/3; background:var(--sand); overflow:hidden; position:relative; }
+.store-card-media img { width:100%; height:100%; object-fit:cover; transition:transform .4s var(--ease); }
+.store-card:hover .store-card-media img { transform:scale(1.05); }
+.store-card-media.no-img::before { content:attr(data-initial); position:absolute; inset:0; display:grid; place-items:center; font-family:var(--font-display); font-size:3rem; color:var(--terracotta); background:var(--sand); }
+.store-card-body { padding:var(--s5); display:flex; flex-direction:column; gap:.45rem; }
+.store-card-body h3 { margin:0; font-size:1.2rem; }
+.store-card-body p { margin:0; color:var(--text-muted); font-size:.95rem; }
+.store-card-body .badge .ico { width:1rem; height:1rem; color:var(--terracotta); }
+.section-cta { text-align:center; margin-top:var(--s7); }
+
+/* =====================================================
+   INVESTOR TEASER
+   ===================================================== */
+.invest-card {
+  background:linear-gradient(135deg, var(--espresso) 0%, var(--cocoa) 100%); color:var(--cream);
+  border-radius:var(--radius-lg); padding:clamp(var(--s6), 5vw, var(--s8));
+  display:flex; align-items:center; justify-content:space-between; gap:var(--s6); box-shadow:var(--shadow-lg);
+}
+.invest-card .eyebrow { color:var(--amber); }
+.invest-card h2 { color:var(--cream); margin-bottom:var(--s3); }
+.invest-card p { color:rgba(247,242,231,.85); margin:0; max-width:52ch; }
+.invest-card .btn { flex-shrink:0; }
+
+/* =====================================================
+   CONTACT / MAP
+   ===================================================== */
+.contact-grid { display:grid; grid-template-columns:1fr 1.3fr; gap:var(--s7); align-items:start; }
+.contact-info { display:flex; flex-direction:column; gap:var(--s5); }
+.contact-item { display:flex; gap:var(--s4); align-items:flex-start; }
+.contact-item .ico { width:1.5rem; height:1.5rem; color:var(--terracotta); flex-shrink:0; margin-top:.2rem; }
+.contact-item h4 { margin-bottom:.15rem; }
+.contact-item p { margin:0; color:var(--text-muted); }
+.map-container { border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); border:1px solid var(--line); }
+.map-container iframe { display:block; }
+
+/* =====================================================
+   RESPONSIVE — homepage body
+   ===================================================== */
+@media (max-width:900px) {
+  .stats-grid { grid-template-columns:repeat(2,1fr); }
+  .features-grid { grid-template-columns:repeat(2,1fr); }
+  .featured-grid { grid-template-columns:repeat(2,1fr); }
+  .contact-grid { grid-template-columns:1fr; }
+  .invest-card { flex-direction:column; align-items:flex-start; }
+}
+@media (max-width:560px) {
+  .features-grid, .featured-grid { grid-template-columns:1fr; }
+}
+
+/* =====================================================
    Component layers appended per task:
-   Task 6  → hero + próximamente
-   Task 7  → stats, value props, featured, location, teaser, contact
    Task 8+ → tiendas, detail, espacios, faq, inversionistas, data room
    ===================================================== */

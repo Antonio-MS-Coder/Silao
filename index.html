@@ -3,42 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- SEO Meta Tags -->
+
+    <!-- SEO -->
     <title>Plaza Real Silao | Centro Comercial en Silao de la Victoria, Guanajuato</title>
-    <meta name="description" content="Plaza Real Silao - Tu centro comercial familiar en Silao de la Victoria, Guanajuato. Tiendas, restaurantes y más. Libramiento Nte. 3140. Abierto Lun-Vie 8:00-22:00">
-    <meta name="keywords" content="plaza real silao, centro comercial silao, tiendas silao, shopping silao, guanajuato, silao de la victoria, locales comerciales">
+    <meta name="description" content="Plaza Real Silao: tu centro comercial familiar en Silao de la Victoria, Guanajuato. 20+ tiendas y servicios. Muy pronto Modatelas y Smart Fit. Frente a la central de autobuses. Lun-Vie 8:00-22:00.">
+    <meta name="keywords" content="plaza real silao, centro comercial silao, tiendas silao, smart fit silao, modatelas silao, guanajuato, locales comerciales">
     <meta name="author" content="Plaza Real Silao">
     <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph Meta Tags -->
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Plaza Real Silao | Centro Comercial Familiar">
-    <meta property="og:description" content="Tu destino de compras y entretenimiento en Silao de la Victoria. Tiendas y restaurantes para toda la familia.">
-    <meta property="og:image" content="https://plazarealsilao.com/images/og-image.jpg">
+    <meta property="og:description" content="20+ tiendas y servicios. Muy pronto Modatelas y Smart Fit. Tu destino de compras en Silao de la Victoria.">
+    <meta property="og:image" content="https://plazarealsilao.com/images/plaza/plaza-main.jpg">
     <meta property="og:url" content="https://plazarealsilao.com/">
     <meta property="og:type" content="website">
-    
-    <!-- Canonical URL -->
+
     <link rel="canonical" href="https://plazarealsilao.com/">
-    
-    <!-- PWA Manifest -->
     <link rel="manifest" href="/manifest.json">
-    
-    <!-- Theme Color for mobile browsers -->
-    <meta name="theme-color" content="#2563eb">
-    
-    <!-- Apple Touch Icons -->
+    <meta name="theme-color" content="#33200F">
     <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Plaza Real">
-    
-    <!-- Microsoft Tiles -->
-    <meta name="msapplication-TileImage" content="/images/icons/icon-144x144.png">
-    <meta name="msapplication-TileColor" content="#2563eb">
-    
-    <!-- Google tag (gtag.js) -->
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SGW9ESY52"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -46,242 +31,231 @@
       gtag('js', new Date());
       gtag('config', 'G-0SGW9ESY52');
     </script>
-    
-    <!-- Preconnect to external domains for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Preload critical assets -->
-    <link rel="preload" href="css/styles.css" as="style">
-    <link rel="preload" href="js/script.js" as="script">
-    <link rel="preload" href="/images/mapa-tiendas-silao.webp" as="image">
-    <link rel="preload" href="/images/stores/elektra.png" as="image">
-    <link rel="preload" href="/images/stores/tiendas-del-sol.jpg" as="image">
-    
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="/css/styles.css">
-    
-    <!-- Structured Data for Local Business -->
+
+    <!-- Fonts (self-hosted) + LCP image preload -->
+    <link rel="preload" href="/fonts/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/images/plaza/plaza-main.jpg" as="image" fetchpriority="high">
+
+    <!-- Critical CSS inline; full stylesheet loaded async -->
+    <style>
+      :root{--cream:#F7F2E7;--terracotta:#DD6B4A;--terracotta-dark:#C2563A;--amber:#E89A2D;--espresso:#33200F;--ink:#2A1B0E;--text-muted:#6B5743;--line:rgba(51,32,15,.12);--font-display:"Fraunces",Georgia,serif;--font-body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--container:1180px;--header-h:72px;--radius-pill:999px}
+      *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+      body{font-family:var(--font-body);line-height:1.6;color:var(--espresso);background:var(--cream);overflow-x:hidden}
+      img,svg{display:block;max-width:100%}img{height:auto}
+      h1,h2{font-family:var(--font-display);font-weight:600;line-height:1.08;letter-spacing:-.012em;color:var(--ink)}
+      h1{font-size:clamp(2.4rem,6vw,4rem)}
+      .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 1.5rem}
+      .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.85rem 1.6rem;border-radius:var(--radius-pill);font-weight:600;font-size:1rem;line-height:1;cursor:pointer;border:1.5px solid transparent;text-decoration:none}
+      .btn-primary{background:var(--terracotta);color:#fff}
+      .navbar{position:sticky;top:0;z-index:100;min-height:var(--header-h);background:rgba(247,242,231,.78)}
+      .nav-wrapper{display:flex;align-items:center;justify-content:space-between;min-height:var(--header-h)}
+      .hero{position:relative;min-height:clamp(560px,86vh,820px);display:flex;align-items:center;isolation:isolate}
+      .hero-media{position:absolute;inset:0;z-index:-2}.hero-media img{width:100%;height:100%;object-fit:cover}
+      .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(42,27,14,.82),rgba(42,27,14,.18))}
+      .hero h1{color:var(--cream)}
+    </style>
+    <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+
+    <!-- Structured Data -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "ShoppingCenter",
-        "name": "Plaza Real Silao",
-        "description": "Centro comercial familiar en Silao de la Victoria, Guanajuato. Tiendas y restaurantes para toda la familia.",
-        "url": "https://plazarealsilao.com/",
-        "telephone": "+52-55-7878-9795",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Libramiento Nte. 3140",
-            "addressLocality": "Silao de la Victoria",
-            "addressRegion": "Guanajuato",
-            "postalCode": "36100",
-            "addressCountry": "MX"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": 20.9436,
-            "longitude": -101.4269
-        },
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "08:00",
-                "closes": "22:00"
-            }
-        ],
-        "image": "https://plazarealsilao.com/images/plaza-real-silao.jpg",
-        "priceRange": "$$",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.5",
-            "reviewCount": "1250"
-        },
-        "hasMap": "https://goo.gl/maps/example",
-        "sameAs": [
-            "https://www.facebook.com/plazarealsilao",
-            "https://www.instagram.com/plazarealsilao"
-        ]
+      "@context": "https://schema.org",
+      "@type": "ShoppingCenter",
+      "name": "Plaza Real Silao",
+      "description": "Centro comercial familiar en Silao de la Victoria, Guanajuato. 20+ tiendas y servicios.",
+      "url": "https://plazarealsilao.com/",
+      "telephone": "+52-55-7878-9795",
+      "address": {"@type":"PostalAddress","streetAddress":"Libramiento Nte. 3140","addressLocality":"Silao de la Victoria","addressRegion":"Guanajuato","postalCode":"36100","addressCountry":"MX"},
+      "geo": {"@type":"GeoCoordinates","latitude":20.9436,"longitude":-101.4269},
+      "openingHoursSpecification": [{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"22:00"}],
+      "image": "https://plazarealsilao.com/images/plaza/plaza-main.jpg",
+      "priceRange": "$$"
     }
     </script>
 </head>
 <body>
-    <!-- Skip Link for Accessibility -->
     <a href="#main" class="skip-link">Saltar al contenido principal</a>
-    <!-- Navigation Header (Injected by components.js) -->
     <header class="header" id="header"></header>
-    
-    <!-- Main Content -->
+
     <main id="main">
-        <!-- Hero Section -->
+        <!-- HERO -->
         <section class="hero">
-            <div class="hero-background">
-                <div class="hero-overlay"></div>
+            <div class="hero-media">
+                <img src="/images/plaza/plaza-main.jpg" alt="Plaza Real Silao" width="1600" height="1067" fetchpriority="high">
             </div>
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        <span class="hero-title-main">La Plaza de Confianza de Silao</span>
-                        <span class="hero-subtitle">20+ tiendas locales y nacionales desde 2019</span>
-                    </h1>
-                    <p class="hero-description">
-                        Frente a la central de autobuses · Estacionamiento gratuito · Abierto hasta las 22:00
-                    </p>
-                    <div class="hero-cta">
-                        <a href="/tiendas/" class="btn btn-primary">Ver Todas las Tiendas</a>
-                        <a href="#contact" class="btn btn-secondary">Cómo Llegar</a>
-                    </div>
+            <div class="container hero-inner">
+                <a href="#proximamente" class="hero-badge">
+                    <svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#sparkles"></use></svg>
+                    Muy pronto: Modatelas + Smart Fit
+                </a>
+                <h1>La plaza de confianza<br>de Silao</h1>
+                <p class="hero-sub">20+ tiendas locales y nacionales · Frente a la central de autobuses · Estacionamiento gratuito · Abierto hasta las 22:00</p>
+                <div class="hero-cta">
+                    <a href="/tiendas/" class="btn btn-primary btn-lg">Ver todas las tiendas</a>
+                    <a href="#contact" class="btn btn-ghost btn-lg">Cómo llegar</a>
                 </div>
             </div>
         </section>
-        
-        <!-- Features Section -->
-        <section class="features">
+
+        <!-- PRÓXIMAMENTE -->
+        <section id="proximamente" class="section proximamente">
             <div class="container">
-                <h2 class="section-title">¿Por qué Plaza Real Silao?</h2>
+                <div class="section-head reveal">
+                    <p class="eyebrow">Próximamente</p>
+                    <h2>Dos nuevas marcas llegan a Plaza Real</h2>
+                    <p class="lead">Estamos creciendo. Modatelas y Smart Fit están en construcción y muy pronto abrirán sus puertas en Plaza Real Silao. Déjanos tu correo y te avisamos el día de la apertura.</p>
+                </div>
+                <div class="prox-grid">
+                    <article class="card prox-card reveal">
+                        <span class="badge badge--amber">Apertura 2026</span>
+                        <div class="prox-logo"><img src="/images/stores/modatelas.svg" alt="Modatelas" width="320" height="160" loading="lazy"></div>
+                        <h3>Modatelas</h3>
+                        <p class="prox-desc">Telas, mercería y todo para tus proyectos de costura, decoración y confección. La tienda favorita de México para crear.</p>
+                        <form class="avisame-form" action="https://formsubmit.co/contacto@plazarealsilao.com" method="POST" data-brand="Modatelas">
+                            <input type="hidden" name="_subject" value="Avísame cuando abra Modatelas">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="email" name="email" required placeholder="Tu correo electrónico" aria-label="Tu correo para Modatelas">
+                            <button class="btn btn-primary" type="submit">Avísame</button>
+                        </form>
+                    </article>
+                    <article class="card prox-card reveal">
+                        <span class="badge badge--amber">Apertura 2026</span>
+                        <div class="prox-logo"><img src="/images/stores/smartfit.svg" alt="Smart Fit" width="320" height="160" loading="lazy"></div>
+                        <h3>Smart Fit</h3>
+                        <p class="prox-desc">El gimnasio más grande de Latinoamérica llega a Silao. Equipo de primer nivel, clases y acceso accesible para toda la comunidad.</p>
+                        <form class="avisame-form" action="https://formsubmit.co/contacto@plazarealsilao.com" method="POST" data-brand="Smart Fit">
+                            <input type="hidden" name="_subject" value="Avísame cuando abra Smart Fit">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="email" name="email" required placeholder="Tu correo electrónico" aria-label="Tu correo para Smart Fit">
+                            <button class="btn btn-primary" type="submit">Avísame</button>
+                        </form>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PLAZA EN NÚMEROS -->
+        <section class="section section--dark stats-section">
+            <div class="container">
+                <div class="stats-grid reveal">
+                    <!-- Owner: update figures as needed -->
+                    <div class="stat"><span class="stat-num">22+</span><span class="stat-label">Tiendas y servicios</span></div>
+                    <div class="stat"><span class="stat-num">2019</span><span class="stat-label">Sirviendo a Silao desde</span></div>
+                    <div class="stat"><span class="stat-num">+2</span><span class="stat-label">Marcas nuevas en camino</span></div>
+                    <div class="stat"><span class="stat-num">Gratis</span><span class="stat-label">Estacionamiento amplio</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- POR QUÉ -->
+        <section class="section features">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Por qué Plaza Real</p>
+                    <h2>Todo lo que buscas, en un solo lugar</h2>
+                </div>
                 <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-shopping-bag"></i>
-                        </div>
+                    <div class="feature-card card reveal">
+                        <span class="feature-icon"><svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#bag"></use></svg></span>
                         <h3>20+ Tiendas</h3>
-                        <p>Encuentra todo lo que necesitas en un solo lugar</p>
+                        <p>Comercio, alimentos, belleza, servicios y más para toda la familia.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-map-marked-alt"></i>
-                        </div>
-                        <h3>Ubicación Estratégica</h3>
-                        <p>Frente a la central de autobuses de Silao</p>
+                    <div class="feature-card card reveal">
+                        <span class="feature-icon"><svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#pin"></use></svg></span>
+                        <h3>Ubicación estratégica</h3>
+                        <p>Frente a la central de autobuses de Silao, con fácil acceso.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-parking"></i>
-                        </div>
-                        <h3>Estacionamiento Amplio</h3>
-                        <p>Estacionamiento gratuito para tu comodidad</p>
+                    <div class="feature-card card reveal">
+                        <span class="feature-icon"><svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#parking"></use></svg></span>
+                        <h3>Estacionamiento amplio</h3>
+                        <p>Estacionamiento gratuito y seguro para tu comodidad.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Seguridad 24/7</h3>
-                        <p>Tu seguridad es nuestra prioridad</p>
+                    <div class="feature-card card reveal">
+                        <span class="feature-icon"><svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#shield"></use></svg></span>
+                        <h3>Ambiente seguro</h3>
+                        <p>Vigilancia y un entorno familiar para que compres tranquilo.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Mission Section -->
-        <section class="mission">
+        <!-- TIENDAS DESTACADAS -->
+        <section id="stores" class="section section--alt store-preview">
             <div class="container">
-                <div class="mission-content">
-                    <h2>Nuestra Misión</h2>
-                    <p class="mission-text">
-                        "Nuestra misión es crear un ambiente acogedor y dinámico que invite a todos a explorar y disfrutar. 
-                        Queremos ser el destino de compras y entretenimiento líder en Silao, impulsando el crecimiento 
-                        y la prosperidad de nuestra comunidad."
-                    </p>
-                    <a href="/tiendas/" class="btn btn-primary">Conoce Nuestras Tiendas</a>
+                <div class="section-head reveal">
+                    <p class="eyebrow">Nuestras tiendas</p>
+                    <h2>Tiendas destacadas</h2>
                 </div>
-            </div>
-        </section>
-
-        <!-- Quick Store Preview -->
-        <section class="store-preview">
-            <div class="container">
-                <h2 class="section-title">Nuestras Tiendas Destacadas</h2>
-                <div class="preview-grid" id="storePreview">
-                    <!-- Will be populated by JavaScript -->
-                </div>
+                <div class="featured-grid" id="storePreview"></div>
                 <div class="section-cta">
-                    <a href="/tiendas/" class="btn btn-secondary">Ver Todas las Tiendas</a>
+                    <a href="/tiendas/" class="btn btn-secondary btn-lg">Ver todas las tiendas
+                        <svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#arrow-right"></use></svg></a>
                 </div>
             </div>
         </section>
-        
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
+
+        <!-- INVERSIONISTAS TEASER -->
+        <section class="section invest-teaser">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Visítanos</h2>
-                    <p class="section-subtitle">Estamos aquí para servirte</p>
+                <div class="invest-card reveal">
+                    <div>
+                        <p class="eyebrow">Inversionistas</p>
+                        <h2>Una oportunidad que está creciendo</h2>
+                        <p class="lead">Ubicación privilegiada, marcas ancla en camino y una comunidad en expansión. Conoce la oportunidad de inversión de Plaza Real Silao.</p>
+                    </div>
+                    <a href="/inversionistas/" class="btn btn-primary btn-lg">Conoce la oportunidad
+                        <svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#arrow-right"></use></svg></a>
                 </div>
-                
+            </div>
+        </section>
+
+        <!-- VISÍTANOS / CONTACTO -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Visítanos</p>
+                    <h2>Cómo llegar</h2>
+                </div>
                 <div class="contact-grid">
-                    <div class="contact-info">
+                    <div class="contact-info reveal">
                         <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h3>Dirección</h3>
-                                <p>Libramiento Nte. 3140, Centro<br>
-                                36100 Silao de la Victoria, Gto.</p>
-                            </div>
+                            <svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#pin"></use></svg>
+                            <div><h4>Dirección</h4><p>Libramiento Nte. 3140, Centro<br>36100 Silao de la Victoria, Gto.</p></div>
                         </div>
-                        
                         <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h3>Horario</h3>
-                                <p>Lunes a Viernes: 8:00 - 22:00<br>
-                                Sábado y Domingo: Consultar tiendas</p>
-                            </div>
+                            <svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#clock"></use></svg>
+                            <div><h4>Horario</h4><p>Lunes a Viernes: 8:00 - 22:00<br>Sábado y Domingo: variable por tienda</p></div>
                         </div>
-                        
                         <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <div>
-                                <h3>Teléfono</h3>
-                                <p>(55) 7878-9795</p>
-                            </div>
+                            <svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#phone"></use></svg>
+                            <div><h4>Teléfono</h4><p><a href="tel:+5578789795">(55) 7878-9795</a></p></div>
                         </div>
-                        
                         <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h3>Email</h3>
-                                <p>contacto@plazarealsilao.com</p>
-                            </div>
+                            <svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#mail"></use></svg>
+                            <div><h4>Email</h4><p><a href="mailto:contacto@plazarealsilao.com">contacto@plazarealsilao.com</a></p></div>
                         </div>
                     </div>
-                    
-                    <div class="map-container">
-                        <iframe 
+                    <div class="map-container reveal">
+                        <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.806258212179!2d-101.4263262775461!3d20.95353948003567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842b9d66fc1f3c7b%3A0x410e7594111aeae!2sPlaza%20Real!5e1!3m2!1ses!2smx!4v1754622876156!5m2!1ses!2smx"
-                            width="100%" 
-                            height="400" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Ubicación Plaza Real Silao">
-                        </iframe>
+                            width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade" title="Ubicación Plaza Real Silao"></iframe>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    
-    <!-- Footer (Injected by components.js) -->
+
     <footer class="footer"></footer>
-    
-    <!-- Back to Top Button -->
+
     <button id="backToTop" class="back-to-top" aria-label="Volver arriba">
-        <i class="fas fa-chevron-up"></i>
+        <svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#chevron-up"></use></svg>
     </button>
-    
-    <!-- JavaScript -->
+
     <script src="/js/components.js"></script>
-    <script src="/js/smart-image-loader.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="/js/home.js"></script>
+    <script src="/js/script.js" defer></script>
+    <script src="/js/home.js" defer></script>
 </body>
 </html>
