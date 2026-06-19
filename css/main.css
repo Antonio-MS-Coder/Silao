@@ -542,8 +542,40 @@ body.menu-open { overflow:hidden; }
 .dataroom-note { font-size:.85rem; color:var(--text-muted); margin-top:var(--s4); }
 
 /* =====================================================
-   DATA ROOM (gated viewer) — Task 12
+   DATA ROOM (gated viewer)
    ===================================================== */
+.dataroom-head { background:linear-gradient(135deg, var(--espresso), var(--cocoa)); color:var(--cream); padding:calc(var(--header-h) + var(--s5)) 0 var(--s6); }
+.dr-head-row { display:flex; align-items:flex-end; justify-content:space-between; gap:var(--s4); flex-wrap:wrap; }
+.dataroom-head .eyebrow { color:var(--amber); display:inline-flex; align-items:center; gap:.4rem; }
+.dataroom-head .eyebrow .ico { width:1rem; height:1rem; }
+.dataroom-head h1 { color:var(--cream); }
+.dr-viewer-id { font-size:.85rem; color:rgba(247,242,231,.85); background:rgba(247,242,231,.1); padding:.45rem .9rem; border-radius:var(--radius-pill); }
+.dr-confidential { margin-top:var(--s4); color:rgba(247,242,231,.7); font-size:.85rem; max-width:70ch; }
+
+.dataroom-layout { display:grid; grid-template-columns:300px 1fr; gap:var(--s6); align-items:start; }
+.dr-sidebar { position:sticky; top:calc(var(--header-h) + var(--s4)); }
+.dr-sidebar-title { font-size:.8rem; letter-spacing:.12em; text-transform:uppercase; color:var(--text-muted); margin-bottom:var(--s4); }
+.dr-doclist { display:flex; flex-direction:column; gap:.6rem; }
+.dr-doc { width:100%; display:flex; align-items:flex-start; gap:.75rem; padding:.9rem 1rem; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); cursor:pointer; text-align:left; transition:all .2s var(--ease); }
+.dr-doc:hover { border-color:var(--terracotta); transform:translateX(2px); }
+.dr-doc.active { border-color:var(--terracotta); background:#fff; box-shadow:var(--shadow-sm); }
+.dr-doc .ico { color:var(--terracotta); width:1.3rem; height:1.3rem; flex-shrink:0; margin-top:.1rem; }
+.dr-doc-text { display:flex; flex-direction:column; }
+.dr-doc-t { font-weight:600; color:var(--espresso); }
+.dr-doc-d { font-size:.85rem; color:var(--text-muted); }
+
+.dr-viewer { background:var(--sand); border:1px solid var(--line); border-radius:var(--radius-lg); min-height:60vh; padding:var(--s5); }
+.dr-empty { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:var(--s3); min-height:50vh; color:var(--text-muted); text-align:center; }
+.dr-empty .ico { width:2.5rem; height:2.5rem; color:var(--terracotta); opacity:.6; }
+.dr-pages { display:flex; flex-direction:column; gap:var(--s5); }
+.dr-page { width:100%; height:auto; border-radius:8px; box-shadow:var(--shadow-md); background:#fff; -webkit-user-select:none; user-select:none; -webkit-user-drag:none; pointer-events:none; }
+.dr-loading { text-align:center; color:var(--text-muted); padding:var(--s7) 0; }
+
+@media (max-width:840px) {
+  .dataroom-layout { grid-template-columns:1fr; }
+  .dr-sidebar { position:static; }
+}
+
 
 /* =====================================================
    Component layers appended per task:

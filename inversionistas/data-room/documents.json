@@ -1,0 +1,6 @@
+{
+  "documents": [
+    { "title": "Resumen Ejecutivo", "file": "docs/resumen-ejecutivo.pdf", "desc": "Visión general de la oportunidad de inversión" },
+    { "title": "Plaza en Números", "file": "docs/plaza-en-numeros.pdf", "desc": "Métricas de operación y desempeño" }
+  ]
+}
