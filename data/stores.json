@@ -314,6 +314,38 @@
       "services": ["Planes móviles", "Internet residencial", "Equipos y accesorios", "Soluciones empresariales", "Soporte técnico"],
       "gradient": "linear-gradient(135deg, #00BCD4, #0097A7)",
       "image": "/images/stores/att.webp"
+    },
+    {
+      "id": "modatelas",
+      "name": "Modatelas",
+      "category": "retail",
+      "categoryName": "Comercio",
+      "status": "coming-soon",
+      "description": "Telas, mercería y todo para tus proyectos de costura, decoración y confección. La tienda favorita de México para crear llega muy pronto a Plaza Real Silao.",
+      "shortDescription": "Telas y mercería · Próximamente",
+      "location": "Próximamente",
+      "hours": "Próximamente",
+      "phone": "Próximamente",
+      "email": "Próximamente",
+      "services": ["Telas por metro", "Mercería", "Blancos y cortinas", "Manualidades", "Material para confección"],
+      "gradient": "linear-gradient(135deg, #D5202B, #B71C1C)",
+      "image": "/images/stores/modatelas.svg"
+    },
+    {
+      "id": "smart-fit",
+      "name": "Smart Fit",
+      "category": "health",
+      "categoryName": "Bienestar",
+      "status": "coming-soon",
+      "description": "El gimnasio más grande de Latinoamérica llega a Silao. Equipo de primer nivel, clases y un plan accesible para toda la comunidad. Próximamente en Plaza Real Silao.",
+      "shortDescription": "Gimnasio · Próximamente",
+      "location": "Próximamente",
+      "hours": "Próximamente",
+      "phone": "Próximamente",
+      "email": "Próximamente",
+      "services": ["Equipo cardiovascular", "Área de peso libre", "Clases grupales", "Regaderas", "Acceso accesible"],
+      "gradient": "linear-gradient(135deg, #15161A, #2A2C33)",
+      "image": "/images/stores/smartfit.svg"
     }
   ]
 }

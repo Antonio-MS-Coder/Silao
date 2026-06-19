@@ -388,6 +388,52 @@ body.menu-open { overflow:hidden; }
 }
 
 /* =====================================================
+   PAGE HERO (inner pages)
+   ===================================================== */
+.page-hero { background:linear-gradient(180deg, var(--sand) 0%, var(--cream) 100%); padding:calc(var(--s8) + 1rem) 0 var(--s7); text-align:center; }
+.page-hero h1 { margin:.2rem 0 var(--s3); }
+.page-hero .lead { max-width:60ch; margin:0 auto; }
+.page-hero--dark { background:linear-gradient(135deg, var(--espresso), var(--cocoa)); }
+.page-hero--dark h1 { color:var(--cream); }
+.page-hero--dark .lead { color:rgba(247,242,231,.85); }
+.page-hero--dark .eyebrow { color:var(--amber); }
+
+/* =====================================================
+   STORE MAP + DIRECTORY
+   ===================================================== */
+.map-image { width:100%; border-radius:var(--radius-lg); box-shadow:var(--shadow-md); border:1px solid var(--line); margin-bottom:var(--s6); }
+.directory-box { padding:var(--s6); }
+.directory-box h3 { margin-bottom:var(--s4); }
+.directory-list { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:.6rem 1.5rem; }
+.directory-list div { color:var(--text-muted); padding:.15rem 0; }
+.directory-list strong { color:var(--terracotta-dark); margin-right:.4rem; }
+
+/* =====================================================
+   FILTERS + SEARCH
+   ===================================================== */
+.store-categories { display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-bottom:var(--s5); }
+.category-btn {
+  padding:.55rem 1.15rem; border-radius:var(--radius-pill); border:1.5px solid var(--line-strong);
+  background:transparent; color:var(--cocoa); font-weight:500; font-size:.92rem; cursor:pointer; transition:all .2s var(--ease);
+}
+.category-btn:hover { border-color:var(--espresso); color:var(--espresso); }
+.category-btn.active { background:var(--terracotta); border-color:var(--terracotta); color:#fff; }
+.store-search { position:relative; max-width:480px; margin:0 auto var(--s7); }
+.store-search .ico { position:absolute; left:1rem; top:50%; transform:translateY(-50%); color:var(--text-muted); width:1.2rem; height:1.2rem; }
+.store-search input { width:100%; padding:.85rem 1rem .85rem 2.8rem; border:1.5px solid var(--line-strong); border-radius:var(--radius-pill); font:inherit; background:var(--surface); color:var(--text); }
+.store-search input:focus { outline:none; border-color:var(--terracotta); }
+
+/* Store card footer + coming-soon variant */
+.store-card-foot { display:flex; align-items:center; gap:.4rem; padding:0 var(--s5) var(--s5); font-weight:600; font-size:.92rem; color:var(--terracotta-dark); }
+.store-card-foot .ico { width:1rem; height:1rem; transition:transform .2s var(--ease); }
+.store-card:hover .store-card-foot .ico { transform:translateX(3px); }
+.store-card .store-flag { position:absolute; top:var(--s4); left:var(--s4); z-index:1; }
+.store-card.coming { cursor:default; }
+.store-card.coming .store-card-media { background:var(--sand); }
+.store-card.coming .store-card-media img { object-fit:contain; padding:1.5rem; }
+.no-results { grid-column:1/-1; text-align:center; color:var(--text-muted); padding:var(--s7) 0; }
+
+/* =====================================================
    Component layers appended per task:
-   Task 8+ → tiendas, detail, espacios, faq, inversionistas, data room
+   Task 9+ → detail, espacios, faq, inversionistas, data room
    ===================================================== */

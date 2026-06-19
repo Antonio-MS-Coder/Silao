@@ -1,149 +1,104 @@
-// Stores Page JavaScript
-(function() {
+// Plaza Real Silao — Stores directory
+(function () {
     'use strict';
 
     let allStores = [];
     let filteredStores = [];
 
-    // Load stores data
+    const CATEGORY_ICON = {
+        retail: 'bag', services: 'bell', food: 'utensils', health: 'heart',
+        education: 'cap', finance: 'landmark', telecom: 'signal',
+        government: 'landmark', beauty: 'sparkles'
+    };
+    const icon = c => CATEGORY_ICON[c] || 'store';
+
     async function loadStores() {
+        const grid = document.getElementById('storesGrid');
         try {
-            const response = await fetch('/data/stores.json');
-            const data = await response.json();
-            allStores = data.stores;
+            const res = await fetch('/data/stores.json');
+            const data = await res.json();
+            // Coming-soon first so new anchors lead the directory.
+            allStores = (data.stores || []).slice().sort((a, b) =>
+                (b.status === 'coming-soon') - (a.status === 'coming-soon'));
             filteredStores = [...allStores];
             renderStores();
-            initializeFilters();
-            initializeSearch();
-        } catch (error) {
-            console.error('Error loading stores:', error);
-            document.getElementById('storesGrid').innerHTML = 
-                '<p class="error-message">Error al cargar las tiendas. Por favor, intenta más tarde.</p>';
+            initFilters();
+            initSearch();
+        } catch (err) {
+            console.error('Error loading stores:', err);
+            if (grid) grid.innerHTML = '<p class="no-results">No se pudieron cargar las tiendas. Intenta más tarde.</p>';
         }
     }
 
-    // Render stores to the grid
-    // Helper function to get category icon
-    function getCategoryIcon(category) {
-        const icons = {
-            'retail': 'fa-shopping-bag',
-            'services': 'fa-concierge-bell',
-            'food': 'fa-utensils',
-            'health': 'fa-heartbeat',
-            'education': 'fa-graduation-cap',
-            'finance': 'fa-landmark'
-        };
-        return icons[category] || 'fa-store';
+    function storeCard(store) {
+        const coming = store.status === 'coming-soon';
+        const badge = coming
+            ? `<span class="badge badge--amber store-flag">Próximamente</span>`
+            : '';
+        const media = `
+            <div class="store-card-media">
+                ${badge}
+                <img src="${store.image}" alt="${store.name}" width="400" height="300" loading="lazy"
+                     onerror="this.style.display='none';this.parentElement.classList.add('no-img');this.parentElement.dataset.initial='${store.name.charAt(0)}'">
+            </div>`;
+        const body = `
+            <div class="store-card-body">
+                <span class="badge"><svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#${icon(store.category)}"></use></svg>${store.categoryName}</span>
+                <h3>${store.name}</h3>
+                <p>${store.shortDescription || ''}</p>
+            </div>`;
+        if (coming) {
+            return `<div class="store-card card coming" data-category="${store.category}">${media}${body}</div>`;
+        }
+        return `<a class="store-card card" data-category="${store.category}" href="/tiendas/detalle.html?id=${store.id}">${media}${body}
+            <span class="store-card-foot">Ver detalles <svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#arrow-right"></use></svg></span></a>`;
     }
 
     function renderStores() {
         const grid = document.getElementById('storesGrid');
-        
-        if (filteredStores.length === 0) {
+        if (!grid) return;
+        if (!filteredStores.length) {
             grid.innerHTML = '<p class="no-results">No se encontraron tiendas que coincidan con tu búsqueda.</p>';
             return;
         }
-
-        grid.innerHTML = filteredStores.map((store, index) => `
-            <div class="store-card" data-category="${store.category}">
-                <a href="/tiendas/detalle.html?id=${store.id}" class="store-card-link">
-                    <div class="store-image">
-                        ${store.image ? 
-                            `<img ${index < 6 ? 'src' : 'data-src'}="${store.image}" alt="${store.name}" loading="${index < 6 ? 'eager' : 'lazy'}" decoding="async" fetchpriority="${index < 3 ? 'high' : 'auto'}">` :
-                            `<div class="store-placeholder" style="background: ${store.gradient};">
-                                <span class="store-initial">${store.name.charAt(0)}</span>
-                            </div>`
-                        }
-                    </div>
-                    <div class="store-info">
-                        <h3>${store.name}</h3>
-                        <p>${store.shortDescription}</p>
-                        <div class="store-category-badge ${store.category}">
-                            <i class="fas ${getCategoryIcon(store.category)}"></i>
-                            <span>${store.categoryName}</span>
-                        </div>
-                    </div>
-                    <div class="store-card-footer">
-                        <span class="view-details">Ver Detalles <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </a>
-            </div>
-        `).join('');
-
-        // Add animation
-        const cards = grid.querySelectorAll('.store-card');
-        cards.forEach((card, index) => {
-            setTimeout(() => {
-                card.classList.add('fade-in');
-            }, index * 50);
-        });
+        grid.innerHTML = filteredStores.map(storeCard).join('');
     }
 
-    // Initialize category filters
-    function initializeFilters() {
-        const filterButtons = document.querySelectorAll('.category-btn');
-        
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Update active state
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Filter stores
-                const category = this.dataset.category;
-                if (category === 'all') {
-                    filteredStores = [...allStores];
-                } else {
-                    filteredStores = allStores.filter(store => store.category === category);
-                }
-                
-                // Clear search if filtering
-                document.getElementById('storeSearch').value = '';
-                
-                renderStores();
-            });
-        });
+    function applyCategory(category) {
+        filteredStores = category === 'all' ? [...allStores] : allStores.filter(s => s.category === category);
     }
 
-    // Initialize search functionality
-    function initializeSearch() {
-        const searchInput = document.getElementById('storeSearch');
-        
-        if (!searchInput) {
-            console.error('Search input not found');
-            return;
-        }
-        
-        searchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase().trim();
-            
-            if (searchTerm === '') {
-                // Reset to current filter
-                const activeFilter = document.querySelector('.category-btn.active');
-                const category = activeFilter.dataset.category;
-                
-                if (category === 'all') {
-                    filteredStores = [...allStores];
-                } else {
-                    filteredStores = allStores.filter(store => store.category === category);
-                }
+    function initFilters() {
+        const buttons = document.querySelectorAll('.category-btn');
+        buttons.forEach(btn => btn.addEventListener('click', function () {
+            buttons.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const search = document.getElementById('storeSearch');
+            if (search) search.value = '';
+            applyCategory(this.dataset.category);
+            renderStores();
+        }));
+    }
+
+    function initSearch() {
+        const input = document.getElementById('storeSearch');
+        if (!input) return;
+        input.addEventListener('input', function () {
+            const term = this.value.toLowerCase().trim();
+            if (!term) {
+                const active = document.querySelector('.category-btn.active');
+                applyCategory(active ? active.dataset.category : 'all');
             } else {
-                // Search in all stores
-                filteredStores = allStores.filter(store => 
-                    store.name.toLowerCase().includes(searchTerm) ||
-                    store.shortDescription.toLowerCase().includes(searchTerm) ||
-                    store.categoryName.toLowerCase().includes(searchTerm)
-                );
+                filteredStores = allStores.filter(s =>
+                    s.name.toLowerCase().includes(term) ||
+                    (s.shortDescription || '').toLowerCase().includes(term) ||
+                    s.categoryName.toLowerCase().includes(term));
             }
-            
             renderStores();
         });
     }
 
-    // Initialize when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', loadStores);
-    } else {
-        loadStores();
-    }
+    } else { loadStores(); }
 })();

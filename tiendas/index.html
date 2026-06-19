@@ -4,200 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestras Tiendas | Plaza Real Silao</title>
-    <meta name="description" content="Directorio completo de tiendas y servicios en Plaza Real Silao. Encuentra todo lo que necesitas en un solo lugar.">
+    <meta name="description" content="Directorio completo de tiendas y servicios en Plaza Real Silao. Comercio, alimentos, belleza, telecomunicaciones y más. Muy pronto Modatelas y Smart Fit.">
     <link rel="canonical" href="https://plazarealsilao.com/tiendas/">
-    
-    <!-- Google tag (gtag.js) -->
+    <meta name="theme-color" content="#33200F">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="/images/icons/icon-192x192.png">
+    <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SGW9ESY52"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-0SGW9ESY52');
-    </script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    
-    <!-- Preload critical images -->
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0SGW9ESY52');</script>
+
+    <link rel="preload" href="/fonts/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/images/mapa-tiendas-silao.webp" as="image" fetchpriority="high">
-    <link rel="preload" href="/images/stores/elektra.webp" as="image">
-    <link rel="preload" href="/images/stores/tiendas-del-sol.jpg" as="image">
-    
     <style>
-        /* Title banner styles */
-        .page-title-banner {
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 45px 0;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-            margin-top: 80px; /* Add space for fixed header */
-        }
-        
-        .page-title-banner h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin: 0;
-            letter-spacing: 1px;
-        }
-        
-        /* Simple and clean styles */
-        .map-display {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .map-display h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 30px;
-            color: #1f2937;
-        }
-        
-        .map-image {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        
-        .directory-box {
-            background: #f9fafb;
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 40px;
-        }
-        
-        .directory-box h3 {
-            margin-bottom: 20px;
-            color: #1f2937;
-            font-size: 1.3rem;
-        }
-        
-        .directory-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 12px;
-            font-size: 0.95rem;
-            color: #4b5563;
-        }
-        
-        .directory-list div {
-            padding: 5px 0;
-        }
-        
-        .directory-list strong {
-            color: #667eea;
-            margin-right: 8px;
-        }
-        
-        @media (max-width: 768px) {
-            .page-title-banner {
-                padding: 35px 0;
-                margin-top: 70px; /* Slightly less margin on mobile */
-            }
-            
-            .page-title-banner h1 {
-                font-size: 1.8rem;
-            }
-        }
+      :root{--cream:#F7F2E7;--terracotta:#DD6B4A;--terracotta-dark:#C2563A;--amber:#E89A2D;--espresso:#33200F;--ink:#2A1B0E;--text-muted:#6B5743;--line:rgba(51,32,15,.12);--font-display:"Fraunces",Georgia,serif;--font-body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--container:1180px;--header-h:72px;--radius-pill:999px}
+      *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+      body{font-family:var(--font-body);line-height:1.6;color:var(--espresso);background:var(--cream);overflow-x:hidden}
+      img,svg{display:block;max-width:100%}img{height:auto}
+      h1,h2{font-family:var(--font-display);font-weight:600;line-height:1.08;letter-spacing:-.012em;color:var(--ink)}
+      .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 1.5rem}
+      .navbar{position:sticky;top:0;z-index:100;min-height:var(--header-h);background:rgba(247,242,231,.78)}
+      .nav-wrapper{display:flex;align-items:center;justify-content:space-between;min-height:var(--header-h)}
     </style>
+    <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
 </head>
 <body>
+    <a href="#main" class="skip-link">Saltar al contenido principal</a>
     <header class="header" id="header"></header>
-    
-    <!-- Title Banner -->
-    <div class="page-title-banner">
-        <h1>NUESTRAS TIENDAS</h1>
-    </div>
-    
-    <main>
-        <!-- Simple Map Display -->
-        <div class="map-display">
-            <h2>Mapa de Locales</h2>
-            
-            <img 
-                src="/images/mapa-tiendas-silao.webp" 
-                alt="Mapa de Plaza Real Silao" 
-                class="map-image"
-                fetchpriority="high"
-                decoding="async"
-                loading="eager">
-            
-            <div class="directory-box">
-                <h3>Directorio de Locales</h3>
-                <div class="directory-list">
-                    <div><strong>A.</strong> Tiendas del Sol</div>
-                    <div><strong>B.</strong> Elektra</div>
-                    <div><strong>C.</strong> Fix Ferreterías</div>
-                    <div><strong>D.</strong> Zorro Abarrotero</div>
-                    <div><strong>E.</strong> Chevrolet</div>
-                    <div><strong>F.</strong> Abogados</div>
-                    <div><strong>G.</strong> Telcel</div>
-                    <div><strong>H.</strong> Infonavit</div>
-                    <div><strong>I.</strong> Zonatura</div>
-                    <div><strong>J.</strong> Acceso</div>
-                    <div><strong>K.</strong> Escuela de Peluquería</div>
-                    <div><strong>L.</strong> Comex</div>
-                    <div><strong>M.</strong> Comida China</div>
-                    <div><strong>N.</strong> Home Moda</div>
-                    <div><strong>O.</strong> Dols (Beauty & Nails Shop)</div>
-                    <div><strong>P.</strong> Zapatería</div>
-                    <div><strong>Q.</strong> Restaurante</div>
-                    <div><strong>R.</strong> Restaurante</div>
-                    <div><strong>S.</strong> Óptica Jireh</div>
-                    <div><strong>T.</strong> Gobierno</div>
-                    <div><strong>U.</strong> AT&T</div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Stores Section -->
-        <section class="stores-page">
+
+    <main id="main">
+        <section class="page-hero">
             <div class="container">
-                <h2 style="text-align: center; margin-bottom: 30px;">Explora Nuestras Tiendas</h2>
-                
-                <!-- Store Categories Filter -->
-                <div class="store-categories">
-                    <button class="category-btn active" data-category="all">Todas</button>
-                    <button class="category-btn" data-category="retail">Comercio</button>
-                    <button class="category-btn" data-category="services">Servicios</button>
-                    <button class="category-btn" data-category="food">Alimentos</button>
-                    <button class="category-btn" data-category="telecom">Telecomunicaciones</button>
-                    <button class="category-btn" data-category="beauty">Belleza</button>
-                    <button class="category-btn" data-category="government">Gobierno</button>
+                <p class="eyebrow">Directorio</p>
+                <h1>Nuestras tiendas</h1>
+                <p class="lead">22+ tiendas y servicios para toda la familia, en un solo lugar. Y muy pronto, dos nuevas marcas ancla.</p>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <section class="section store-map">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Ubícate</p>
+                    <h2>Mapa de locales</h2>
                 </div>
-                
-                <!-- Search Bar -->
-                <div class="store-search">
-                    <input type="text" id="storeSearch" placeholder="Buscar tienda..." aria-label="Buscar tienda">
-                    <i class="fas fa-search"></i>
-                </div>
-                
-                <!-- Stores Grid -->
-                <div class="stores-grid" id="storesGrid">
-                    <!-- Will be populated by JavaScript -->
+                <img src="/images/mapa-tiendas-silao.webp" alt="Mapa de Plaza Real Silao" class="map-image"
+                     fetchpriority="high" decoding="async" width="1200" height="800">
+                <div class="directory-box card reveal">
+                    <h3>Directorio de locales</h3>
+                    <div class="directory-list">
+                        <div><strong>A.</strong> Tiendas del Sol</div>
+                        <div><strong>B.</strong> Elektra</div>
+                        <div><strong>C.</strong> Fix Ferreterías</div>
+                        <div><strong>D.</strong> Zorro Abarrotero</div>
+                        <div><strong>E.</strong> Chevrolet</div>
+                        <div><strong>F.</strong> Abogados</div>
+                        <div><strong>G.</strong> Telcel</div>
+                        <div><strong>H.</strong> Infonavit</div>
+                        <div><strong>I.</strong> Zonatura</div>
+                        <div><strong>J.</strong> Acceso</div>
+                        <div><strong>K.</strong> Escuela de Peluquería</div>
+                        <div><strong>L.</strong> Comex</div>
+                        <div><strong>M.</strong> Comida China</div>
+                        <div><strong>N.</strong> Home Moda</div>
+                        <div><strong>O.</strong> Dols (Beauty & Nails)</div>
+                        <div><strong>P.</strong> Zapatería</div>
+                        <div><strong>Q.</strong> Restaurante</div>
+                        <div><strong>R.</strong> Restaurante</div>
+                        <div><strong>S.</strong> Óptica Jireh</div>
+                        <div><strong>T.</strong> Gobierno</div>
+                        <div><strong>U.</strong> AT&T</div>
+                    </div>
                 </div>
             </div>
         </section>
+
+        <!-- Directory grid -->
+        <section class="section section--alt stores-page">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Explora</p>
+                    <h2>Todas las tiendas</h2>
+                </div>
+                <div class="store-categories">
+                    <button class="category-btn active" data-category="all">Todas</button>
+                    <button class="category-btn" data-category="retail">Comercio</button>
+                    <button class="category-btn" data-category="food">Alimentos</button>
+                    <button class="category-btn" data-category="services">Servicios</button>
+                    <button class="category-btn" data-category="beauty">Belleza</button>
+                    <button class="category-btn" data-category="telecom">Telecom</button>
+                    <button class="category-btn" data-category="health">Bienestar</button>
+                    <button class="category-btn" data-category="government">Gobierno</button>
+                </div>
+                <div class="store-search">
+                    <svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#search"></use></svg>
+                    <input type="text" id="storeSearch" placeholder="Buscar tienda…" aria-label="Buscar tienda">
+                </div>
+                <div class="stores-grid featured-grid" id="storesGrid"></div>
+            </div>
+        </section>
     </main>
-    
+
     <footer class="footer"></footer>
-    
     <button id="backToTop" class="back-to-top" aria-label="Volver arriba">
-        <i class="fas fa-chevron-up"></i>
+        <svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#chevron-up"></use></svg>
     </button>
-    
+
     <script src="/js/components.js"></script>
-    <script src="/js/smart-image-loader.js"></script>
-    <script src="/js/stores.js"></script>
+    <script src="/js/script.js" defer></script>
+    <script src="/js/stores.js" defer></script>
 </body>
 </html>
