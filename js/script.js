@@ -45,6 +45,23 @@ document.addEventListener('DOMContentLoaded', function () {
         reveals.forEach(el => el.classList.add('in'));
     }
 
+    // ---- Subtle parallax on hero arch (2026 scroll storytelling, restrained) ----
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const heroImg = document.querySelector('.hero-arch img');
+    if (heroImg && !prefersReduced && window.innerWidth > 820) {
+        let ticking = false;
+        const onScroll = () => {
+            if (ticking) return; ticking = true;
+            requestAnimationFrame(() => {
+                const y = Math.min(window.scrollY, 600);
+                heroImg.style.transform = `translateY(${y * 0.08}px) scale(1.06)`;
+                ticking = false;
+            });
+        };
+        heroImg.style.transform = 'scale(1.06)';
+        window.addEventListener('scroll', onScroll, { passive: true });
+    }
+
     // ---- Performance beacon to GA ----
     if ('performance' in window && typeof gtag !== 'undefined') {
         window.addEventListener('load', () => {

@@ -753,6 +753,111 @@ h2 { letter-spacing:-.018em; }
 }
 
 /* =====================================================
+   ★★ V2 — "100x" ELEVATION (2026 trends) ★★
+   Bento asymmetry · richer texture · kinetic editorial type · parallax
+   ===================================================== */
+
+/* ---- Richer, finer paper grain + warm atmosphere ---- */
+body::after { opacity:.055; background-size:140px; }
+.section { position:relative; }
+
+/* Hero: warm radial glow + soft overlap, kinetic headline */
+.hero { position:relative; overflow:hidden; }
+.hero::before {
+  content:""; position:absolute; z-index:0; width:680px; height:680px; right:-180px; top:-220px;
+  background:radial-gradient(circle, rgba(232,154,45,.20), transparent 68%); pointer-events:none;
+}
+.hero .container { position:relative; z-index:1; }
+.hero h1 { font-size:clamp(3rem, 8vw, 5.6rem); }
+.hero-figure { will-change:transform; }
+
+/* Floating accent card over the hero arch (layering / depth) */
+.hero-float {
+  position:absolute; left:-22px; bottom:44px; z-index:3;
+  background:var(--surface); border-radius:16px; box-shadow:var(--shadow-lg);
+  padding:.85rem 1.1rem; display:flex; align-items:center; gap:.75rem; max-width:240px;
+  animation:floaty 6s ease-in-out infinite;
+}
+.hero-float .hf-dot { width:42px; height:42px; border-radius:50%; background:var(--amber); display:grid; place-items:center; flex-shrink:0; }
+.hero-float .hf-dot .ico { width:1.3rem; height:1.3rem; color:var(--espresso); }
+.hero-float .hf-t { font-family:var(--font-display); font-weight:600; font-size:1rem; line-height:1.1; color:var(--ink); }
+.hero-float .hf-s { font-size:.78rem; color:var(--text-muted); }
+@keyframes floaty { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
+@media (prefers-reduced-motion:reduce){ .hero-float{ animation:none; } }
+@media (max-width:820px){ .hero-float{ left:8px; bottom:8px; max-width:210px; } }
+
+/* ---- Giant ghost numbers on section heads (editorial) ---- */
+.s-head { position:relative; z-index:1; }
+.s-head .ghost {
+  position:absolute; right:0; top:-.46em; z-index:-1; pointer-events:none;
+  font-family:var(--font-display); font-style:italic; font-weight:600;
+  font-size:clamp(7rem, 17vw, 14rem); line-height:.8; color:var(--terracotta);
+  opacity:.07; user-select:none;
+}
+.section--dark .s-head .ghost { color:var(--amber); opacity:.12; }
+
+/* ---- BENTO GRID (kills the boxy uniform rows) ---- */
+.bento {
+  display:grid; grid-template-columns:repeat(4, 1fr); grid-auto-rows:200px; gap:16px;
+  grid-template-areas:
+    "lead lead photo photo"
+    "lead lead photo photo"
+    "s1   ubic ubic  s2"
+    "feat feat s3    cta";
+}
+.bento > * { border-radius:var(--radius-lg); padding:1.6rem; display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden; position:relative; }
+.b-lead { grid-area:lead; background:linear-gradient(150deg, var(--espresso), var(--cocoa)); color:var(--cream); justify-content:center; }
+.b-lead .kicker { color:var(--amber); }
+.b-lead h2 { color:var(--cream); margin-bottom:.5rem; }
+.b-lead p { color:rgba(247,242,231,.8); margin:0; max-width:34ch; }
+.b-photo { grid-area:photo; padding:0; }
+.b-photo img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.b-photo .b-cap { position:relative; z-index:1; color:#fff; font-family:var(--font-display); font-size:1.1rem; padding:1.2rem; text-shadow:0 1px 8px rgba(0,0,0,.4); }
+.b-photo::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(33,22,12,.5), transparent 55%); }
+.b-stat { align-items:flex-start; justify-content:center; gap:.2rem; }
+.b-stat .n { font-family:var(--font-display); font-style:italic; font-weight:600; font-size:clamp(2.2rem,3.5vw,3rem); line-height:1; }
+.b-stat .l { font-size:.85rem; letter-spacing:.02em; }
+.b-terra { grid-area:s1; background:var(--terracotta); color:#fff; }
+.b-terra .l { color:rgba(255,255,255,.85); }
+.b-amber { grid-area:s3; background:var(--amber); color:var(--espresso); }
+.b-amber .l { color:rgba(51,32,15,.75); }
+.b-sand { grid-area:s2; background:var(--sand); color:var(--espresso); }
+.b-sand .l { color:var(--cocoa); }
+.b-feature { background:var(--surface); border:1px solid var(--line); justify-content:flex-end; gap:.4rem; }
+.b-feature.ubic { grid-area:ubic; }
+.b-feature.feat { grid-area:feat; }
+.b-feature .ico { width:1.7rem; height:1.7rem; color:var(--terracotta); margin-bottom:auto; }
+.b-feature h3 { font-size:1.15rem; margin:0; }
+.b-feature p { font-size:.9rem; margin:0; color:var(--text-muted); }
+.b-cta { grid-area:cta; background:var(--ink); color:var(--cream); justify-content:space-between; text-decoration:none; transition:background .25s var(--ease); }
+.b-cta:hover { background:var(--terracotta-dark); }
+.b-cta .ico { width:1.5rem; height:1.5rem; align-self:flex-end; transition:transform .25s var(--ease); }
+.b-cta:hover .ico { transform:translate(4px,-4px); }
+.b-cta span { font-family:var(--font-display); font-size:1.25rem; }
+.bento > *:hover { transform:translateY(-3px); transition:transform .25s var(--ease); }
+
+@media (max-width:820px) {
+  .bento { grid-template-columns:repeat(2,1fr); grid-auto-rows:160px;
+    grid-template-areas:
+      "lead lead" "lead lead"
+      "photo photo" "photo photo"
+      "s1 s2" "ubic ubic" "feat feat" "s3 cta"; }
+}
+@media (max-width:480px) {
+  .bento { grid-template-columns:1fr; grid-template-areas:"lead" "photo" "s1" "s2" "ubic" "feat" "s3" "cta"; }
+}
+
+/* ---- Featured stores: editorial asymmetry (first card large) ---- */
+.featured-grid { grid-auto-flow:dense; }
+.featured-grid .store-card:first-child { grid-column:span 2; }
+.featured-grid .store-card:first-child .store-card-media { aspect-ratio:16/10; }
+.featured-grid .store-card:first-child h3 { font-size:1.6rem; }
+.store-card-media::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(33,22,12,.12), transparent 60%); opacity:0; transition:opacity .3s var(--ease); }
+.store-card:hover .store-card-media::after { opacity:1; }
+@media (max-width:900px){ .featured-grid .store-card:first-child{ grid-column:span 2; } }
+@media (max-width:560px){ .featured-grid .store-card:first-child{ grid-column:span 1; } }
+
+/* =====================================================
    Component layers appended per task:
    Task 12 → data room viewer (above)
    ===================================================== */
