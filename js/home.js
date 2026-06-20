@@ -52,7 +52,22 @@
         });
     }
 
-    function init() { loadStorePreview(); initAvisame(); }
+    // Próximamente: temporary announcement. Closeable, but reappears on a new
+    // visit (sessionStorage, not localStorage) — never feels like a permanent section.
+    function initProxAnnounce() {
+        const sec = document.getElementById('proximamente');
+        if (!sec) return;
+        let closedThisSession = false;
+        try { closedThisSession = sessionStorage.getItem('pr_prox_closed') === '1'; } catch (e) {}
+        if (!closedThisSession) sec.hidden = false;
+        const close = document.getElementById('proxClose');
+        close && close.addEventListener('click', () => {
+            sec.hidden = true;
+            try { sessionStorage.setItem('pr_prox_closed', '1'); } catch (e) {}
+        });
+    }
+
+    function init() { loadStorePreview(); initAvisame(); initProxAnnounce(); }
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
