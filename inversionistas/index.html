@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inversionistas | Plaza Real Silao — Oportunidad de Inversión</title>
-    <meta name="description" content="Oportunidad de inversión en Plaza Real Silao: ubicación privilegiada frente a la central de autobuses, marcas ancla en camino (Modatelas y Smart Fit) y una comunidad en crecimiento. Accede al data room.">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="Oportunidad de inversión en Plaza Real Silao: activo comercial consolidado en el Bajío, con marcas ancla en camino y una comunidad en expansión. Acceso privado al data room.">
+    <meta name="robots" content="noindex, follow">
     <meta property="og:title" content="Oportunidad de Inversión | Plaza Real Silao">
-    <meta property="og:description" content="Ubicación privilegiada, marcas ancla en camino y comunidad en expansión en Silao, Guanajuato.">
+    <meta property="og:description" content="Activo comercial consolidado en Silao, Guanajuato. Acceso privado para inversionistas.">
     <meta property="og:image" content="https://plazarealsilao.com/images/plaza/plaza-main.jpg">
     <meta property="og:url" content="https://plazarealsilao.com/inversionistas/">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://plazarealsilao.com/inversionistas/">
-    <meta name="theme-color" content="#FFFFFF">
+    <meta name="theme-color" content="#16181D">
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" type="image/png" href="/images/icons/icon-192x192.png">
     <link rel="apple-touch-icon" href="/images/icons/icon-192x192.png">
@@ -29,99 +29,137 @@
       body{font-family:var(--font);line-height:1.6;color:var(--ink);background:var(--bg);overflow-x:hidden}
       img,svg{display:block;max-width:100%}img{height:auto}
       h1,h2{font-weight:800;letter-spacing:-.03em;line-height:1.04;color:var(--ink)}
-      h1{font-size:clamp(2.4rem,6vw,4rem)}
       .container{width:100%;max-width:var(--container);margin:0 auto;padding:0 24px}
       .navbar{position:sticky;top:0;z-index:100;min-height:var(--header-h);background:rgba(255,255,255,.85)}
       .nav-wrapper{display:flex;align-items:center;justify-content:space-between;min-height:var(--header-h)}
-      .hero{padding:clamp(3rem,7vh,5rem) 0 clamp(2.5rem,6vh,4rem)}
-      .hero--dark{background:#16181D}
-      .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,3.5rem);align-items:center}
-      .hero h1 em{font-style:normal;color:var(--coral)}
-      .hero--dark .hero-copy h1{color:#fff}
-      .hero-arch{aspect-ratio:5/5.4;overflow:hidden;border-radius:var(--r-xl)}
-      .hero-arch img{width:100%;height:100%;object-fit:cover}
-      .page-hero{background:var(--soft);padding:calc(var(--header-h) + 1rem) 0 3rem;text-align:center}
-      @media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+      .inv-hero{position:relative;min-height:88vh;display:flex;align-items:flex-end;isolation:isolate;color:#fff}
+      .inv-hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+      .inv-hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(13,15,18,.55) 0%,rgba(13,15,18,.35) 40%,rgba(13,15,18,.92) 100%)}
+      .inv-hero-inner{padding:0 0 clamp(3rem,8vh,6rem);max-width:760px}
+      .inv-hero h1{color:#fff;font-size:clamp(2.8rem,6.5vw,5rem)}
+      .inv-hero h1 em{font-style:normal;color:var(--coral)}
     </style>
     <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+
+    <style>
+      .inv-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:1.2rem}
+      .inv-eyebrow::before{content:"";width:28px;height:1px;background:var(--coral)}
+      .inv-sub{font-size:clamp(1.1rem,1.8vw,1.4rem);color:rgba(255,255,255,.85);max-width:54ch;margin:1.2rem 0 2rem}
+      .inv-section{padding:clamp(3.5rem,8vh,6.5rem) 0}
+      .inv-quote{max-width:880px;margin:0 auto;text-align:center}
+      .inv-quote p{font-size:clamp(1.4rem,3vw,2.1rem);font-weight:700;letter-spacing:-.02em;color:var(--ink);line-height:1.25}
+      .inv-quote .by{display:block;margin-top:1.2rem;font-size:.95rem;font-weight:600;color:var(--muted)}
+      .metrics{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.14);border-bottom:1px solid rgba(255,255,255,.14)}
+      .metric{padding:2.2rem 1.5rem;position:relative}
+      .metric + .metric::before{content:"";position:absolute;left:0;top:22%;bottom:22%;width:1px;background:rgba(255,255,255,.14)}
+      .metric .n{font-size:clamp(2.4rem,4.5vw,3.4rem);font-weight:800;letter-spacing:-.03em;color:#fff;line-height:1}
+      .metric .l{margin-top:.5rem;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+      .thesis{display:grid;grid-template-columns:repeat(2,1fr);gap:2.5rem 3rem}
+      .thesis-item{display:flex;gap:1rem;align-items:flex-start}
+      .thesis-item .tn{font-size:.85rem;font-weight:800;color:var(--coral);min-width:2rem;padding-top:.35rem}
+      .thesis-item h3{font-size:1.25rem;margin-bottom:.3rem}
+      .thesis-item p{color:var(--muted);margin:0}
+      .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+      .loc-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-xl)}
+      .dr-access{background:var(--ink);color:#fff;border-radius:var(--r-xl);padding:clamp(2.5rem,5vw,4rem);text-align:center;max-width:820px;margin:0 auto}
+      .dr-access .lock{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);display:grid;place-items:center;margin:0 auto 1.4rem}
+      .dr-access .lock .ico{width:1.5rem;height:1.5rem;color:var(--coral)}
+      .dr-access h2{color:#fff;margin-bottom:.8rem}
+      .dr-access p{color:rgba(255,255,255,.7);max-width:52ch;margin:0 auto 1.8rem}
+      .dr-access .hero-cta{justify-content:center}
+      .dr-access .note{font-size:.82rem;color:rgba(255,255,255,.45);margin-top:1.4rem}
+      @media(max-width:760px){.metrics{grid-template-columns:1fr 1fr}.thesis,.loc-grid{grid-template-columns:1fr}.metric + .metric::before{display:none}.metric{border-top:1px solid rgba(255,255,255,.1)}}
+    </style>
 </head>
 <body>
     <a href="#main" class="skip-link">Saltar al contenido principal</a>
     <header class="header" id="header"></header>
 
     <main id="main">
-        <!-- HERO -->
-        <section class="hero hero--dark">
-            <div class="container hero-grid">
-                <div class="hero-copy">
-                    <div class="hero-eyebrow"><span class="rule"></span> Oportunidad de inversión</div>
-                    <h1>Invierte en el <em>crecimiento</em> de Silao</h1>
-                    <p class="hero-sub">Una ubicación privilegiada, marcas ancla en camino y una comunidad en expansión. Conoce la tesis y accede a la información detallada.</p>
+        <!-- HERO premium -->
+        <section class="inv-hero">
+            <img class="inv-hero-bg" src="/images/plaza/plaza-main.jpg" alt="Plaza Real Silao" fetchpriority="high">
+            <div class="container inv-hero-inner">
+                <span class="inv-eyebrow">Oportunidad de inversión · Confidencial</span>
+                <h1>Invierte en el <em>crecimiento</em> de Silao</h1>
+                <p class="inv-sub">Un activo comercial consolidado en el corazón logístico del Bajío, con marcas ancla en camino y una comunidad en plena expansión.</p>
+                <div class="hero-cta">
+                    <a href="/inversionistas/data-room/" class="btn btn-primary btn-lg"><svg class="ico"><use href="/images/icons/sprite.svg#lock"></use></svg> Entrar al data room</a>
+                    <a href="mailto:contacto@plazarealsilao.com?subject=Solicitud%20de%20acceso%20al%20Data%20Room%20-%20Plaza%20Real%20Silao" class="btn btn-ghost btn-lg">Solicitar acceso</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Narrative / quote -->
+        <section class="inv-section">
+            <div class="container">
+                <div class="inv-quote reveal">
+                    <p>Plaza Real Silao opera desde 2019 con más de 20 locales. La llegada de <span style="color:var(--coral)">Modatelas</span> y <span style="color:var(--coral)">Smart Fit</span> añade dos generadores de tráfico de marca nacional a una propiedad ya consolidada.</p>
+                    <span class="by">— La tesis de inversión, en una línea</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metrics (dark) -->
+        <section class="inv-section section--dark">
+            <div class="container">
+                <div class="s-head reveal" style="margin-bottom:2.5rem">
+                    <span class="eyebrow">La plaza en números</span>
+                    <h2>Métricas clave</h2>
+                    <p style="color:rgba(255,255,255,.6);font-size:.9rem">Cifras de referencia — el data room contiene los estados financieros y métricas verificadas.</p>
+                </div>
+                <div class="metrics reveal">
+                    <div class="metric"><div class="n">22+</div><div class="l">Locales y servicios</div></div>
+                    <div class="metric"><div class="n">2019</div><div class="l">En operación desde</div></div>
+                    <div class="metric"><div class="n">+2</div><div class="l">Marcas ancla en camino</div></div>
+                    <div class="metric"><div class="n">Bajío</div><div class="l">Polo logístico e industrial</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Thesis -->
+        <section class="inv-section">
+            <div class="container">
+                <div class="s-head reveal">
+                    <span class="eyebrow">La tesis</span>
+                    <h2>Por qué Plaza Real Silao</h2>
+                </div>
+                <div class="thesis reveal">
+                    <div class="thesis-item"><span class="tn">01</span><div><h3>Ubicación privilegiada</h3><p>Frente a la central de autobuses y sobre el libramiento norte, con flujo constante de personas todos los días.</p></div></div>
+                    <div class="thesis-item"><span class="tn">02</span><div><h3>Marcas ancla en camino</h3><p>Modatelas y Smart Fit abrirán pronto, sumando tráfico de marca nacional y atractivo para nuevos arrendatarios.</p></div></div>
+                    <div class="thesis-item"><span class="tn">03</span><div><h3>Comunidad en crecimiento</h3><p>Silao es uno de los polos industriales y logísticos del Bajío con mayor expansión, con demanda creciente de comercio.</p></div></div>
+                    <div class="thesis-item"><span class="tn">04</span><div><h3>Operación consolidada</h3><p>Más de 20 locales en operación desde 2019, con una mezcla diversa de comercio, servicios y alimentos.</p></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location -->
+        <section class="inv-section section--alt">
+            <div class="container">
+                <div class="loc-grid">
+                    <div class="reveal">
+                        <span class="eyebrow">Ubicación</span>
+                        <h2>En el corazón de Silao</h2>
+                        <p class="lead" style="margin-top:1rem">Libramiento Nte. 3140, frente a la central de autobuses. Un punto de paso obligado con acceso desde las principales vías de la ciudad y a minutos del corredor industrial.</p>
+                    </div>
+                    <img class="reveal" src="/images/plaza/plaza-exterior.jpg" alt="Plaza Real Silao" width="800" height="600" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Data room access -->
+        <section class="inv-section">
+            <div class="container">
+                <div class="dr-access reveal">
+                    <div class="lock"><svg class="ico"><use href="/images/icons/sprite.svg#lock"></use></svg></div>
+                    <h2>Acceso privado al data room</h2>
+                    <p>Documentación detallada para inversionistas: estados financieros, ocupación, contratos, plan de crecimiento y proyecciones. Acceso por invitación, con documentos protegidos y marcados.</p>
                     <div class="hero-cta">
                         <a href="/inversionistas/data-room/" class="btn btn-primary btn-lg"><svg class="ico"><use href="/images/icons/sprite.svg#lock"></use></svg> Entrar al data room</a>
-                        <a href="mailto:contacto@plazarealsilao.com?subject=Solicitud%20de%20acceso%20al%20Data%20Room%20-%20Plaza%20Real%20Silao" class="btn btn-secondary btn-lg">Solicitar acceso</a>
+                        <a href="mailto:contacto@plazarealsilao.com?subject=Solicitud%20de%20acceso%20al%20Data%20Room%20-%20Plaza%20Real%20Silao" class="btn btn-ghost btn-lg">Solicitar acceso</a>
                     </div>
-                    <div class="hero-stats">
-                        <div><div class="hs-num">2019</div><div class="hs-label">En operación</div></div>
-                        <div><div class="hs-num">22+</div><div class="hs-label">Locales</div></div>
-                        <div><div class="hs-num">+2</div><div class="hs-label">Anclas en camino</div></div>
-                    </div>
-                </div>
-                <div class="hero-figure">
-                    <div class="hero-arch">
-                        <img src="/images/plaza/plaza-main.jpg" alt="Plaza Real Silao" width="1067" height="1333" fetchpriority="high">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- THESIS -->
-        <section class="section">
-            <div class="container">
-                <div class="s-head reveal">
-                    <div class="kicker"><span class="num">01</span><span class="rule"></span>La tesis</div>
-                    <h2>Por qué Plaza Real Silao</h2>
-                    <p class="lead">Una propiedad consolidada con una vía clara de crecimiento de valor.</p>
-                </div>
-                <div class="features-grid">
-                    <div class="feature-card card reveal"><span class="feature-icon"><svg class="ico"><use href="/images/icons/sprite.svg#pin"></use></svg></span><h3>Ubicación privilegiada</h3><p>Frente a la central de autobuses de Silao y sobre el libramiento, con flujo constante de personas todos los días.</p></div>
-                    <div class="feature-card card reveal"><span class="feature-icon"><svg class="ico"><use href="/images/icons/sprite.svg#store"></use></svg></span><h3>Marcas ancla en camino</h3><p>Modatelas y Smart Fit abrirán pronto, sumando dos generadores de tráfico de marca nacional.</p></div>
-                    <div class="feature-card card reveal"><span class="feature-icon"><svg class="ico"><use href="/images/icons/sprite.svg#trending-up"></use></svg></span><h3>Comunidad en crecimiento</h3><p>Silao es un polo industrial y logístico del Bajío en plena expansión, con demanda creciente de comercio.</p></div>
-                    <div class="feature-card card reveal"><span class="feature-icon"><svg class="ico"><use href="/images/icons/sprite.svg#shield"></use></svg></span><h3>Operación consolidada</h3><p>Más de 20 locales en operación desde 2019, con una mezcla diversa de comercio, servicios y alimentos.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NUMBERS -->
-        <section class="section section--dark stats-section">
-            <div class="container">
-                <div class="s-head reveal">
-                    <div class="kicker"><span class="num">02</span><span class="rule"></span>La plaza en números</div>
-                    <h2>Métricas clave</h2>
-                    <p style="color:rgba(247,242,231,.7);font-size:.9rem">Cifras de referencia — el data room contiene los estados financieros y métricas verificadas.</p>
-                </div>
-                <div class="stats-grid reveal">
-                    <div class="stat"><span class="stat-num">22+</span><span class="stat-label">Locales y servicios</span></div>
-                    <div class="stat"><span class="stat-num">2019</span><span class="stat-label">En operación desde</span></div>
-                    <div class="stat"><span class="stat-num">+2</span><span class="stat-label">Marcas ancla en camino</span></div>
-                    <div class="stat"><span class="stat-num">Bajío</span><span class="stat-label">Polo logístico e industrial</span></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- DATA ROOM CTA -->
-        <section class="section">
-            <div class="container">
-                <div class="dataroom-cta card reveal">
-                    <div class="dataroom-icon"><svg class="ico"><use href="/images/icons/sprite.svg#lock"></use></svg></div>
-                    <h2>Accede al data room</h2>
-                    <p class="lead">Documentación detallada para inversionistas: estados financieros, ocupación, contratos, plan de crecimiento y proyecciones. Acceso por invitación, con vista protegida de los documentos.</p>
-                    <div class="hero-cta" style="justify-content:center;margin-top:1.25rem">
-                        <a href="/inversionistas/data-room/" class="btn btn-primary btn-lg"><svg class="ico"><use href="/images/icons/sprite.svg#lock"></use></svg> Entrar al data room</a>
-                        <a href="mailto:contacto@plazarealsilao.com?subject=Solicitud%20de%20acceso%20al%20Data%20Room%20-%20Plaza%20Real%20Silao" class="btn btn-secondary btn-lg">Solicitar acceso</a>
-                    </div>
-                    <p class="dataroom-note">El acceso requiere autorización previa. Si aún no tienes acceso, escríbenos y te enviaremos una invitación.</p>
+                    <p class="note">El acceso requiere autorización previa. Si aún no tienes un código, escríbenos y te enviaremos una invitación.</p>
                 </div>
             </div>
         </section>

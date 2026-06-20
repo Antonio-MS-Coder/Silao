@@ -13,6 +13,12 @@
     const ico = (id, cls) => `<svg class="ico${cls ? ' ' + cls : ''}" aria-hidden="true"><use href="${basePath}/images/icons/sprite.svg#${id}"></use></svg>`;
 
     const navigationHTML = `
+        <div class="topbanner" id="topBanner" hidden>
+            <div class="container topbanner-inner">
+                <p><span class="tb-spark">✦</span> <strong>Muy pronto</strong> · Modatelas y Smart Fit abren en Plaza Real Silao <a href="${basePath}/#proximamente">Avísame →</a></p>
+                <button class="topbanner-close" id="topBannerClose" aria-label="Cerrar aviso">${ico('x')}</button>
+            </div>
+        </div>
         <nav class="navbar" role="navigation" aria-label="Navegación principal">
             <div class="container nav-wrapper">
                 <a class="logo" href="${basePath}/" aria-label="Plaza Real Silao - Inicio">
@@ -28,7 +34,6 @@
                     <li><a href="${basePath}/tiendas/" class="nav-link" data-page="tiendas">Tiendas</a></li>
                     <li><a href="${basePath}/espacios/" class="nav-link" data-page="espacios">Espacios</a></li>
                     <li><a href="${basePath}/faq/" class="nav-link" data-page="faq">FAQ</a></li>
-                    <li><a href="${basePath}/inversionistas/" class="nav-link" data-page="inversionistas">Inversionistas</a></li>
                     <li><a href="${basePath}/#contact" class="nav-link nav-cta">Visítanos</a></li>
                 </ul>
 
@@ -51,7 +56,6 @@
                 <a href="${basePath}/tiendas/" class="mobile-nav-link">${ico('store')}<span>Tiendas</span></a>
                 <a href="${basePath}/espacios/" class="mobile-nav-link">${ico('building')}<span>Espacios disponibles</span></a>
                 <a href="${basePath}/faq/" class="mobile-nav-link">${ico('help')}<span>Preguntas frecuentes</span></a>
-                <a href="${basePath}/inversionistas/" class="mobile-nav-link">${ico('lock')}<span>Inversionistas</span></a>
                 <a href="${basePath}/#contact" class="mobile-nav-link">${ico('pin')}<span>Visítanos</span></a>
             </nav>
             <div class="mobile-sidebar-footer">
@@ -185,10 +189,26 @@
         btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
 
+    // Dismissible announcement banner (remembers close via localStorage)
+    const BANNER_KEY = 'pr_banner_modatelas_smartfit';
+    function initBanner() {
+        const banner = document.getElementById('topBanner');
+        if (!banner) return;
+        let dismissed = false;
+        try { dismissed = localStorage.getItem(BANNER_KEY) === '1'; } catch (e) {}
+        if (!dismissed) banner.hidden = false;
+        const closeBtn = document.getElementById('topBannerClose');
+        closeBtn && closeBtn.addEventListener('click', () => {
+            banner.hidden = true;
+            try { localStorage.setItem(BANNER_KEY, '1'); } catch (e) {}
+        });
+    }
+
     function initComponents() {
         injectNavigation();
         injectFooter();
         initBackToTop();
+        initBanner();
     }
 
     window.PlazaRealComponents = { init: initComponents, injectNavigation, injectFooter };
