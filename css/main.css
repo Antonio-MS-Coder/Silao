@@ -20,7 +20,7 @@
   --ink:#16181D; --text:#16181D; --muted:#5B606B; --line:#E8EAEE; --line-strong:#D7DAE0;
   --surface:#FFFFFF;
   --teal:#03867A; --teal-dark:#026B61; --teal-soft:#E4F1EF;
-  --coral:#FF5A4D; --coral-dark:#E8412F; --coral-soft:#FFE9E6;
+  --coral:#F2462F; --coral-dark:#CE3A22; --coral-soft:#FFE9E6;
   --accent:var(--coral); --accent-dark:var(--coral-dark);
 
   --font:"Jakarta","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
@@ -66,7 +66,7 @@ a:hover{color:var(--coral)}
 
 /* Eyebrow / kicker → clean pill label */
 .eyebrow,.kicker{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.8rem;
-  letter-spacing:.02em;color:var(--coral);background:var(--coral-soft);padding:.4rem .9rem;border-radius:var(--r-pill);
+  letter-spacing:.02em;color:var(--coral-dark);background:var(--coral-soft);padding:.4rem .9rem;border-radius:var(--r-pill);
   margin-bottom:var(--s4);text-transform:none}
 .kicker .num,.kicker .rule{display:none}
 .section--dark .eyebrow,.section--dark .kicker{background:rgba(255,255,255,.1);color:#fff}
@@ -113,7 +113,7 @@ a:hover{color:var(--coral)}
 .reveal.in{opacity:1;transform:none}
 
 /* ---------- Announcement banner (dismissible) ---------- */
-.topbanner{background:var(--coral);color:#fff;font-size:.9rem}
+.topbanner{background:var(--coral-dark);color:#fff;font-size:.9rem}
 .topbanner[hidden]{display:none}
 .topbanner-inner{display:flex;align-items:center;justify-content:center;gap:1rem;min-height:42px;padding:.5rem 2.5rem;position:relative}
 .topbanner p{margin:0;color:#fff;text-align:center}
@@ -149,8 +149,8 @@ a:hover{color:var(--coral)}
 .mobile-menu-toggle .ico{width:1.6rem;height:1.6rem}
 
 .mobile-sidebar{position:fixed;top:0;right:0;height:100dvh;width:min(86vw,330px);z-index:201;background:#fff;
-  box-shadow:var(--shadow-lg);transform:translateX(100%);transition:transform .3s var(--ease);display:flex;flex-direction:column}
-.mobile-sidebar.active{transform:translateX(0)}
+  box-shadow:var(--shadow-lg);transform:translateX(100%);transition:transform .3s var(--ease),visibility .3s;display:flex;flex-direction:column;visibility:hidden}
+.mobile-sidebar.active{transform:translateX(0);visibility:visible}
 .mobile-sidebar-header{display:flex;align-items:center;justify-content:space-between;padding:var(--s5);border-bottom:1px solid var(--line)}
 .mobile-sidebar-logo{display:flex;align-items:center;gap:.6rem;font-weight:800;color:var(--ink)}
 .mobile-sidebar-logo img{width:34px;height:34px;border-radius:8px}

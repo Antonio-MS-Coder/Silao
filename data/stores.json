@@ -329,7 +329,7 @@
       "email": "Próximamente",
       "services": ["Telas por metro", "Mercería", "Blancos y cortinas", "Manualidades", "Material para confección"],
       "gradient": "linear-gradient(135deg, #D5202B, #B71C1C)",
-      "image": "/images/stores/modatelas.jpg"
+      "image": "/images/stores/modatelas.webp"
     },
     {
       "id": "smart-fit",
@@ -345,7 +345,7 @@
       "email": "Próximamente",
       "services": ["Equipo cardiovascular", "Área de peso libre", "Clases grupales", "Regaderas", "Acceso accesible"],
       "gradient": "linear-gradient(135deg, #15161A, #2A2C33)",
-      "image": "/images/stores/smartfit.jpg"
+      "image": "/images/stores/smartfit.webp"
     }
   ]
 }
