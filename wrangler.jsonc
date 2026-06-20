@@ -11,5 +11,9 @@
     // path is served straight from static assets, so a Worker bug can never
     // take down the public site.
     "run_worker_first": ["/inversionistas/data-room/*"]
-  }
+  },
+  // Stores per-investor access codes (code:* / admin:*) and the access log (log:*).
+  "kv_namespaces": [
+    { "binding": "DATAROOM", "id": "4b98a907a6b14d3790e5c44422968548" }
+  ]
 }
