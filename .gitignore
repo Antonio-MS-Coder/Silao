@@ -1,3 +1,6 @@
 
 # gstack tooling artifacts
 .gstack/
+
+# wrangler local state
+.wrangler/
