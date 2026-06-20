@@ -6,6 +6,10 @@
 /.wrangler
 /wrangler.jsonc
 /wrangler.toml
+/worker
+/node_modules
+/package.json
+/package-lock.json
 /.gstack
 /.claude
 /.github

@@ -8,8 +8,16 @@
     const BASE = '/inversionistas/data-room/';
     let viewerLabel = 'acceso autorizado';
 
-    // Identity from Cloudflare Access (falls back gracefully when not gated).
+    function getCookie(name) {
+        const m = (document.cookie || '').split(';').map(c => c.trim()).find(c => c.startsWith(name + '='));
+        return m ? decodeURIComponent(m.slice(name.length + 1)) : '';
+    }
+
+    // Identity for the watermark: self-reported name from the password gate
+    // (cookie dr_who), then Cloudflare Access identity, then a generic label.
     async function getViewer() {
+        const who = getCookie('dr_who');
+        if (who) return who;
         try {
             const r = await fetch('/cdn-cgi/access/get-identity', { cache: 'no-store' });
             if (r.ok) { const j = await r.json(); return j.email || j.name || viewerLabel; }
