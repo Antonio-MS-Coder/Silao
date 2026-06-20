@@ -24,25 +24,27 @@
 
 > Mientras tanto el sitio sigue vivo en GitHub Pages. No hay prisa para las siguientes fases hasta que el dominio esté **Active**.
 
-## Fase 3 — Crear el proyecto en Cloudflare Pages
+## Fase 3 — Conectar el repo (ya hecho ✅)
 
-9. En Cloudflare: menú lateral **Workers & Pages** → **Create** → pestaña **Pages** → **Connect to Git**.
-10. Autoriza **GitHub** y selecciona el repo **`Antonio-MS-Coder/Silao`**.
-11. Configuración de build (es un sitio estático, sin compilación):
-    - **Production branch:** `main`
-    - **Framework preset:** `None`
-    - **Build command:** (déjalo **vacío**)
-    - **Build output directory:** `/`
-12. **Save and Deploy.** En ~1 min tendrás una URL tipo `silao-xxxx.pages.dev`. Ábrela para confirmar que el sitio se ve bien.
+> El proyecto ya quedó conectado a GitHub y desplegando. Cloudflare lo configuró como
+> **Worker con assets estáticos** (comando `npx wrangler deploy`, output `.`), sirviendo en
+> `https://silao.carlosantonio-murrieta.workers.dev`. Eso es correcto y actual.
+>
+> El repo incluye un **`.assetsignore`** que evita publicar `.git/`, scripts y docs internos.
+> No lo borres. Cada `push` a `main` redepliega solo en ~1-2 min.
+
+Si alguna vez lo recreas desde cero: **Workers & Pages → Create → Pages → Connect to Git**,
+repo `Antonio-MS-Coder/Silao`, branch `main`, framework `None`, build command vacío, output `/`.
 
 ## Fase 4 — Conectar el dominio real
 
-13. Dentro del proyecto de Pages → pestaña **Custom domains** → **Set up a domain**.
-14. Agrega **`plazarealsilao.com`** → Cloudflare crea el registro DNS solo (porque el dominio ya está en Cloudflare). Confirma.
-15. Repite con **`www.plazarealsilao.com`** (Cloudflare lo redirige al dominio principal).
-16. Espera a que diga **Active** y que el **SSL/HTTPS** esté activo (palomita verde). Prueba `https://plazarealsilao.com` — ya lo sirve Cloudflare.
+13. Ve a **Workers & Pages** → abre tu proyecto **`silao`** → **Settings** → **Domains & Routes** → **Add → Custom domain**.
+14. Escribe **`plazarealsilao.com`** → Cloudflare crea el registro DNS solo (porque el dominio ya está en Cloudflare tras la Fase 1-2). Confirma.
+15. Repite con **`www.plazarealsilao.com`**.
+16. Espera a que diga **Active** y que el **SSL/HTTPS** esté en verde. Prueba `https://plazarealsilao.com` — ya lo sirve Cloudflare.
 
-> A partir de aquí, cada vez que se haga `push` a `main`, Cloudflare reconstruye y publica solo. Tu flujo de trabajo no cambia. El archivo `_headers` del repo (caché + noindex del data room) ya funciona en Cloudflare.
+> A partir de aquí, cada `push` a `main` reconstruye y publica solo. El archivo `_headers`
+> (caché + noindex del data room) funciona en Workers static assets.
 
 ## Fase 5 — Proteger el data room con Cloudflare Access
 
