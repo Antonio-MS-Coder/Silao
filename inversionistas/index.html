@@ -40,7 +40,8 @@
       .inv-hero h1{color:#fff;font-size:clamp(2.8rem,6.5vw,5rem)}
       .inv-hero h1 em{font-style:normal;color:var(--coral)}
     </style>
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
 
     <style>
       .inv-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:1.2rem}
