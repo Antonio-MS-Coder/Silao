@@ -1,0 +1,22 @@
+# Files that must NOT be published to Cloudflare (Workers/Pages static assets).
+# Anchored with leading "/" = repo root only, so /inversionistas/data-room/docs/ stays served.
+/.git
+/.gitignore
+/.assetsignore
+/.wrangler
+/wrangler.jsonc
+/wrangler.toml
+/.gstack
+/.claude
+/.github
+/docs
+/build.js
+/optimize.html
+/optimize-images.sh
+/optimize-images-webp.sh
+/optimize-all-images.sh
+/performance-optimization.txt
+/.htaccess
+/README.md
+/ARCHITECTURE.md
+/CNAME
