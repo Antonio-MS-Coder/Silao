@@ -316,14 +316,13 @@ body.menu-open{overflow:hidden}
 /* =====================================================
    STORE MAP + DIRECTORY
    ===================================================== */
-.store-map-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:var(--s6);align-items:start}
-.map-image{width:100%;border-radius:var(--r-lg);box-shadow:var(--shadow-sm);border:1px solid var(--line);margin:0}
+.store-map-grid{display:block}
+.map-image{display:block;width:100%;max-width:900px;margin:0 auto var(--s6);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);border:1px solid var(--line)}
 .directory-box{padding:var(--s6)}
-.directory-box h3{margin-bottom:var(--s4)}
-.directory-list{display:grid;grid-template-columns:1fr;gap:.55rem}
-.directory-list div{color:var(--muted);padding:.1rem 0}
+.directory-box h3{margin-bottom:var(--s5);text-align:center}
+.directory-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.6rem 1.5rem}
+.directory-list div{color:var(--muted);padding:.1rem 0;font-size:.95rem}
 .directory-list strong{color:var(--coral-dark);margin-right:.4rem}
-@media (max-width:860px){.store-map-grid{grid-template-columns:1fr}.directory-list{grid-template-columns:1fr 1fr}}
 
 /* =====================================================
    FILTERS + SEARCH
