@@ -75,21 +75,21 @@ function loginPage({ error = '' } = {}) {
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Data Room — Acceso | Plaza Real Silao</title><meta name="robots" content="noindex, nofollow">
 <link rel="icon" type="image/png" href="/images/icons/icon-192x192.png">
-<link rel="preload" href="/fonts/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/jakarta-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/main.css">
 <style>
-  .gate{min-height:100vh;display:grid;place-items:center;padding:2rem;background:linear-gradient(135deg,var(--espresso),var(--cocoa))}
-  .gate-card{background:var(--surface);border-radius:var(--radius-lg);padding:clamp(1.75rem,5vw,2.75rem);max-width:440px;width:100%;box-shadow:var(--shadow-lg);text-align:center}
-  .gate-icon{width:64px;height:64px;border-radius:50%;background:var(--sand);display:grid;place-items:center;margin:0 auto 1.25rem}
-  .gate-icon .ico{width:1.8rem;height:1.8rem;color:var(--terracotta)}
-  .gate h1{font-size:1.6rem;margin-bottom:.4rem}.gate>.gate-card>p{color:var(--text-muted);font-size:.95rem;margin-bottom:1.5rem}
+  .gate{min-height:100vh;display:grid;place-items:center;padding:2rem;background:linear-gradient(135deg,var(--ink),var(--teal-dark))}
+  .gate-card{background:var(--surface);border-radius:var(--r-lg);padding:clamp(1.75rem,5vw,2.75rem);max-width:440px;width:100%;box-shadow:var(--shadow-lg);text-align:center}
+  .gate-icon{width:64px;height:64px;border-radius:50%;background:var(--teal-soft);display:grid;place-items:center;margin:0 auto 1.25rem}
+  .gate-icon .ico{width:1.8rem;height:1.8rem;color:var(--teal)}
+  .gate h1{font-size:1.6rem;margin-bottom:.4rem}.gate>.gate-card>p{color:var(--muted);font-size:.95rem;margin-bottom:1.5rem}
   .gate form{display:flex;flex-direction:column;gap:.75rem;text-align:left}
   .gate label{font-weight:600;font-size:.85rem}
-  .gate input{width:100%;padding:.8rem 1rem;border:1.5px solid var(--line-strong);border-radius:var(--radius);font:inherit;background:var(--surface);color:var(--text)}
-  .gate input:focus{outline:none;border-color:var(--terracotta)}
+  .gate input{width:100%;padding:.8rem 1rem;border:1.5px solid var(--line-strong);border-radius:var(--r);font:inherit;background:var(--surface);color:var(--text)}
+  .gate input:focus{outline:none;border-color:var(--teal)}
   .gate .btn{width:100%;margin-top:.5rem}
-  .gate-err{background:#fbe9e6;color:#9a3b27;border-radius:var(--radius);padding:.6rem .9rem;font-size:.88rem;margin-bottom:1rem}
-  .gate-note{font-size:.78rem;color:var(--text-muted);margin-top:1.25rem;margin-bottom:0}
+  .gate-err{background:#fbe9e6;color:#9a3b27;border-radius:var(--r);padding:.6rem .9rem;font-size:.88rem;margin-bottom:1rem}
+  .gate-note{font-size:.78rem;color:var(--muted);margin-top:1.25rem;margin-bottom:0}
 </style></head><body>
   <div class="gate"><div class="gate-card">
     <div class="gate-icon"><svg class="ico" aria-hidden="true"><use href="/images/icons/sprite.svg#lock"></use></svg></div>
@@ -106,17 +106,17 @@ function loginPage({ error = '' } = {}) {
 
 function logPage(name, entries) {
   const rows = entries.map(e => `<tr><td>${esc(e.time)}</td><td>${esc(e.name)}</td><td>${esc(e.role)}</td><td>${esc(e.ip || '')}</td></tr>`).join('') ||
-    '<tr><td colspan="4" style="text-align:center;color:var(--text-muted);padding:2rem">Sin accesos registrados todavía.</td></tr>';
+    '<tr><td colspan="4" style="text-align:center;color:var(--muted);padding:2rem">Sin accesos registrados todavía.</td></tr>';
   return `<!DOCTYPE html><html lang="es-MX"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitácora de accesos | Data Room</title><meta name="robots" content="noindex, nofollow">
 <link rel="stylesheet" href="/css/main.css">
 <style>
   body{padding:2rem 0}.wrap{max-width:900px;margin:0 auto;padding:0 1.5rem}
-  h1{font-size:1.8rem;margin-bottom:.3rem}.sub{color:var(--text-muted);margin-bottom:1.5rem}
-  table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden}
+  h1{font-size:1.8rem;margin-bottom:.3rem}.sub{color:var(--muted);margin-bottom:1.5rem}
+  table{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
   th,td{text-align:left;padding:.7rem 1rem;border-bottom:1px solid var(--line);font-size:.92rem}
-  th{background:var(--sand);font-family:var(--font-body);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--cocoa)}
+  th{background:var(--teal-soft);font-family:var(--font);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--teal-dark)}
   tr:last-child td{border-bottom:none}
   .top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem}
 </style></head><body><div class="wrap">

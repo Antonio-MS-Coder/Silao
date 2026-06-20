@@ -6,7 +6,7 @@
  *  - Cross-origin (GA, maps)     → passthrough (never cached)
  */
 
-const CACHE = 'plaza-real-silao-v2';
+const CACHE = 'plaza-real-silao-v3';
 const SHELL = [
     '/',
     '/css/main.css',
@@ -15,9 +15,9 @@ const SHELL = [
     '/js/home.js',
     '/images/icons/sprite.svg',
     '/images/logo-silao.webp',
-    '/fonts/inter-400.woff2',
-    '/fonts/inter-600.woff2',
-    '/fonts/fraunces-600.woff2',
+    '/fonts/jakarta-400.woff2',
+    '/fonts/jakarta-700.woff2',
+    '/fonts/jakarta-800.woff2',
     '/data/stores.json',
     '/404.html'
 ];
