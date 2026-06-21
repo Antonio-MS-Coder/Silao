@@ -97,7 +97,7 @@ function loginPage({ error = '' } = {}) {
     ${error ? `<div class="gate-err">${esc(error)}</div>` : ''}
     <form method="POST" autocomplete="off">
       <div><label for="code">Código de acceso</label>
-        <input id="code" name="code" type="text" placeholder="PlazaReal-silao-…" required autofocus></div>
+        <input id="code" name="code" type="text" placeholder="PlazaReal-silao-…" autocomplete="off" required autofocus></div>
       <button class="btn btn-primary" type="submit">Entrar al data room</button>
     </form>
     <p class="gate-note">Documentos confidenciales. Tu acceso queda registrado y tu nombre se marca en cada página. ¿No tienes código? Escribe a contacto@plazarealsilao.com</p>

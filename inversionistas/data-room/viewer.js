@@ -48,7 +48,8 @@
         pages.hidden = false;
         pages.innerHTML = '<p class="dr-loading">Cargando documento…</p>';
         try {
-            const pdf = await PDFJS.getDocument(BASE + doc.file).promise;
+            // isEvalSupported:false → PDF.js no usa eval/new Function (compatible con CSP estricta)
+            const pdf = await PDFJS.getDocument({ url: BASE + doc.file, isEvalSupported: false }).promise;
             pages.innerHTML = '';
             const containerW = pages.clientWidth || 820;
             for (let n = 1; n <= pdf.numPages; n++) {
