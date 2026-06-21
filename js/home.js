@@ -57,14 +57,33 @@
     function initProxAnnounce() {
         const sec = document.getElementById('proximamente');
         if (!sec) return;
+        const open = () => { sec.hidden = false; try { sessionStorage.removeItem('pr_prox_closed'); } catch (e) {} };
         let closedThisSession = false;
         try { closedThisSession = sessionStorage.getItem('pr_prox_closed') === '1'; } catch (e) {}
         if (!closedThisSession) sec.hidden = false;
+
         const close = document.getElementById('proxClose');
         close && close.addEventListener('click', () => {
             sec.hidden = true;
             try { sessionStorage.setItem('pr_prox_closed', '1'); } catch (e) {}
         });
+
+        // Any "Avísame" / #proximamente link (incl. the top banner) re-opens the
+        // announcement even if it was closed. Capture phase so it runs before the
+        // smooth-scroll handler, which then scrolls to the now-visible section.
+        document.addEventListener('click', e => {
+            if (e.target.closest('a[href*="#proximamente"]')) open();
+        }, true);
+
+        // Arriving from another page via the banner (e.g. /tiendas → /#proximamente)
+        if (location.hash === '#proximamente') {
+            open();
+            setTimeout(() => {
+                const h = document.querySelector('.navbar')?.offsetHeight || 72;
+                const y = sec.getBoundingClientRect().top + window.scrollY - h - 8;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }, 150);
+        }
     }
 
     function init() { loadStorePreview(); initAvisame(); initProxAnnounce(); }

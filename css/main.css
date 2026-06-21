@@ -304,7 +304,7 @@ body.menu-open{overflow:hidden}
 /* =====================================================
    PAGE HERO (inner pages without split hero)
    ===================================================== */
-.page-hero{background:var(--soft);padding:calc(var(--header-h) + 1rem) 0 var(--s7);text-align:center}
+.page-hero{background:var(--soft);padding:2.5rem 0 2.5rem;text-align:center}
 .page-hero h1{margin:.2rem 0 var(--s3)}
 .page-hero .lead{max-width:60ch;margin:0 auto}
 .page-hero em{font-style:normal;color:var(--coral)}
