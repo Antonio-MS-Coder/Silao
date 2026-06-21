@@ -23,9 +23,9 @@
 
     <link rel="preload" href="/fonts/jakarta-800.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/jakarta-400.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/images/plaza/plaza-main.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="/images/plaza/plaza-exterior.webp" as="image" fetchpriority="high">
     <style>
-      :root{--bg:#FFFFFF;--soft:#F5F6F8;--ink:#16181D;--muted:#5B606B;--line:#E8EAEE;--teal:#03867A;--teal-soft:#E4F1EF;--coral:#F2462F;--font:"Jakarta","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--container:1180px;--header-h:74px;--r-pill:999px;--r-xl:36px}
+      :root{--bg:#FFFFFF;--soft:#F5F6F8;--soft2:#EEF0F4;--ink:#16181D;--muted:#5B606B;--line:#E8EAEE;--teal:#03867A;--teal-soft:#E4F1EF;--coral:#F2462F;--coral-dark:#CE3A22;--font:"Jakarta","Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;--container:1180px;--header-h:74px;--r:16px;--r-lg:24px;--r-xl:36px;--r-pill:999px;--shadow-md:0 10px 30px rgba(20,24,30,.09)}
       *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
       body{font-family:var(--font);line-height:1.6;color:var(--ink);background:var(--bg);overflow-x:hidden}
       img,svg{display:block;max-width:100%}img{height:auto}
@@ -34,63 +34,84 @@
       .navbar{position:sticky;top:0;z-index:100;min-height:var(--header-h);background:rgba(255,255,255,.85)}
       .nav-wrapper{display:flex;align-items:center;justify-content:space-between;min-height:var(--header-h)}
       .hero{padding:clamp(3rem,7vh,5rem) 0 clamp(2.5rem,6vh,4rem)}
-      .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,3.5rem);align-items:center}
+      .inv-hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4rem);align-items:center}
       .hero h1 em{font-style:normal;color:var(--coral)}
-      .hero-arch{aspect-ratio:5/5.4;overflow:hidden;border-radius:var(--r-xl)}
-      .hero-arch img{width:100%;height:100%;object-fit:cover}
-      @media(max-width:860px){.hero-grid{grid-template-columns:1fr}}
+      @media(max-width:880px){.inv-hero-grid{grid-template-columns:1fr}}
     </style>
     <link rel="preload" href="/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
+
+    <style>
+      /* Layout propio de Inversionistas (mismos tokens, distinto acomodo) */
+      .asset-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadow-md)}
+      .asset-card>img{width:100%;aspect-ratio:16/11;object-fit:cover}
+      .asset-card .ac-body{padding:1.5rem 1.6rem 1.7rem}
+      .asset-card .ac-flag{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--coral-dark);background:var(--coral-soft,#FFE9E6);padding:.3rem .7rem;border-radius:var(--r-pill);margin-bottom:.7rem}
+      .asset-card .ac-title{font-weight:800;font-size:1.35rem;letter-spacing:-.02em}
+      .asset-card .ac-loc{color:var(--muted);font-size:.92rem;margin-top:.25rem;display:flex;align-items:center;gap:.4rem}
+      .asset-card .ac-loc .ico{width:1rem;height:1rem;color:var(--coral)}
+      .asset-card .ac-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:1.3rem;border-top:1px solid var(--line);padding-top:1.3rem}
+      .asset-card .ac-stats .n{font-weight:800;font-size:1.5rem;letter-spacing:-.02em;color:var(--coral)}
+      .asset-card .ac-stats .l{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:.15rem}
+      /* tesis: lista editorial numerada */
+      .thesis-list{display:grid;grid-template-columns:1fr 1fr;gap:2.2rem 3.5rem;margin-top:var(--s7,3rem)}
+      .thesis-row{display:flex;gap:1.1rem;align-items:flex-start;border-top:2px solid var(--line);padding-top:1.1rem}
+      .thesis-row .tnum{font-weight:800;font-size:1.25rem;color:var(--coral);min-width:1.8rem}
+      .thesis-row h3{font-size:1.2rem;letter-spacing:-.02em;margin-bottom:.35rem}
+      .thesis-row p{color:var(--muted);margin:0;font-size:.96rem}
+      @media(max-width:760px){.thesis-list{grid-template-columns:1fr;gap:1.6rem}}
+    </style>
 </head>
 <body>
     <a href="#main" class="skip-link">Saltar al contenido principal</a>
     <header class="header" id="header"></header>
 
     <main id="main">
-        <!-- HERO (mismo patrón que el resto: claro, split, arco) -->
+        <!-- HERO data-forward: texto + ficha del activo -->
         <section class="hero">
-            <div class="container hero-grid">
+            <div class="container inv-hero-grid">
                 <div class="hero-copy">
                     <div class="hero-eyebrow"><span class="rule"></span> Inversionistas</div>
-                    <h1>Invierte en el <em>crecimiento</em> de Silao</h1>
-                    <p class="hero-sub">Un activo comercial consolidado en el corazón logístico del Bajío, con marcas ancla en camino y una comunidad en plena expansión.</p>
+                    <h1>La <em>oportunidad</em> Plaza Real Silao</h1>
+                    <p class="hero-sub">Un activo comercial consolidado en el corazón logístico del Bajío — con marcas ancla en camino y una comunidad en plena expansión.</p>
                     <div class="hero-cta">
                         <a href="/inversionistas/data-room/" class="btn btn-primary btn-lg"><svg class="ico"><use href="/images/icons/sprite.svg#lock"></use></svg> Entrar al data room</a>
                         <a href="mailto:contacto@plazarealsilao.com?subject=Solicitud%20de%20acceso%20al%20Data%20Room%20-%20Plaza%20Real%20Silao" class="btn btn-secondary btn-lg">Solicitar acceso</a>
                     </div>
-                    <div class="hero-stats">
-                        <div><div class="hs-num">2019</div><div class="hs-label">En operación</div></div>
-                        <div><div class="hs-num">22+</div><div class="hs-label">Locales</div></div>
-                        <div><div class="hs-num">+2</div><div class="hs-label">Anclas en camino</div></div>
-                    </div>
                 </div>
-                <div class="hero-figure">
-                    <div class="hero-arch">
-                        <img src="/images/plaza/plaza-main.webp" alt="Plaza Real Silao" width="1067" height="1333" fetchpriority="high">
+                <aside class="asset-card reveal">
+                    <img src="/images/plaza/plaza-exterior.webp" alt="Plaza Real Silao" width="800" height="550" fetchpriority="high">
+                    <div class="ac-body">
+                        <span class="ac-flag">El activo</span>
+                        <div class="ac-title">Plaza Real Silao</div>
+                        <div class="ac-loc"><svg class="ico"><use href="/images/icons/sprite.svg#pin"></use></svg> Libramiento Nte. 3140 · Silao, Gto.</div>
+                        <div class="ac-stats">
+                            <div><div class="n">2019</div><div class="l">En operación</div></div>
+                            <div><div class="n">22+</div><div class="l">Locales</div></div>
+                            <div><div class="n">+2</div><div class="l">Anclas nuevas</div></div>
+                        </div>
                     </div>
-                </div>
+                </aside>
             </div>
         </section>
 
-        <!-- TESIS (features-grid como en Home/Espacios) -->
-        <section class="section">
+        <!-- TESIS: lista editorial numerada (distinto a la rejilla de íconos) -->
+        <section class="section section--alt">
             <div class="container">
-                <div class="s-head center reveal">
+                <div class="s-head reveal">
                     <span class="eyebrow">La tesis</span>
-                    <h2>Por qué Plaza Real Silao</h2>
-                    <p class="lead" style="margin:.8rem auto 0">Una propiedad consolidada con una vía clara de crecimiento de valor.</p>
+                    <h2>Cuatro razones para invertir</h2>
                 </div>
-                <div class="features-grid">
-                    <div class="feature-card reveal"><span class="feature-icon"><svg class="ico"><use href="/images/icons/sprite.svg#pin"></use></svg></span><h3>Ubicación privilegiada</h3><p>Frente a la central de autobuses, sobre el libramiento norte. Flujo constante todos los días.</p></div>
-                    <div class="feature-card reveal"><span class="feature-icon"><svg class="ico"><use href="/images/icons/sprite.svg#store"></use></svg></span><h3>Marcas ancla en camino</h3><p>Modatelas y Smart Fit suman tráfico de marca nacional y atractivo para nuevos arrendatarios.</p></div>
-                    <div class="feature-card reveal"><span class="feature-icon"><svg class="ico"><use href="/images/icons/sprite.svg#trending-up"></use></svg></span><h3>Comunidad en crecimiento</h3><p>Silao, polo industrial y logístico del Bajío en plena expansión, con demanda creciente de comercio.</p></div>
-                    <div class="feature-card reveal"><span class="feature-icon"><svg class="ico"><use href="/images/icons/sprite.svg#shield"></use></svg></span><h3>Operación consolidada</h3><p>Más de 20 locales operando desde 2019, con una mezcla diversa de comercio, servicios y alimentos.</p></div>
+                <div class="thesis-list reveal">
+                    <div class="thesis-row"><span class="tnum">01</span><div><h3>Ubicación privilegiada</h3><p>Frente a la central de autobuses y sobre el libramiento norte. Flujo constante de personas todos los días.</p></div></div>
+                    <div class="thesis-row"><span class="tnum">02</span><div><h3>Marcas ancla en camino</h3><p>Modatelas y Smart Fit suman tráfico de marca nacional y atractivo para nuevos arrendatarios.</p></div></div>
+                    <div class="thesis-row"><span class="tnum">03</span><div><h3>Comunidad en crecimiento</h3><p>Silao, polo industrial y logístico del Bajío en plena expansión, con demanda creciente de comercio.</p></div></div>
+                    <div class="thesis-row"><span class="tnum">04</span><div><h3>Operación consolidada</h3><p>Más de 20 locales operando desde 2019, con una mezcla diversa de comercio, servicios y alimentos.</p></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- MÉTRICAS (banda oscura + stats, como el resto del sistema) -->
+        <!-- MÉTRICAS: banda oscura + stats (momento premium del sistema) -->
         <section class="section section--dark">
             <div class="container">
                 <div class="s-head center reveal">
@@ -108,7 +129,7 @@
         </section>
 
         <!-- DATA ROOM (tarjeta del sistema) -->
-        <section class="section section--alt">
+        <section class="section">
             <div class="container">
                 <div class="dataroom-cta card reveal">
                     <div class="dataroom-icon"><svg class="ico"><use href="/images/icons/sprite.svg#lock"></use></svg></div>
