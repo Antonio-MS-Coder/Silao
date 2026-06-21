@@ -56,7 +56,7 @@
     <noscript><link rel="stylesheet" href="/css/main.css"></noscript>
 
     <style>
-      /* Espacios — galería, plano, chip (mismos tokens) */
+      /* Espacios — galería, chip (mismos tokens) */
       .esp-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral-dark);margin-bottom:1.1rem}
       .esp-eyebrow::before{content:"";width:26px;height:1px;background:var(--coral)}
       .esp-sub{font-size:1.18rem;color:var(--muted);max-width:46ch;margin:1.1rem 0 1.8rem}
@@ -74,14 +74,6 @@
       .esp-gallery figure:hover img{transform:scale(1.05)}
       .esp-gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.4rem 1rem .8rem;color:#fff;font-weight:700;font-size:.92rem;background:linear-gradient(0deg,rgba(20,24,30,.75),transparent)}
       @media(max-width:760px){.esp-gallery{grid-template-columns:1fr 1fr}}
-
-      .plano-wrap{display:grid;grid-template-columns:1.5fr .55fr;gap:clamp(1.5rem,4vw,3rem);align-items:center}
-      .plano-wrap .plano-img{width:100%;border-radius:var(--r-lg);border:1px solid var(--line);box-shadow:var(--shadow-md);background:#fff}
-      .plano-facts li{display:flex;gap:.7rem;align-items:flex-start;padding:.7rem 0;border-bottom:1px solid var(--line);color:var(--muted)}
-      .plano-facts li:first-child{border-top:1px solid var(--line)}
-      .plano-facts .ico{color:var(--coral);width:1.2rem;height:1.2rem;flex-shrink:0;margin-top:.15rem}
-      .plano-facts strong{color:var(--ink)}
-      @media(max-width:820px){.plano-wrap{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
@@ -113,7 +105,7 @@
         <section class="section" style="padding-top:0">
             <div class="container">
                 <div class="stats-grid reveal">
-                    <div class="stat"><span class="stat-num">7,830 m²</span><span class="stat-label">Disponibles para renta</span></div>
+                    <div class="stat"><span class="stat-num">7,830 m²</span><span class="stat-label">Últimos espacios disponibles</span></div>
                     <div class="stat"><span class="stat-num">300</span><span class="stat-label">Cajones gratis</span></div>
                     <div class="stat"><span class="stat-num">+12,000</span><span class="stat-label">Clientes al mes</span></div>
                     <div class="stat"><span class="stat-num">10 min</span><span class="stat-label">Del aeropuerto de León</span></div>
@@ -127,38 +119,19 @@
                 <div class="s-head reveal">
                     <span class="eyebrow">Conoce la plaza</span>
                     <h2>Un lugar con movimiento</h2>
-                    <p class="lead">Una plaza consolidada, en crecimiento y con marcas que atraen clientes todos los días.</p>
+                    <p class="lead">Una plaza consolidada y en crecimiento. Locales desde 25&nbsp;m² y una bodega de 2,200&nbsp;m², con marcas ancla que atraen clientes todos los días.</p>
                 </div>
                 <div class="esp-gallery reveal">
                     <figure><img src="/images/plaza/interior.webp" alt="Local disponible en Plaza Real Silao" width="900" height="675" loading="lazy"><figcaption>Espacios amplios listos para tu negocio</figcaption></figure>
                     <figure><img src="/images/plaza/delsol-nuevo.webp" alt="Tiendas Del Sol, última apertura" width="900" height="675" loading="lazy"><figcaption>Última apertura: Tiendas del Sol</figcaption></figure>
-                    <figure><img src="/images/plaza/delsol-calle.webp" alt="Plaza Real Silao sobre avenida" width="900" height="675" loading="lazy"><figcaption>Sobre avenida, alto flujo vehicular</figcaption></figure>
-                    <figure><img src="/images/plaza/terreno.webp" alt="Render del terreno colindante desarrollado" width="900" height="675" loading="lazy"><figcaption>Próxima expansión · terreno colindante de 9,024 m²</figcaption></figure>
-                </div>
-            </div>
-        </section>
-
-        <!-- LOCALES DISPONIBLES (plano) -->
-        <section class="section">
-            <div class="container">
-                <div class="s-head reveal">
-                    <span class="eyebrow">Locales disponibles</span>
-                    <h2>Encuentra tu espacio ideal</h2>
-                </div>
-                <div class="plano-wrap reveal">
-                    <img class="plano-img" src="/images/plaza/plano.webp" alt="Plano de Plaza Real Silao con locales disponibles" width="1500" height="1010" loading="lazy">
-                    <ul class="plano-facts">
-                        <li><svg class="ico"><use href="/images/icons/sprite.svg#bag"></use></svg><div>Locales <strong>desde 25 m²</strong> para comercio o servicios</div></li>
-                        <li><svg class="ico"><use href="/images/icons/sprite.svg#building"></use></svg><div>Bodega de <strong>2,200 m²</strong> para logística o mayoreo</div></li>
-                        <li><svg class="ico"><use href="/images/icons/sprite.svg#trending-up"></use></svg><div>Terreno colindante de <strong>9,024 m²</strong> listo para desarrollar</div></li>
-                        <li><svg class="ico"><use href="/images/icons/sprite.svg#parking"></use></svg><div><strong>300 cajones</strong> de estacionamiento gratis</div></li>
-                    </ul>
+                    <figure><img src="/images/stores/smartfit.webp" alt="Smart Fit y Modatelas, próximas aperturas" width="900" height="675" loading="lazy"><figcaption>Próximas aperturas: Modatelas + Smart Fit</figcaption></figure>
+                    <figure><img src="/images/plaza/inversion.webp" alt="Plaza Real Silao frente a la central camionera" width="900" height="675" loading="lazy"><figcaption>Frente a la central camionera de Silao</figcaption></figure>
                 </div>
             </div>
         </section>
 
         <!-- BENEFITS -->
-        <section class="section section--alt benefits-section">
+        <section class="section benefits-section">
             <div class="container">
                 <div class="s-head reveal">
                     <span class="eyebrow">Por qué aquí</span>
