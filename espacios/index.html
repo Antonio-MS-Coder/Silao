@@ -76,10 +76,14 @@
       @media(max-width:760px){.esp-gallery{grid-template-columns:1fr 1fr}}
 
       /* Stat destacada de escasez ("casi rentada") */
-      .stat--hot{background:var(--coral-dark);border-color:var(--coral-dark);position:relative;overflow:hidden}
-      .stat--hot .stat-tag{align-self:flex-start;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:rgba(255,255,255,.18);border-radius:var(--r-pill);padding:.2rem .6rem;margin-bottom:.45rem}
-      .stat--hot .stat-num{color:#fff;font-size:clamp(1.55rem,2.8vw,2.1rem)}
+      .stat--hot{background:var(--coral-dark);border-color:var(--coral-dark)}
+      .stat--hot .stat-num{color:#fff;font-size:clamp(1.7rem,2.9vw,2.3rem)}
       .stat--hot .stat-label{color:rgba(255,255,255,.95);font-weight:600}
+
+      /* Beneficios: 4 tarjetas en una fila pareja (sin huérfana) */
+      .benefits-section .benefits-grid{grid-template-columns:repeat(4,1fr)}
+      @media(max-width:900px){.benefits-section .benefits-grid{grid-template-columns:repeat(2,1fr)}}
+      @media(max-width:560px){.benefits-section .benefits-grid{grid-template-columns:1fr}}
     </style>
 </head>
 <body>
@@ -111,7 +115,7 @@
         <section class="section" style="padding-top:0">
             <div class="container">
                 <div class="stats-grid reveal">
-                    <div class="stat stat--hot"><span class="stat-tag">Cupo limitado</span><span class="stat-num">Casi rentada</span><span class="stat-label">Aparta los últimos locales disponibles</span></div>
+                    <div class="stat stat--hot"><span class="stat-num">Casi rentada</span><span class="stat-label">Cupo limitado · aparta los últimos locales</span></div>
                     <div class="stat"><span class="stat-num">300</span><span class="stat-label">Cajones gratis</span></div>
                     <div class="stat"><span class="stat-num">+12,000</span><span class="stat-label">Clientes al mes</span></div>
                     <div class="stat"><span class="stat-num">10 min</span><span class="stat-label">Del aeropuerto de León</span></div>
