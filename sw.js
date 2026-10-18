@@ -6,7 +6,7 @@
  *  - Cross-origin (GA, maps)     → passthrough (never cached)
  */
 
-const CACHE = 'plaza-real-silao-v3';
+const CACHE = 'plaza-real-silao-v4-commercial-20261018';
 const SHELL = [
     '/',
     '/css/main.css',

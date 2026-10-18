@@ -15,7 +15,7 @@
     const navigationHTML = `
         <div class="topbanner" id="topBanner" hidden>
             <div class="container topbanner-inner">
-                <p><span class="tb-spark">✦</span> <strong>Muy pronto</strong> · Modatelas y Smart Fit abren en Plaza Real Silao <a href="${basePath}/#proximamente">Avísame →</a></p>
+                <p><span class="tb-spark">✦</span> <strong>Modatelas ya opera</strong> · Smart Fit: apertura prevista en diciembre de 2026 <a href="${basePath}/#proximamente">Conoce más →</a></p>
                 <button class="topbanner-close" id="topBannerClose" aria-label="Cerrar aviso">${ico('x')}</button>
             </div>
         </div>
@@ -59,12 +59,12 @@
                 <a href="${basePath}/#contact" class="mobile-nav-link">${ico('pin')}<span>Visítanos</span></a>
             </nav>
             <div class="mobile-sidebar-footer">
-                <a href="tel:+5578789795" class="mobile-contact-link">${ico('phone')}<span>(55) 7878-9795</span></a>
+                <a href="tel:+525578789795" class="mobile-contact-link">${ico('phone')}<span>(55) 7878-9795</span></a>
                 <a href="mailto:contacto@plazarealsilao.com" class="mobile-contact-link">${ico('mail')}<span>Contacto</span></a>
                 <div class="mobile-social-links">
                     <a href="https://facebook.com/plazarealsilao" target="_blank" rel="noopener" aria-label="Facebook">${ico('facebook')}</a>
                     <a href="https://instagram.com/plazarealsilao" target="_blank" rel="noopener" aria-label="Instagram">${ico('instagram')}</a>
-                    <a href="https://wa.me/5578789795" target="_blank" rel="noopener" aria-label="WhatsApp">${ico('whatsapp')}</a>
+                    <a href="https://wa.me/525578789795" target="_blank" rel="noopener" aria-label="WhatsApp">${ico('whatsapp')}</a>
                 </div>
             </div>
         </div>
@@ -83,7 +83,7 @@
                     <div class="social-links">
                         <a href="https://facebook.com/plazarealsilao" aria-label="Facebook" target="_blank" rel="noopener">${ico('facebook')}</a>
                         <a href="https://instagram.com/plazarealsilao" aria-label="Instagram" target="_blank" rel="noopener">${ico('instagram')}</a>
-                        <a href="https://wa.me/5578789795" aria-label="WhatsApp" target="_blank" rel="noopener">${ico('whatsapp')}</a>
+                        <a href="https://wa.me/525578789795" aria-label="WhatsApp" target="_blank" rel="noopener">${ico('whatsapp')}</a>
                     </div>
                 </div>
                 <div class="footer-section">
@@ -104,7 +104,7 @@
                     <h4>Contacto</h4>
                     <p class="footer-contact">
                         ${ico('pin')} Libramiento Nte. 3140, 36100 Silao, Gto.<br>
-                        ${ico('phone')} <a href="tel:+5578789795">(55) 7878-9795</a><br>
+                        ${ico('phone')} <a href="tel:+525578789795">(55) 7878-9795</a><br>
                         ${ico('mail')} <a href="mailto:contacto@plazarealsilao.com">contacto@plazarealsilao.com</a>
                     </p>
                 </div>

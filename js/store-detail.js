@@ -63,8 +63,9 @@
         // Coming-soon banner
         const status = document.getElementById('storeStatus');
         status.innerHTML = coming
-            ? `<span class="badge badge--amber">Próximamente · Apertura 2026</span>`
+            ? `<span class="badge badge--amber"></span>`
             : '';
+        if (coming) status.querySelector('span').textContent = s.openingLabel || 'Próximamente · fecha por confirmar';
 
         document.getElementById('storeDescription').textContent = s.description;
         document.getElementById('storeLocation').textContent = s.location;
@@ -74,10 +75,10 @@
         const emailEl = document.getElementById('storeEmail');
         if (s.phone && s.phone !== 'Próximamente') {
             phoneEl.innerHTML = `<a href="tel:${s.phone.replace(/\s/g, '')}">${s.phone}</a>`;
-        } else { phoneEl.textContent = 'Próximamente'; }
+        } else { phoneEl.textContent = coming ? 'Próximamente' : 'Consulta en tienda'; }
         if (s.email && s.email !== 'Próximamente') {
             emailEl.innerHTML = `<a href="mailto:${s.email}">${s.email}</a>`;
-        } else { emailEl.textContent = 'Próximamente'; }
+        } else { emailEl.textContent = coming ? 'Próximamente' : 'Consulta en tienda'; }
 
         document.getElementById('servicesTitle').textContent = coming ? 'Lo que encontrarás' : 'Servicios disponibles';
         document.getElementById('storeServices').innerHTML = (s.services || [])
