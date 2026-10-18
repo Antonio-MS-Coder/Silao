@@ -139,12 +139,14 @@ function validateField(field) {
         }
     } else if (field.id === 'squareMeters' && field.value) {
         // Square meters validation
-        const value = parseInt(field.value);
-        if (value < 10) {
-            message = 'El espacio mínimo es de 10 m²';
+        const value = Number(field.value);
+        const minimum = Number(field.min);
+        const maximum = Number(field.max);
+        if (value < minimum) {
+            message = `El espacio mínimo es de ${minimum} m²`;
             isValid = false;
-        } else if (value > 5000) {
-            message = 'Por favor ingresa un valor menor a 5000 m²';
+        } else if (value > maximum) {
+            message = `Por favor ingresa un valor de hasta ${maximum} m²`;
             isValid = false;
         }
     }
